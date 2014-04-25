@@ -1,0 +1,18 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Qualificacaorevisaorodrigo.aux
+The style file: abnt-alf.bst
+Database file #1: abnt-options.bib
+Database file #2: reflatex.bib
+A bad cross reference---entry "JensenGHL2007"
+refers to entry "conf/ecows/2007", which doesn't exist
+Warning--I didn't find a database entry for "abnt-etal-list=99"
+Warning--I didn't find a database entry for "denning-sacco"
+Warning--I didn't find a database entry for "conf/ecows/2007"
+Warning--faltando school em pattern-driven2008
+Warning--faltando school em Fielding2000
++---------------------------------------------------------+
+| Estilo bibliografico abnt-alf.bst versao 1.52           |
+| Implementa a NBR6023, NBR10520 e NBR10523               |
+| Em caso de duvidas ou problemas com este estilo procure |
+| http://abntex.codigolivre.org.br                        |
++---------------------------------------------------------+
+(There was 1 error message)

@@ -1,0 +1,805 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.4)  14 APR 2014 12:22
+entering extended mode
+**E:/Qualificacao1/Qualificacaorevisaorodrigo.tex
+(E:/Qualificacao1/Qualificacaorevisaorodrigo.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(E:\Qualificacao1\normas-utf-tex.cls (E:\Qualificacao1\cvs-id.def)
+Document Class: normas-utf-tex 2011/06/19 v2.0
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\lastpage\lastpage.sty"
+Package: lastpage 2013/01/28 v1.2l Refers to last page's name (HMM; JPG)
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\bigfoot\perpage.sty"
+Package: perpage 2006/07/15 1.12 Reset/sort counters per page
+\c@abspage=\count79
+)
+(E:\Qualificacao1\abnt.cls (E:\Qualificacao1\cvs-id.def)
+Document Class: abnt 2006/09/09 v1.32 Classe abnt (NBR6024, NBR6027, NBR6028, N
+BR14724)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count80
+\calc@Bcount=\count81
+\calc@Adimen=\dimen102
+\calc@Bdimen=\dimen103
+\calc@Askip=\skip41
+\calc@Bskip=\skip42
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count82
+\calc@Cskip=\skip43
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count83
+\mult@box=\box26
+\multicol@leftmargin=\dimen104
+\c@unbalance=\count84
+\c@collectmore=\count85
+\doublecol@number=\count86
+\multicoltolerance=\count87
+\multicolpretolerance=\count88
+\full@width=\dimen105
+\page@free=\dimen106
+\premulticols=\dimen107
+\postmulticols=\dimen108
+\multicolsep=\skip44
+\multicolbaselineskip=\skip45
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count89
+\c@finalcolumnbadness=\count90
+\last@try=\dimen109
+\multicolovershoot=\dimen110
+\multicolundershoot=\dimen111
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\multicol@sort@counter=\count91
+)
+(E:\Qualificacao1\abntex-abrev.sty (E:\Qualificacao1\cvs-id.def)
+Package: abntex-abrev 2005/11/14 v1.4 Abreviacoes
+
+(E:\Qualificacao1\nbr10522-1988.def (E:\Qualificacao1\cvs-id.def)
+File: nbr10522-1988.def 2003/10/13 v1.2 Abreviacoes bibliograficas (NBR10522:19
+88)
+)
+(E:\Qualificacao1\abntex-abrev-pt_BR.def (E:\Qualificacao1\cvs-id.def)
+File: abntex-abrev-pt_BR.def 2005/11/14 v1.3 definicao de abntex-abrev, traduca
+o de termos en_US/pt_BR
+))
+(E:\Qualificacao1\abntex-text.sty (E:\Qualificacao1\cvs-id.def)
+Package: abntex-text 2005/11/14 v1.1 abnTeX text replacements
+
+(E:\Qualificacao1\abntex-text-pt_BR.def (E:\Qualificacao1\cvs-id.def)
+File: abntex-text-pt_BR.def 2005/12/21 v1.2 Definicao de nomes em Portugues/Bra
+sil (pt_BR)
+))
+(E:\Qualificacao1\abntex-default-design.sty (E:\Qualificacao1\cvs-id.def)
+Package: abntex-default-design 2005/06/22 v1.2 Definicoes de design padrao do a
+bntex
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+
+
+Package relsize Warning: Failed to get list of font sizes.
+(relsize)                Falling back to old definition. on input line 81.
+
+)
+\ABNTanapindent=\skip46
+\ABNTsignwidth=\skip47
+\ABNTsignthickness=\skip48
+\ABNTsignskip=\skip49
+) (E:\Qualificacao1\nbr6027-1989.def) (E:\Qualificacao1\nbr14724-2001.def)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count92
+\c@chapter=\count93
+\c@section=\count94
+\c@subsection=\count95
+\c@subsubsection=\count96
+\c@paragraph=\count97
+\c@subparagraph=\count98
+\c@figure=\count99
+\c@table=\count100
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+\bibindent=\dimen112
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\mathptmx.sty"
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\helvet.sty"
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+))
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+))
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen113
+\captionmargin@=\dimen114
+\captionwidth=\dimen115
+\caption@tempdima=\dimen116
+\caption@indent=\dimen117
+\caption@parindent=\dimen118
+\caption@hangindent=\dimen119
+)
+\c@ContinuedFloat=\count101
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\caption\newfloat.sty"
+Package: newfloat 2013/05/11 v1.1-91 Defining new floating environments (AR)
+Package newfloat Info: Unsupported document class, or \@chapter 
+(newfloat)             was already redefined by another package.
+Package newfloat Info: \@chapter = macro:[#1]#2->\ifthenelse {\boolean {ABNThyp
+ertoc}}{\renewcommand {\theHchapter }{\chaptertype \thechapter }}{} \ifnum \c@s
+ecnumdepth >\m@ne \refstepcounter {chapter} \ABNTchaptermark {#1}\typeout {\@ch
+apapp \space \thechapter .}\ifthenelse {\boolean {ABNTaftertoc}} {\ABNTaddconte
+ntsline {toc}{chapter}{\protect \numberline {\thechapter }#1}}{}\else \ABNTchap
+termark {#1}\ifthenelse {\boolean {ABNTaftertoc}}{\ABNTaddcontentsline {toc}{ch
+apter}{#1}}{}\fi \if@twocolumn \@topnewpage [\@makechapterhead {#2}]\else \@mak
+echapterhead {#2}\@afterheading \fi \par .
+Package newfloat Info: \Hy@org@chapter = undefined.
+Package newfloat Info: Trying Plan B...
+)
+Package newfloat Info: New float `quadro' with options `name={quadro},listname=
+{quadro}' on input line 42.
+\c@quadro=\count102
+\newfloat@ftype=\count103
+Package newfloat Info: float type `quadro'=8 on input line 42.
+\c@absfigure=\count104
+\c@abstable=\count105
+\c@absquadro=\count106
+\c@absequation=\count107
+)
+(E:\Qualificacao1\abntcite.sty (E:\Qualificacao1\cvs-id.def)
+Package: abntcite 2006/04/25 v1.30 Chamadas de referencias no texto (NBR10520, 
+NBR10522)
+\minimumbiblabelwidth=\skip52
+\ABCIauxlen=\skip53
+\c@ABCIaux=\count108
+\c@ABCImax=\count109
+
+(E:\Qualificacao1\nbr10520-2002.def (E:\Qualificacao1\cvs-id.def)
+File: nbr10520-2002.def 2006/04/25 v1.4 Definicoes para abntcite (NBR10520:2002
+)
+)
+\biblabelsep=\skip54
+LaTeX Info: Redefining \newblock on input line 466.
+LaTeX Info: Redefining \cite on input line 493.
+\ABCItoken=\toks15
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\generic\babel\portuges.ldf"
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count110
+\U@D=\dimen120
+)
+\l@brazil = a dialect from \language\l@portuges 
+Package babel Info: Making " an active character on input line 145.
+))
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip55
+
+For additional information on amsmath, use the `?' option.
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen121
+))
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen122
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count111
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count112
+\leftroot@=\count113
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count114
+\DOTSCASE@=\count115
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+\big@size=\dimen123
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count116
+\c@MaxMatrixCols=\count117
+\dotsspace@=\muskip10
+\c@parentequation=\count118
+\dspbrk@lvl=\count119
+\tag@help=\toks19
+\row@=\count120
+\column@=\count121
+\maxfields@=\count122
+\andhelp@=\toks20
+\eqnshift@=\dimen124
+\alignsep@=\dimen125
+\tagshift@=\dimen126
+\tagwidth@=\dimen127
+\totwidth@=\dimen128
+\lineht@=\dimen129
+\@envbody=\toks21
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count123
+))
+\Gin@req@height=\dimen130
+\Gin@req@width=\dimen131
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\times.sty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+Package: pdfpages 2013/05/30 v0.4u Insert pages of external PDF documents (AM)
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+))
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
+File: pppdftex.def 2013/05/30 v0.4u Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box54
+\AM@toc@title=\toks23
+\c@AM@survey=\count124
+\AM@templatesizebox=\box55
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks24
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen132
+\extrarowheight=\dimen133
+\NC@list=\toks25
+\extratabsurround=\skip58
+\backup@length=\skip59
+)
+\TX@col@width=\dimen134
+\TX@old@table=\dimen135
+\TX@old@col=\dimen136
+\TX@target=\dimen137
+\TX@delta=\dimen138
+\TX@cols=\count125
+\TX@ftn=\toks26
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen139
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen140
+\lightrulewidth=\dimen141
+\cmidrulewidth=\dimen142
+\belowrulesep=\dimen143
+\belowbottomsep=\dimen144
+\aboverulesep=\dimen145
+\abovetopsep=\dimen146
+\cmidrulesep=\dimen147
+\cmidrulekern=\dimen148
+\defaultaddspace=\dimen149
+\@cmidla=\count126
+\@cmidlb=\count127
+\@aboverulesep=\dimen150
+\@belowrulesep=\dimen151
+\@thisruleclass=\count128
+\@lastruleclass=\count129
+\@thisrulewidth=\dimen152
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+\everycr=\toks27
+\minrowclearance=\skip60
+)
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(E:\Qualificacao1\proof.sty
+\inferLineSkip=\dimen153
+\inferLabelSkip=\dimen154
+\@LeftOffset=\dimen155
+\@RightOffset=\dimen156
+\@SavedLeftOffset=\dimen157
+\UpperWidth=\dimen158
+\LowerWidth=\dimen159
+\LowerHeight=\dimen160
+\UpperLeftOffset=\dimen161
+\UpperRightOffset=\dimen162
+\UpperCenter=\dimen163
+\LowerCenter=\dimen164
+\UpperAdjust=\dimen165
+\RuleAdjust=\dimen166
+\LowerAdjust=\dimen167
+\RuleWidth=\dimen168
+\HLabelAdjust=\dimen169
+\VLabelAdjust=\dimen170
+\WidthAdjust=\dimen171
+\@UpperPart=\box56
+\@LowerPart=\box57
+\@LabelPart=\box58
+\ResultBox=\box59
+) (E:\Qualificacao1\Qualificacaorevisaorodrigo.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 82.
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pageslts/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
+(lastpage)             ! on input line 82.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count130
+\scratchdimen=\dimen172
+\scratchbox=\box60
+\nofMPsegments=\count131
+\nofMParguments=\count132
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen173
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
+\everyMPtoPDFconversion=\toks29
+)
+\AtBeginShipoutBox=\box61
+ <unb.jpg, id=1, 69.25874pt x 42.1575pt>
+File: unb.jpg Graphic file (type jpg)
+ <use unb.jpg>
+Package pdftex.def Info: unb.jpg used on input line 84.
+(pdftex.def)             Requested size: 69.25856pt x 42.15738pt.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 84.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 84
+.
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 84
+.
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 84
+.
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 84
+.
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 84.
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 84.
+
+("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 84--84
+  $[]$ 
+ []
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 84.
+[1
+
+
+Non-PDF special ignored!{C:/Documents and Settings/All Users/Dados de aplicativ
+os/MiKTeX/2.9/pdftex/config/pdftex.map} <E:/Qualificacao1/unb.jpg>] [1
+
+
+]
+[2
+
+
+] (E:\Qualificacao1\Qualificacaorevisaorodrigo.lof)
+\tf@lof=\write3
+ [3
+
+]
+(E:\Qualificacao1\Qualificacaorevisaorodrigo.lot)
+\tf@lot=\write4
+ [4
+
+]
+(E:\Qualificacao1\Qualificacaorevisaorodrigo.lsg)
+\tf@lsg=\write5
+ [5
+
+]
+(E:\Qualificacao1\Qualificacaorevisaorodrigo.toc [6
+
+
+])
+\tf@toc=\write6
+ [7]
+Cap\'{\i }tulo 1.
+[13
+
+
+] [14] [15]
+Cap\'{\i }tulo 2.
+[16
+
+] [17]
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 281.
+ [18]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 327.
+
+ ("C:\Arquivos de programas\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 327.
+ [19] <qtd_veiculo_publicacao.jpg, id=55, 657.95813pt x 368.87813pt>
+File: qtd_veiculo_publicacao.jpg Graphic file (type jpg)
+
+<use qtd_veiculo_publicacao.jpg>
+Package pdftex.def Info: qtd_veiculo_publicacao.jpg used on input line 353.
+(pdftex.def)             Requested size: 394.77792pt x 221.32857pt.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 354.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 354.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 354.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 354.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 354.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 354.
+ [20 <E:/Qualificacao1/qtd_veiculo_publicacao.jpg>] [21] <tipo_contribuicao_3.j
+pg, id=62, 369.63094pt x 219.82124pt>
+File: tipo_contribuicao_3.jpg Graphic file (type jpg)
+
+<use tipo_contribuicao_3.jpg>
+Package pdftex.def Info: tipo_contribuicao_3.jpg used on input line 379.
+(pdftex.def)             Requested size: 273.14923pt x 162.44379pt.
+ [22 <E:/Qualificacao1/tipo_contribuicao_3.jpg>]
+<Atributo_Seguranca_Solucao.jpg, id=66, 459.21562pt x 194.22563pt>
+File: Atributo_Seguranca_Solucao.jpg Graphic file (type jpg)
+
+<use Atributo_Seguranca_Solucao.jpg>
+Package pdftex.def Info: Atributo_Seguranca_Solucao.jpg used on input line 394.
+
+(pdftex.def)             Requested size: 318.66948pt x 134.78932pt.
+ [23 <E:/Qualificacao1/Atributo_Seguranca_Solucao.jpg>] <tipo_solucao.jpg, id=7
+1, 277.035pt x 182.18062pt>
+File: tipo_solucao.jpg Graphic file (type jpg)
+
+<use tipo_solucao.jpg>
+Package pdftex.def Info: tipo_solucao.jpg used on input line 409.
+(pdftex.def)             Requested size: 227.62206pt x 149.68651pt.
+ [24 <E:/Qualificacao1/tipo_solucao.jpg>] [25]
+Cap\'{\i }tulo 3.
+[26
+
+] [27] [28] [29] <COMPOSICAO_WSDL.jpg, id=91, 206.27063pt x 354.57469pt>
+File: COMPOSICAO_WSDL.jpg Graphic file (type jpg)
+
+<use COMPOSICAO_WSDL.jpg>
+Package pdftex.def Info: COMPOSICAO_WSDL.jpg used on input line 572.
+(pdftex.def)             Requested size: 103.13506pt x 177.28691pt.
+ [30 <E:/Qualificacao1/COMPOSICAO_WSDL.jpg>] [31]
+[32] [33] [34] [35] [36] [37]
+<openiddiagram.png, id=117, 646.415pt x 294.09875pt>
+File: openiddiagram.png Graphic file (type png)
+ <use openiddiagram.png>
+Package pdftex.def Info: openiddiagram.png used on input line 711.
+(pdftex.def)             Requested size: 364.19667pt x 165.69939pt.
+
+[38 <E:/Qualificacao1/openiddiagram.png>] [39]
+<diagrama_oauth2.png, id=124, 715.67375pt x 325.215pt>
+File: diagrama_oauth2.png Graphic file (type png)
+
+<use diagrama_oauth2.png>
+Package pdftex.def Info: diagrama_oauth2.png used on input line 770.
+(pdftex.def)             Requested size: 364.19667pt x 165.50015pt.
+ [40] [41 <E:/Qualificacao1/diagrama_oauth2.png>]
+[42]
+Cap\'{\i }tulo 4.
+[43
+
+] [44]
+<modelo_relacionamento_contrato.png, id=141, 536.0025pt x 441.90094pt>
+File: modelo_relacionamento_contrato.png Graphic file (type png)
+
+<use modelo_relacionamento_contrato.png>
+Package pdftex.def Info: modelo_relacionamento_contrato.png used on input line 
+974.
+(pdftex.def)             Requested size: 364.19667pt x 300.25266pt.
+ [45 <E:/Qualificacao1/modelo_relacionamento_contrato.png>]
+<fluxo_autenticacao.png, id=145, 612.78937pt x 381.67593pt>
+File: fluxo_autenticacao.png Graphic file (type png)
+
+<use fluxo_autenticacao.png>
+Package pdftex.def Info: fluxo_autenticacao.png used on input line 1010.
+(pdftex.def)             Requested size: 455.24411pt x 283.54813pt.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1011.
+
+
+LaTeX Warning: Reference `XYS' on page 46 undefined on input line 1018.
+
+[46 <E:/Qualificacao1/fluxo_autenticacao.png>] [47]
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 1044.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 1044.
+
+
+LaTeX Warning: Citation `denning-sacco' on page 48 undefined on input line 1063
+.
+
+[48] [49] [50] <fluxo_autenticacao_BAN.png, id=164, 612.03656pt x 242.40562pt>
+File: fluxo_autenticacao_BAN.png Graphic file (type png)
+
+<use fluxo_autenticacao_BAN.png>
+Package pdftex.def Info: fluxo_autenticacao_BAN.png used on input line 1166.
+(pdftex.def)             Requested size: 455.24411pt x 180.30574pt.
+ [51] [52 <E:/Qualificacao1/fluxo_autenticacao_BAN.png>] [53] [54] [55] [56] [5
+7] [58]
+Cap\'{\i }tulo 5.
+[59
+
+] [60]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[61] [62] (E:\Qualificacao1\Qualificacaorevisaorodrigo.bbl [63
+
+
+] [64])
+
+AED: lastpage setting LastPage
+[65]
++-------------------------------------------------------------------+
+| Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
+|                  http://abntex.codigolivre.org.br                 |
++-------------------------------------------------------------------+
+(E:\Qualificacao1\Qualificacaorevisaorodrigo.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6838 strings out of 493921
+ 99990 string characters out of 3144003
+ 171558 words of memory out of 3000000
+ 9882 multiletter control sequences out of 15000+200000
+ 66807 words of font info for 117 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 43i,18n,43p,1290b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Arquivos de programas/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Arqu
+ivos de programas/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Arqu
+ivos de programas/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Arqui
+vos de programas/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Arqui
+vos de programas/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Arquivos de pr
+ogramas/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Arquivos de programas/
+MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Arquivos de programas/MiKTeX 2.
+9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Qualificacaorevisaorodrigo.pdf (61 pages, 499429 bytes).
+PDF statistics:
+ 241 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,14 @@
+MAIN MENU: 170
+// Extracted from WinEdt 5
+
+MENU:&Tools
+  Flags:0
+  Hint:
+  Macro:11
+    Item:&Table Designer...
+    Hint:Table Designer...
+    Path:%P
+    Definition:[Run("%B\Plugins\Array\Arrayd.exe","%P",0,0,"Tabular/Array Environment",1,1);]
+    Tool Bar:10
+    Image:20
+END Menu:&Tools

@@ -1,0 +1,280 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.52 }
+
+\bibitem[Bertino et al. 2010]{Bertino2010}
+\abntrefinfo{Bertino et al.}{BERTINO et al.}{2010}
+{BERTINO, E. et al. \textbf{Security for Web Services and Service-Oriented
+  Architectures}. [S.l.]: Springer, 2010. I-XII, 1-226~p.
+ISBN 978-3-540-87741-7.}
+
+\bibitem[Bhalla e Kazerooni 2007]{Sahba2007}
+\abntrefinfo{Bhalla e Kazerooni}{BHALLA; KAZEROONI}{2007}
+{BHALLA, N.; KAZEROONI, S. Web services vulnerabilities.
+\textbf{Security Compass Inc}, 2007.}
+
+\bibitem[Bianco et al. 2007]{Bianco2007}
+\abntrefinfo{Bianco et al.}{BIANCO et al.}{2007}
+{BIANCO, P.; KOTERMANSKI, R.; MERSON, P. \textbf{Evaluating a Service-Oriented
+  Architecture}.
+[S.l.], 2007.}
+
+\bibitem[Booth et al. 2004]{Booth2004}
+\abntrefinfo{Booth et al.}{BOOTH et al.}{2004}
+{BOOTH, D. et al. \textbf{Web Services Architecture}. February 2004.
+World Wide Web Consortium, Note NOTE-ws-arch-20040211.}
+
+\bibitem[Burrows et al. 1990]{Burrows1990}
+\abntrefinfo{Burrows et al.}{BURROWS et al.}{1990}
+{BURROWS, M.; ABADI, M.; NEEDHAM, R. A logic of authentication.
+\textbf{ACM Trans. Comput. Syst.}, ACM, New York, NY, USA, v.~8, n.~1, p.
+  18--36, fev. 1990.
+ISSN 0734-2071.
+Dispon{\'\i}vel em: $<$http://doi.acm.org/10.1145/77648.77649$>$.}
+
+\bibitem[Cerami 2002]{Cerami2002}
+\abntrefinfo{Cerami}{CERAMI}{2002}
+{CERAMI, E. \textbf{Web Services Essentials}. 1st. ed. Sebastopol, CA, USA:
+  O'Reilly \& Associates, Inc., 2002.
+ISBN 0596002246.}
+
+\bibitem[Clements et al. 2010]{Clements2010}
+\abntrefinfo{Clements et al.}{CLEMENTS et al.}{2010}
+{CLEMENTS, P. et al. \textbf{Documenting Software Architectures: Views and
+  Beyond}. 2nd. ed. [S.l.]: Addison-Wesley Professional, 2010.
+ISBN 0321552687, 9780321552686.}
+
+\bibitem[Coetzee 2012]{Coetzee2012}
+\abntrefinfo{Coetzee}{COETZEE}{2012}
+{COETZEE, M. Towards a holistic information security governance framework for
+  soa.
+\textbf{2012 Seventh International Conference on Availability, Reliability and
+  Security}, IEEE Computer Society, Los Alamitos, CA, USA, v.~0, p. 155--160,
+  2012.}
+
+\bibitem[COYLE 2002]{COYLE}
+\abntrefinfo{COYLE}{COYLE}{2002}
+{COYLE, F.~P. \textbf{XML, Web Services, and the Data Revolution}. [S.l.]:
+  Boston: Addison-Wesley, 2002.}
+
+\bibitem[DAgostini et al. 2012]{Ontology2012}
+\abntrefinfo{DAgostini et al.}{DAGOSTINI et al.}{2012}
+{DAGOSTINI, S. et al. An ontology for run-time verification of security
+  certificates for soa.
+\textbf{2012 Seventh International Conference on Availability, Reliability and
+  Security}, IEEE Computer Society, Los Alamitos, CA, USA, v.~0, p. 525--533,
+  2012.}
+
+\bibitem[Delessy e Fernandez 2008]{pattern-driven2008}
+\abntrefinfo{Delessy e Fernandez}{DELESSY; FERNANDEZ}{2008}
+{DELESSY, N.~A.; FERNANDEZ, E.
+\textbf{A pattern-driven process for secure service-oriented applications}.
+Tese (Doutorado), Boca Raton, FL, USA, 2008.}
+
+\bibitem[Erl 2009]{ERL09}
+\abntrefinfo{Erl}{ERL}{2009}
+{ERL, T. \textbf{Soa Principios De Design De Servi{\c{c}}os}. [S.l.]: PRENTICE
+  HALL BRASIL, 2009.
+ISBN 9788576051893.}
+
+\bibitem[Fielding 2000]{Fielding2000}
+\abntrefinfo{Fielding}{FIELDING}{2000}
+{FIELDING, R.~T.
+\textbf{Architectural Styles and the Design of Network-based Software
+  Architectures}.
+Tese (Doutorado), 2000. AAI9980887.}
+
+\bibitem[Furtado et al. 2009]{Furtado2009}
+\abntrefinfo{Furtado et al.}{FURTADO et al.}{2009}
+{FURTADO, C. et al. \textbf{Arquitetura Orientada a Serviço - Conceituação}.
+[S.l.], 2009.}
+
+\bibitem[Hammer-Lahav 2010]{oauth210}
+\abntrefinfo{Hammer-Lahav}{HAMMER-LAHAV}{2010}
+{HAMMER-LAHAV, E. \textbf{{The OAuth 1.0 Protocol}}.
+Fremont, CA, USA, abr. 2010. Dispon{\'\i}vel em:
+  $<$http://www.rfc-editor.org/rfc/rfc5849.txt$>$.}
+
+\bibitem[Hardt 2012]{rfc6749}
+\abntrefinfo{Hardt}{HARDT}{2012}
+{HARDT, D. \textbf{The {OA}uth 2.0 Authorization Framework}.
+Fremont, CA, USA, out. 2012. Dispon{\'\i}vel em:
+  $<$http://www.rfc-editor.org/rfc/rfc6749.txt$>$.}
+
+\bibitem[Jensen et al. 2007]{JensenGHL2007}
+\abntrefinfo{Jensen et al.}{JENSEN et al.}{2007}
+{JENSEN, M. et al. Soa and web services: New technologies, new standards - new
+  attacks. In:  \textbf{ECOWS}. [S.l.]: IEEE Computer Society, 2007. p.
+  35--44.}
+
+\bibitem[Josuttis 2007]{Josuttis07}
+\abntrefinfo{Josuttis}{JOSUTTIS}{2007}
+{JOSUTTIS, N.~M. \textbf{SOA in Practice: The Art of Distributed System
+  Design}. Beijing: O'Reilly Media, Inc., 2007.
+ISBN 978-0-596-52955-0.}
+
+\bibitem[Kanneganti e Chodavarapu 2008]{SOASecurity2008}
+\abntrefinfo{Kanneganti e Chodavarapu}{KANNEGANTI; CHODAVARAPU}{2008}
+{KANNEGANTI, R.; CHODAVARAPU, P. \textbf{SOA security}. Greenwich, CT, USA:
+  Manning Publications Co., 2008.
+ISBN 9781932394689.}
+
+\bibitem[Kitchenham e Charters 2007]{guidelines-2007}
+\abntrefinfo{Kitchenham e Charters}{KITCHENHAM; CHARTERS}{2007}
+{KITCHENHAM, B.; CHARTERS, S. \textbf{Guidelines for performing systematic
+  literature reviews in software engineering}.
+[S.l.], 2007.}
+
+\bibitem[Lakshmiraghavan 2013]{lakshmiraghavan2013pro}
+\abntrefinfo{Lakshmiraghavan}{LAKSHMIRAGHAVAN}{2013}
+{LAKSHMIRAGHAVAN, B. \textbf{Pro ASP.NET Web API Security: Securing ASP.NET Web
+  API}. 1st. ed. Berkely, CA, USA: Apress, 2013.
+ISBN 1430257822, 9781430257820.}
+
+\bibitem[Lowis e Accorsi 2011]{Vulnerability_Analysis2011}
+\abntrefinfo{Lowis e Accorsi}{LOWIS; ACCORSI}{2011}
+{LOWIS, L.; ACCORSI, R. Vulnerability analysis in soa-based business processes.
+\textbf{IEEE Transactions on Services Computing}, IEEE Computer Society, Los
+  Alamitos, CA, USA, v.~4, n.~3, p. 230--242, 2011.
+ISSN 1939-1374.}
+
+\bibitem[Madsen et al. 2005]{Madsen2005}
+\abntrefinfo{Madsen et al.}{MADSEN et al.}{2005}
+{MADSEN, P. et al. \textbf{SAML V2.0 Executive Overview}.
+[S.l.], abr. 2005. Dispon{\'\i}vel em:
+  $<$http://www.oasis-open.org/committees/download.php/13525/sstc-saml-exec-overview-2.0-cd-01-2col.pdf$>$.}
+
+\bibitem[Marks e Bell 2006]{marks2006}
+\abntrefinfo{Marks e Bell}{MARKS; BELL}{2006}
+{MARKS, E.; BELL, M. \textbf{Service Oriented Architecture (SOA): A Planning
+  and Implementation Guide for Business and Technology}. [S.l.]: Wiley, 2006.
+  (Gu{\'\i}as de Espa{\~n}a).
+ISBN 9780471768944.}
+
+\bibitem[Meadows 1995]{Meadows95}
+\abntrefinfo{Meadows}{MEADOWS}{1995}
+{MEADOWS, C.~A. Formal verification of cryptographic protocols: A survey. In:
+  . [S.l.]: Springer-Verlag, 1995. p. 133--150.}
+
+\bibitem[Meier et al. 2007]{Meier2007}
+\abntrefinfo{Meier et al.}{MEIER et al.}{2007}
+{MEIER, J. et al. \textbf{Performance testing guidance for web applications:
+  patterns \& practices}. Redmond, WA, USA: Microsoft Press, 2007.
+ISBN 9780735625709.}
+
+\bibitem[Menezes et al. 1996]{Menezes1996}
+\abntrefinfo{Menezes et al.}{MENEZES et al.}{1996}
+{MENEZES, A.~J.; VANSTONE, S.~A.; OORSCHOT, P. C.~V. \textbf{Handbook of
+  Applied Cryptography}. 1st. ed. Boca Raton, FL, USA: CRC Press, Inc., 1996.
+ISBN 0849385237.}
+
+\bibitem[Moradian e Håkansson 2006]{Moradian2006}
+\abntrefinfo{Moradian e Håkansson}{MORADIAN; HåKANSSON}{2006}
+{MORADIAN, E.; HåKANSSON, A. Possible attacks on xml web services.
+\textbf{IJCSNS International Journal of Computer Science and 154 Network
+  Security}, VOL.6 No.1B, 2006.}
+
+\bibitem[Nordbotten 2009]{Nordbotten09}
+\abntrefinfo{Nordbotten}{NORDBOTTEN}{2009}
+{NORDBOTTEN, N.~A. Xml and web services security standards.
+\textbf{IEEE Communications Surveys and Tutorials}, v.~11, n.~3, p. 4--21,
+  2009.}
+
+\bibitem[Petersen et al. 2008]{Petersen2008}
+\abntrefinfo{Petersen et al.}{PETERSEN et al.}{2008}
+{PETERSEN, K. et al. Systematic mapping studies in software engineering. In:
+  \textbf{Proceedings of the 12th international conference on Evaluation and
+  Assessment in Software Engineering}. Swinton, UK, UK: British Computer
+  Society, 2008.  (EASE'08), p. 68--77. Dispon{\'\i}vel em:
+  $<$http://dl.acm.org/citation.cfm?id=2227115.2227123$>$.}
+
+\bibitem[Pinho 2008]{sonia2008}
+\abntrefinfo{Pinho}{PINHO}{2008}
+{PINHO, S. C.~S. de.
+\textbf{Arquitectura de Segurança num ambiente SOA}.
+Disserta\c{c}\~ao (Mestrado) --- Faculdade de Engenharia da Universidade do
+  Porto, 2008.}
+
+\bibitem[Pulier e Taylor 2005]{Pulier2005}
+\abntrefinfo{Pulier e Taylor}{PULIER; TAYLOR}{2005}
+{PULIER, E.; TAYLOR, H. \textbf{{Understanding Enterprise SOA}}. [S.l.]:
+  {Manning Publications}, 2005. Paperback.
+ISBN 1932394591.}
+
+\bibitem[Recordon e Reed 2006]{Recordon2006}
+\abntrefinfo{Recordon e Reed}{RECORDON; REED}{2006}
+{RECORDON, D.; REED, D. Openid 2.0: A platform for user-centric identity
+  management. In:  \textbf{Proceedings of the Second ACM Workshop on Digital
+  Identity Management}. New York, NY, USA: ACM, 2006.  (DIM '06), p. 11--16.
+ISBN 1-59593-547-9. Dispon{\'\i}vel em:
+  $<$http://doi.acm.org/10.1145/1179529.1179532$>$.}
+
+\bibitem[Richardson e Ruby 2007]{Richardson2007}
+\abntrefinfo{Richardson e Ruby}{RICHARDSON; RUBY}{2007}
+{RICHARDSON, L.; RUBY, S. \textbf{Restful Web Services}. First. [S.l.]:
+  O'Reilly, 2007.
+ISBN 9780596529260.}
+
+\bibitem[Schneier 1995]{Schneier1995}
+\abntrefinfo{Schneier}{SCHNEIER}{1995}
+{SCHNEIER, B. \textbf{Applied Cryptography (2Nd Ed.): Protocols, Algorithms,
+  and Source Code in C}. New York, NY, USA: John Wiley \& Sons, Inc., 1995.
+ISBN 0-471-11709-9.}
+
+\bibitem[Siddavatam e Gadge 2008]{Siddavatam2008}
+\abntrefinfo{Siddavatam e Gadge}{SIDDAVATAM; GADGE}{2008}
+{SIDDAVATAM, I.; GADGE, J. Comprehensive test mechanism to detect attack on web
+  services.
+\textbf{Networks, 2008. ICON 2008. 16 IEEE Conferência Internacional sobre}, p.
+  1 -- 6, 2008.}
+
+\bibitem[Stallings 2008]{stallings2008}
+\abntrefinfo{Stallings}{STALLINGS}{2008}
+{STALLINGS, W. \textbf{Criptografia e segurança de redes: princípios e
+  práticas}. [S.l.]: Pearson Prentice Hall, 2008.
+ISBN 9788576051190.}
+
+\bibitem[TANENBAUM 2007]{TANENBAUM2007}
+\abntrefinfo{TANENBAUM}{TANENBAUM}{2007}
+{TANENBAUM, M. V.~S. A.~S. \textbf{SISTEMAS DISTRIBUÍDOS PRINCIPIOS E
+  PARADIGMAS 2ª EDIÇÃO}. [S.l.]: SÃO PAULO, 2007.}
+
+\bibitem[Verissimo e Rodrigues 2001]{Verissimo2001}
+\abntrefinfo{Verissimo e Rodrigues}{VERISSIMO; RODRIGUES}{2001}
+{VERISSIMO, P.; RODRIGUES, L. \textbf{Distributed Systems for System
+  Architects}. Norwell, MA, USA: Kluwer Academic Publishers, 2001.
+ISBN 0792372662.}
+
+\bibitem[Webber et al. 2010]{Webber10}
+\abntrefinfo{Webber et al.}{WEBBER et al.}{2010}
+{WEBBER, J.; ROBINSON, I.; PARASTATIDIS, S. \textbf{REST in Practice:
+  Hypermedia and Systems Architecture}. [S.l.]: O'Reilly, 2010.
+ISBN 978-0-596-80582-1.}
+
+\bibitem[Weber et al. 2007]{WeberAM07}
+\abntrefinfo{Weber et al.}{WEBER et al.}{2007}
+{WEBER, S.; AUSTEL, P.; MCINTOSH, M. A framework for multi-platform soa
+  security analyses. In:  \textbf{2007 IEEE International Conference on Web
+  Services (ICWS 2007), July 9-13, 2007, Salt Lake City, Utah, USA}. [S.l.]:
+  IEEE Computer Society, 2007. p. 102--109.}
+
+\bibitem[Xu et al. 2012]{CrossRealmSOA2012}
+\abntrefinfo{Xu et al.}{XU et al.}{2012}
+{XU, J. et al. Dynamic authentication for cross-realm soa-based business
+  processes.
+\textbf{IEEE Transactions on Services Computing}, IEEE Computer Society, Los
+  Alamitos, CA, USA, v.~5, n.~1, p. 20--32, 2012.
+ISSN 1939-1374.}
+
+\bibitem[Zhang e Chen 2011]{Delegation_Solution2011}
+\abntrefinfo{Zhang e Chen}{ZHANG; CHEN}{2011}
+{ZHANG, Y.; CHEN, J.-L. A delegation solution for universal identity management
+  in soa.
+\textbf{IEEE Transactions on Services Computing}, IEEE Computer Society, Los
+  Alamitos, CA, USA, v.~4, n.~1, p. 70--81, 2011.
+ISSN 1939-1374.}
+
+\end{thebibliography}

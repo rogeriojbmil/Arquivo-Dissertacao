@@ -1,0 +1,1475 @@
+%% Exemplo de utilizacao do estilo de formatacao normas-utf-tex (http://normas-utf-tex.sourceforge.net)
+%% Autores: (200?-2011) Hugo Vieira Neto (hvieir@utfpr.edu.br)
+%%          (200?-2011) Diogo Rosa Kuiaski (diogo.kuiaski@gmail.com)
+%%          (2011-2012) Marcos Talau <talau@users.sourceforge.net>
+%% Colaborador:
+%%          (2011) César M. Vargas Benitez <cesarvargasb@gmail.com>
+
+%\documentclass[openright]{normas-utf-tex} %openright = o capitulo comeca sempre em paginas impares
+\documentclass[oneside,openright,brazil]{normas-utf-tex} %oneside = para dissertacoes com numero de paginas menor que 100 (apenas frente da folha)
+
+% force A4 paper format
+\special{papersize=210mm,297mm}
+
+\usepackage[alf,abnt-emphasize=bf,bibjustif,recuo=0cm, abnt-etal-cite=2, abnt-etal-list=99]{abntcite} %configuracao correta das referencias bibliograficas.
+
+\usepackage[brazil]{babel} % pacote portugues brasileiro
+\usepackage[latin1]{inputenc} % pacote para acentuacao direta
+\usepackage{amsmath,amsfonts,amssymb} % pacote matematico
+\usepackage{graphicx} % pacote grafico
+\usepackage{times} % fonte times
+\usepackage[final]{pdfpages} % adicao da ata
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage{amssymb,proof}
+
+
+
+
+
+%Podem utilizar GEOMETRY{...} para realizar pequenos ajustes das margens. Onde, left=esquerda, right=direita, top=superior, bottom=inferior. P.ex.:
+%\geometry{left=3.0cm,right=1.5cm,top=4cm,bottom=1cm}
+
+% ---------- Preambulo ----------
+\logo{unb.jpg} %logo da UNB
+\instituicao{Universidade de Brasília} % nome da instituicao
+\instituto{Instituto de Ciências Exatas}
+\departamento{Departamento de Ciência da Computação}
+\programa{Programa de Pós-Graduação em Computação Aplicada} % nome do programa
+\area{Computação Aplicada em Engenharia de Software}
+
+\documento{Qualificação} %
+\nivel{Mestrado} % [Mestrado] ou [Doutorado]
+\titulacao{Mestre} % [Mestre] ou [Doutor]
+
+\titulo{{Arquitetura de referência orientada a serviços com foco em segurança}} % titulo do trabalho em portugues
+\title{\MakeUppercase{Title in English}} % titulo do trabalho em ingles
+
+\autor{ROGÉRIO ALVES DA CONCEIÇÃO} % autor do trabalho
+\cita{CONCEIÇÃO, Rogério} % sobrenome (maiusculas), nome do autor do trabalho
+
+\palavraschave{Interoperabilidade, Segurança em arquiteturas orientadas a serviço, Web Services, Arquitetura de referência em SOA} % palavras-chave do trabalho
+\keywords{Interoperability, Security in service-oriented architectures, Web Services, SOA Reference Architecture} % palavras-chave do trabalho em ingles
+
+\comentario{Dissertação apresentada para obtenção do título de Mestre em Computação Aplicada do Curso de Pós-Graduação em \UTFPRareadata\ da \ABNTinstituicaodata.}
+
+\orientador[Orientador:]{Dr. Rodrigo Bonifácio de Almeida} % nome do orientador do trabalho
+%\orientador[Orientadora:]{Nome da Orientadora} % <- no caso de orientadora, usar esta sintaxe
+%\coorientador{Nome do Co-orientador} % nome do co-orientador do trabalho, caso exista
+\coorientador[Co-orientadora:]{Dra. Edna Dias Canedo} % <- no caso de co-orientadora, usar esta sintaxe
+%\coorientador[Co-orientadores:]{Nome do Co-orientador} % no caso de 2 co-orientadores, usar esta sintaxe
+%\coorientadorb{Nome do Co-orientador 2}	% este comando inclui o nome do 2o co-orientador
+
+\local{Brasília} % cidade
+\data{\the\year} % ano automatico
+
+% desativa hifenizacao mantendo o texto justificado.
+% thanks to Emilio C. G. Wille
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\sloppy
+
+%---------- Inicio do Documento ----------
+\begin{document}
+%\capa % geracao automatica da capa
+\folhaderosto % geracao automatica da folha de rosto --> Modificada para a Qualificacao
+
+% Lembre-se de que a ficha catalografica eh impressa no verso da folha de rosto
+% Ficha catalografica
+%\fichacatpum{T137}
+%\fichacatautor{Sobrenome, Nome}
+%\fichacatpgbib{\pageref{bibstart}-\pageref{bibend}}
+%\fichacatpalcha{1. Teoria do controle. 2. Redes de comutação. 3. TCP/IP (Protocolo de rede de computação), ...}
+%\fichacatpdois{CDD (22. ed.) 621.3}
+%\fichacatbib{Biblioteca xxxxxx}
+%\fichacat
+
+% insercao da ATA
+%\includepdf{ata.pdf}
+
+% dedicatoria
+%\begin{dedicatoria}
+%Texto da dedicatória.
+%\end{dedicatoria}
+
+% agradecimentos (opcional)
+%\begin{agradecimentos}
+%Texto dos agradecimentos.
+%\end{agradecimentos}
+
+% epigrafe (opcional)
+%\begin{epigrafe}
+%Texto da epígrafe.
+%\end{epigrafe}
+
+%resumo
+\begin{resumo}
+A DITEC, Divisão de Tecnologia da Polícia Civil do Distrito Federal, tem como responsabilidade estratégica o desenvolvimento dos softwares da instituição, muitas vezes apresentando necessidades de integração e compartilhamento de informações sensíveis com órgãos conveniados. Dada a criticidade desses sistemas e informações compartilhadas, preocupações relacionadas a segurança devem ser tratadas sob uma perspectiva arquitetural dentro da instituição, que atualmente adota diferentes alternativas de integração, desde \emph{Web Services} até a replicação das bases de dados para instituições parceiras. O objetivo desse trabalho é propor uma arquitetura orientada a serviços para ser adotada como alternativa única de integração, balanceando os requisitos de segurança com outros atributos de qualidade; em particular o tempo de processamento das requisições.
+
+\end{resumo}
+
+%abstract
+\begin{abstract}
+
+DITEC, Technology Division Civil Police of the Federal District, is responsible for the software's institution strategic development, often presenting needs of integration and sharing of sensitive information with government insured. Given the criticality of these systems and shared information, security concerns should be treated under an architectural perspective within the institution, which currently adopts different integration alternatives, from \ emph {Web Services} to the replication of databases for partner institutions. The aim of this paper is to propose a service-oriented architecture to be adopted as an alternative single integration, balancing security requirements with other quality attributes, in particular the processing time of the requests.
+
+\end{abstract}
+
+% listas (opcionais, mas recomenda-se a partir de 5 elementos)
+\listadefiguras % geracao automatica da lista de figuras
+\listadetabelas % geracao automatica da lista de tabelas
+%\listadequadros % adivinhe :)
+\listadesiglas % geracao automatica da lista de siglas
+%\listadesimbolos % geracao automatica da lista de simbolos
+
+% sumario
+\sumario % geracao automatica do sumario
+
+
+%---------- Inicio do Texto ----------
+% recomenda-se a escrita de cada capitulo em um arquivo texto separado (exemplo: intro.tex, fund.tex, exper.tex, concl.tex, etc.) e a posterior inclusao dos mesmos no mestre do documento utilizando o comando \input{}, da seguinte forma:
+%\input{intro.tex}
+%\input{fund.tex}
+%\input{exper.tex}
+%\input{concl.tex}
+
+\setcounter{page}{12}
+
+%---------- Primeiro Capitulo ----------
+\chapter{Introdução}
+%\section{Apresentação}
+As atribuições da Polícia Civil do Distrito Federal, no que diz respeito à sua competência de Polícia Judiciária, tangenciam em vários pontos as atribuições do Ministério Público do Distrito Federal e Territórios, do Tribunal de Justiça do Distrito Federal e Territórios e da Defensoria Pública do Distrito Federal. De forma que a competência de cada um desses Órgãos, por apresentarem pontos que se complementam, demanda intensa troca de informações.
+
+%O Título II do Livro I do Código de Processo Penal, ao dispor sobre o Inquérito Policial, disciplina alguns pontos de convergência entre as atividades da Polícia Judiciária, do Ministério Público e do Órgão Judiciário.
+
+%Além dessas, há outras esparsas no Código de Processo Penal como os procedimentos de prisão em flagrante, o recebimento de alvarás judiciais para cumprimento pela Policia Judiciária, o encaminhamento e a solicitação de laudos periciais ao Órgão Judiciário, o envio de representações em geral aos Órgãos Judiciários e o recebimento dos respectivos mandados, e a tramitação dos autos do Inquérito Policial com eventual solicitação de prazo para novas diligências.
+
+A Polícia Civil do Distrito Federal, por meio de sua Divisão de Tecnologia, tem como propósito desenvolver seus próprios softwares. Esta atividade permite uma vantagem estratégica para a instituição, uma vez que a torna detentora dos softwares desenvolvidos evitando dessa forma a dependência tecnológica e administrativa de empresas privadas.
+
+%Quando falamos em desenvolvimento de sistemas devemos utilizar técnicas modernas para a criação de aplicações, usando de forma efetiva os ensinamentos descritos e preconizados na Engenharia de Software.
+
+%\cite{GUEDES2004} sugere que todo software deve ser modelado, pois existe uma grande diferença entre construir uma casa sem projeto e um prédio. É preciso planejamento e documentação. Por mais simples que seja um software é sempre preciso modelá-lo, por que como \cite{GUEDES2004} explica: \ `` os sistemas de informação frequentemente costumam possuir a propriedade de crescer. \ '' Alguns afirmam que seja pelo fato de que cada software é característico, faz-se uma analogia com estar vivo, \ `` o mais correto seria dizer que o software é dinâmico \ '' pois está sempre mudando e se adaptando às necessidades dos usuários e como cada desenvolvedor tem suas características para programar, este, na maioria das vezes, implica códigos e algoritmos de própria preferência para o programa.
+
+Nesse sentido, tem-se buscado estudar técnicas de desenvolvimento de software que promovam de forma efetiva a integração dos sistemas internos com os sistemas de órgãos parceiros e que necessitem consumir de forma segura os dados e informações oriundos dos sistemas legados da Polícia Civil do Distrito Federal.
+
+\section{Problema da pesquisa}
+
+Nesse contexto, um dos principais desafios encontrados na DITEC refere-se à necessidade de integração e compartilhamento de informações de maneira segura, observando que as aplicações foram desenvolvidas em diferentes linguagens de programação e a integração ocorre com diferentes órgãos conveniados, tais como: Tribunal de Justiça do Distrito Federal e Território (TJDFT), Ministério Público da União (MPU), Departamento de Trânsito do DF (DETRAN-DF), Secretária de Segurança Pública do Distrito Federal (SSP-DF), Secretárias de Justiça do DF e estados.
+
+A ocorrência de uma vulnerabilidade de confidencialidade, por exemplo, ocorrendo o vazamento de informações sensíveis, criminosos poderiam utilizar essas informações e comprometer de forma significativa uma investigação policial.
+
+Outra preocupação está relacionada à autenticidade, uma vez que todos os acessos a informações no âmbito da Polícia Civil o Distrito Federal devem ser realizados somente por pessoal autorizado. Caso isso não seja observado, pessoas podem se valer do anonimato e divulgar dados sigilosos de forma criminosa, o que também acarretaria inúmeros problemas de ordem jurídica para a instituição.
+
+Dessa forma, devido à importância dessas informações, elas devem ter um tratamento diferenciado com relação a segurança nos aspectos de confidencialidade, autenticidade, integralidade e disponibilidade.
+
+Por outro lado, na maioria das vezes, são disponibilizadas técnicas não seguras de integração, como a replicação ou o acesso direto a base de dados, apesar de existirem algumas iniciativas de integração baseadas em \emph{Web Services}.
+
+%Atualmente, a PCDF adota a utilização Web Services, para disponibilizar algumas dessas informações, sendo que na maioria das vezes são disponibilizadas replicações da base de dados e em outros casos o acesso direto.
+
+No intuito de possibilitar que os sistemas possam ser integrados de forma eficiente e principalmente segura com outros sistemas, a Divisão de Tecnologia busca desenvolver uma metodologia própria que possa melhorar o processo integração de software no âmbito da Polícia Civil do Distrito Federal.
+Para isso, optou-se pela utilização da Arquitetura Orientada a Serviços (SOA), que é um modelo arquitetural que propõem o uso de um conjunto de padrões para disponibilizar, descrever, publicar e invocar serviços. Neste cenário, este trabalho propõe-se a investigar as seguintes questões de pesquisa:
+
+\begin{enumerate}
+	\item Quais são os principais problemas de segurança encontrados na adoção da Arquitetura Orientada a Serviços \ - (SOA)?
+	\item Quais padrões para construção de software seguro em arquiteturas SOA podem ser empregados pela Divisão de Tecnologia da Polícia Civil do Distrito Federal para realizar efetivamente a integração de seus sistemas com os sistemas dos órgãos parceiros?
+\end{enumerate}
+
+
+\section{Justificativa}
+
+Uma vez que a Polícia Civil do Distrito Federal desenvolva produtos de software mais seguros, que auxiliem no trabalho investigativo, ela realizará seu trabalho de uma forma mais efetiva, influenciando diretamente no combate da criminalidade e beneficiando a comunidade em geral e todos os órgãos distritais e federais tais como: Secretaria de Segurança Pública do Distrito Federal, Tribunal de Justiça do Distrito Federal, Ministério da Justiça, Secretarias de Governo Distritais, dentre outros órgãos, que necessitem das informações da instituição para realizar qualquer tipo de integração de software.
+
+\section{Objetivos}\label{sec:Obj}
+\subsection{Objetivo Geral}
+
+Avaliar e aplicar o uso de técnicas, ferramentas  e procedimentos que garantam os requisitos de segurança em uma arquitetura orientada a serviços a ser usada para integrar os sistemas e automatizar os processos entre órgão parceiros (TJDFT, MPU, DETRAN, SSP).
+
+\subsection{Objetivos Espec\'ificos}
+
+\begin{enumerate}[a )]
+	\item Realizar um mapeamento sistemático da literatura para compreender o estado da arte e da prática de segurança em SOA;
+
+	\item Identificar e avaliar quais são os principais problemas de segurança encontrados na adoção da Arquitetura Orientada a Serviços (SOA);
+
+	\item Estudar as especificações de Web Services relacionados a segurança e selecionar padrões e ferramentas para garantir confidencialidade, autenticidade e integridade nas integrações da arquitetura orientada a serviços. Essa seleção deve considerar o impacto na disponibilidade e no tempo de resposta dos serviços;
+
+    \item Estabelecer uma arquitetura de referência na construção de software seguro em  SOA que possam ser empregados pela Divisão de Tecnologia da Polícia Civil do Distrito Federal para realizar efetivamente a integração de seus sistemas com os sistemas dos órgãos parceiros.
+
+\end{enumerate}
+
+\section{Organização do Trabalho}
+
+\emph{Revisar}
+Este trabalho está organizado em cinco capítulos. No capítulo 2 é realizada uma revisão da literatura onde são abordados os conceitos gerais sobre da Arquitetura Orientada a Serviços (SOA), Web Services, segurança e vulnerabilidades em SOA. No capítulo 3 consta a metodologia que será empregada para a realização da dissertação. No capítulo 4 são apresentados os resultados preliminares, envolvendo um mapeamento sistemático e os resultados obtidos com a sua realização. Finalmente, no capítulo 5 é descrito um cronograma de execução de tarefas.
+\chapter{Mapeamento Sistemático}
+\section{Introdução}
+%A utilização da arquitetura orientada a serviços (SOA), que consiste em uma coleção de componentes distribuídos que fornecem e ou consomem serviços\cite{Clements2010}, tem sido amplamente utilizada por um grande número de empresas.
+
+%Serviços correspondem a recursos de software bem definidos através de uma linguagem padrão, são auto-contidos,  proveem funcionalidades padrões do negócio, independentes do estado ou contexto de outros serviços \cite{Furtado2009}.
+
+%Nesse contexto a utilização de serviços padronizados tornou-se a solução para a problemática da interoparibilidade entre sistemas, uma vez que permitiu a integração automatizada de negócios entre aplicações.
+
+A utilização da SOA tornou-se uma solução para a problemática da interoperabilidade entre sistemas, uma vez que permitiu a integração automatizada de negócios entre aplicações. Contudo, apesar dos benefícios, existem vários desafios que devem ser considerados quando da implantação de uma arquitetura orientada a serviços~\cite{marks2006}. Dentre eles destaca-se o requisito não funcional de segurança, que deve ser muito bem planejado de forma que o serviço oferecido não seja vulnerável a ameaças que comprometam sua integridade, confidencialidade, disponibilidade e autenticidade. Dessa forma, é de suma importância conhecer e aplicar os mecanismos de segurança em uma Arquitetura Orientada a Serviços.
+
+Com a intenção de identificar trabalhos primários relevantes e reconhecidos, com vistas a aumentar o conhecimento da aplicabilidade de mecanismos de segurança a arquitetura orientada a serviços, fez-se necessário realizar um mapeamento sistemático que identificasse as principais pesquisas que envolvessem o tema segurança em SOA.
+
+%Dentre as alternativas optou-se pelo mapeamento sistemático que tem como finalidade, classificar e agregar à literatura estudos relevantes. Seu foco está na  pesquisa mais ampla e de natureza exploratória, cuja finalidade é fornecer uma visão geral e encontrar evidências de uma área de pesquisa.
+
+\section{Mapeamento Sistemático}
+
+Essa seção descreve os resultados do mapeamento sistemático conduzido, sendo estruturada conforme as diretrizes discutidas em ~\cite{Petersen2008}.
+
+%O mapeamento sistemático possibilita verificar e identificar evidências de uma área, por meio de uma revisão ampla de estudos primários \cite{guidelines-2007}. Já a revisão sistemática foca em questões de pesquisa bem definidas, mais específicas, que podem ser respondidas por pesquisa experimental\cite{Kitchenham2010}. A metodologia adotada para a organizar e estruturar este mapeamento seguiu as diretrizes prospostas em \cite{sbcars2013}.
+
+\section{Protocolo de Estudo}
+
+Para a realização do mapeamento sistemático foi definido um protocolo de estudo que contemplasse as questões de pesquisa, a string de busca e os critérios de exclusão e inclusão de artigos. A finalidade deste processo é a de documentar as etapas do mapeamento além de permitir a sua replicação por outros pesquisadores.
+
+\section{Questões de pesquisa (QP)}
+
+Com a finalidade de identificar as principais contribuições e estudos sobre  \ ``Segurança e SOA\ '' a pesquisa toma a vertente mais específica com as questões abaixo:
+
+\begin{enumerate}[ QP1 )]
+
+    \item Quais são os principais veículos que publicam artigos nessa área?
+      busca-se verificar quais são os principais veículos que publicam informações sobre segurança em SOA, de forma que seja possível categorizar e verificar onde foram publicadas as contribuições mais significativas.
+	
+	\item Qual o tipo de contribuição é a mais proposta nas pesquisas realizadas?
+    Neste caso, procura-se verificar quais são as principais contribuições de pesquisa, identificando se o tipo da contribuição é uma proposta, solução, avaliação, validação de algum estudo ou um artigo de opinião.
+
+
+	\item Quais atributos de segurança são mais abordados nos estudos? Objetiva-se identificar dentre os atributos privacidade, confidencialidade, autenticidade e disponibilidade,  quais são os mais abordados nos estudos categorizados e classificados como solução. Além disso, quando uma solução não for classificada em nenhum desses atributos ele deverá ser classificado como qualidade de serviço. Neste caso, serão classificados os artigos que não se enquadrarem em nenhum dos atributos anteriores, mas que mesmo assim, vise garantir a qualidade de outros atributos que no contexto de segurança em SOA seja relevante. Por exemplo, desempenho e escalabilidade.
+
+    \item Quais contribuições classificadas como solução e categorizadas como: método, técnica ou ferramenta/arquitetura, foram os mais propostos nas pesquisas? Objetiva-se identificar dentre os artigos selecionados e categorizados como Solução quais delas podem ser classificados e quantificados como método, técnica ou ferramenta/arquitetura.
+
+
+
+\end{enumerate}
+
+\section{Estratégia de Busca}\label{sec:Obj1}
+
+  É oportuno definir uma estratégia de busca para a pesquisa dos estudos primários, sendo necessário determinar as palavras chaves a serem pesquisadas e também  onde as buscas serão realizadas~\cite{guidelines-2007}.
+A estratégia de busca adotada consistiu objetivamente na busca eletrônica das seguintes bibliotecas digitais:
+\begin{enumerate}[ a )]
+    \item ACM Digital Library referente aos seguintes periódicos:
+       \begin{enumerate}
+            \item ACM Transactions on Information and System Security (TISSEC);
+            \item ACM Computing Surveys (CSUR).
+       \end{enumerate}
+
+    \item IEEE Xplore, apenas por periódicos e
+    \item DBLP Computer Science Bibliography nas seguintes conferências:
+      \begin{enumerate}
+            \item ICWS International Conference on Web Services;
+            \item SERVICES;
+            \item ARES.
+      \end{enumerate}
+
+\end{enumerate}
+
+A opção por essas fontes foi motivada por uma pesquisa inicial realizada na base de dados  da DBLP, que retornou 77 publicações. Sendo que após uma análise preliminar, observou-se que as as conferências mais relevantes quantitativamente foram as citadas no item c desta Seção. Seguiu-se o mesmo procedimento para as bibliotecas citadas nos ítens a e b.
+
+No contexto da elaboração dos termos de busca, para  a base de dados eletrônica, usou-se a abordagem descrita em ~\cite{guidelines-2007}, que consiste em criar os termos de busca a partir de questões de pesquisa, usando a composição de operadores AND e OR. Dessa forma,  a \emph{string} de busca usada na realização desse estudo foi \textbf{\emph{SOA and SECURITY}} não sendo  usados sinônimos ou outras variações.
+
+\section{Critérios de Inclusão e Exclusão}
+
+Após serem realizadas as pesquisas, de acordo com a \emph{string} de busca,  vários estudos primários foram recuperados e avaliados  de forma que fossem  excluídos aqueles que não satisfizessem os objetivos do estudo. A investigação dos estudos consistiu inicialmente em analisar o título, o resumo, a introdução e a conclusão.
+
+As conclusões foram analisadas para entender melhor as contribuições do trabalho. Os critérios de seleção dos estudos foram baseados nas questões de pesquisa e todos os estudos recuperados foram armazenados. Logo, para este mapeamento foram definidos os seguintes critérios de inclusão e exclusão:
+
+No que se refere aos critérios de inclusão, foram incluídos todos os artigos que faziam referência a SOA Security e que foram publicados nos periódicos e conferências publicados no período compreendido do ano de 2000 até 2013 e que satisfizessem a \emph{string} de busca anteriormente definida.
+
+Já no que tange os critérios de exclusão, foram excluídos os artigos e resumos com menos de quatro páginas, artigos que não tratavam diretamente do tema SOA SECURITY, contribuições que, apesar de versar sobre SOA, não faziam referência à segurança e vice-versa, as que tratavam de segurança, mais não tratavam de arquitetura orientada a serviços. Além disso, foram também excluídos os estudos irrelevantes para a pesquisa e aqueles que não puderam ser obtidos gratuitamente.
+
+
+%\begin{itemize}
+    %\item Critérios de Inclusão
+      % \begin{enumerate}
+       %     \item Foram incluídos todos os artigos que faziam referência a SOA Security e que foram publicados nos periódicos  e conferências   que satisfizessem a string de busca anteriormente definida;
+      %      \item Estudos publicados no período compreendido do ano de 2000 até 2013.
+       %\end{enumerate}
+
+    % \item Critérios de Exclusão
+      %\begin{enumerate}
+       %     \item Artigos e resumos com menos de quatro páginas, estudos incompletos e repetidos e apresentações (Power Point);
+      %      \item Artigos que não tratavam diretamente do tema SOA SECURITY;
+        %    \item Contribuições que, apesar de versar sobre SOA, não faziam referência a segurança e vice-versa, as que tratavam de segurança, mais não tratavam de arquitetura orientada a serviços;
+          %  \item Estudos irrelevantes para a pesquisa e aqueles que não puderam ser obtidos pela UNB.
+
+     % \end{enumerate}
+
+%\end{itemize}
+
+\section{Coleta, Armazenamento dos Dados e Análise}
+
+Após a seleção preliminar e seguindo o que foi preconizado na estratégia de busca, foram realizadas buscas automáticas a cada uma das bibliotecas digitais citadas na Seção~\ref{sec:Obj1}, sendo recuperadas ao todo 54 publicações. A última etapa da seleção consistiu em aplicar os critérios de exclusão e inclusão aos artigos selecionados, de forma que se obteve um total de 25 publicações, que foram analisadas e classificadas de acordo com a seguinte classificação:
+
+\begin{enumerate}
+            \item Veículos: Neste tópico buscou-se categorizar quais veículos que mais apresentaram publicações;
+            \item Pesquisa: Este tópico foi utilizado para definir quais tipos de pesquisa foram propostas no estudo de forma que as publicações foram classificadas como:
+                \begin{enumerate}[ a )]
+                 \item Solução: Representa as publicações que propõem uma nova técnica, método ou ferramenta/arquitetura e que a partir dela possa ser realizado algum tipo de verificação de viabilidade;
+
+                 \item Validação: Neste caso são proposições de validação de algum estudo que apresente rigor cientifico, tais como estudos empíricos ou provas da aplicação de alguma técnica, podendo ser uma validação formal ou experimental;
+
+                 \item Avaliação: Publicações que apresentaram avaliações comparativas entre técnicas propostas de algum estudo relacionado a Segurança em SOA, sendo  classificado como:
+
+                    \begin{itemize}
+                         \item Avaliação Formal, que é aquele que possui detalhes do estudo, sendo possível, caso necessário, realizar uma reprodução do trabalho;
+
+                        \item Avaliação Informal, que é  aquela em que os detalhes do estudo são poucos o que torna difícil sua reprodução;
+
+                        \item Avaliação Preliminar, neste caso serão considerados os estudos cujos resultados podem ser questionados e não apresentam detalhes para reprodução
+                    \end{itemize}
+
+
+                 \item Artigos de Opinião: que são estudos informais que fazem uma abordagem geral dos aspectos do tema Segurança em SOA.
+
+            \end{enumerate}
+
+            \item Contexto: Busca-se neste tópico classificar as publicações que sejam classificados como uma Solução e possuam atributos  relacionados a segurança em SOA que abordem: privacidade, confidencialidade, autenticidade e disponibilidade.
+
+\end{enumerate}
+
+\section{Resultados}
+Nesta seção são descritos os resultados obtidos após o estudo e o mapeamento das principais publicações coletadas na seção 2.5 e que serão utilizados para responder as questões de pesquisas anteriormente definidas.
+
+\subsection{QP 1 \- Questão de Pesquisa 1}
+
+Quais são os principais veículos que publicam artigos nessa área?
+Para responder essa pergunta foram analisados os 25 artigos selecionados após a aplicação dos critérios de exclusão e inclusão. Eles foram classificados de acordo com o veículo de publicação do artigo. Essa classificação é apresentada na figura ~\ref{fig:grafico_qtd_veiculo}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.6]{qtd_veiculo_publicacao.jpg}
+\caption{Gráfico representativo da quantidade de contribuições por veículo de publicação.}
+\label{fig:grafico_qtd_veiculo}
+\end{figure}
+
+Verifica-se que os veículos que mais publicaram artigos relacionados a segurança em SOA foram Services Computing, ARES, ICWS e Computer com 28\%, 16\%, 12\% e 8\% dos artigos publicados, respectivamente. Eles reponderam juntos por aproximadamente 64\% das publicações.
+
+\subsection{QP 2 \- Questão de Pesquisa 2}
+
+Qual o tipo de contribuição é a mais proposta nas pesquisas realizadas?
+Após a realização do mapeamento foi possível verificar que dentre os artigos mapeados houve artigos que fizeram referência a mais de um tipo de contribuição. Isso pode ser verificado no artigo proposto por~\cite{Delegation_Solution2011} que foi classificado como sendo uma Solução e uma Validação. Um outro exemplo pode ser observado no artigo ~\cite{Vulnerability_Analysis2011} que foi classificado  como sendo uma Solução e uma Avaliação. Dessa forma, a contribuição mais proposta foi a Solução com 42\% do total de artigos selecionados, seguidos por Avaliações e Artigos de Opinião ambos com 24\% e finalmente a Validação com 10\%. Dentre essas soluções, cabe ressaltar a que é proposta por ~\cite{Vulnerability_Analysis2011}, que propõem um novo método denominado ATLIST, que realiza análise de vulnerabilidades em processos de negócios e serviços baseados em SOA. Este trabalho pode ser útil para a arquitetura de referência que será proposta como resultado deste trabalho de mestrado.
+
+Além desta, outra que também deve ser citada é a que é idealizada por~\cite{Ontology2012}, neste artigo é proposta uma Ontologia, ASSERT4SOA, que foca na interoperabilidade e comparação de certificados heterogêneos e possibilitando a verificação em tempo de execução da conformidade dos serviços com os requisitos de segurança.
+
+Outro artigo relevante para a problemática discutida nesta dissertação é o artigo proposto por \cite {WeberAM07}. Nesta solução, é proposta uma ferramenta que tem por objetivo identificar possíveis violações de segurança em ambientes SOA. Na ferramenta são descritas formas para inspecionar os arquivos de configuração da plataforma SOA, sendo possível detectar possíveis violações de segurança. Sendo também realizada uma avaliação informal que procura analisar as melhores práticas de segurança em SOA.
+
+Já quanto à contribuição que se refere à avaliação pode-se verificar 4 (quatro) artigos classificados neste tipo, são de avaliações formais, ou seja, estudos que traziam resultados detalhados que podem ser reproduzidos por outros pesquisadores. Um exemplo de avaliação formal pode ser identificado no artigo ~\cite{Coetzee2012}. Este artigo analisa os desafios de segurança enfrentados em arquiteturas orientadas a serviço. Os autores propõe uma estrutura de segurança aplicada a SOA baseado em componentes, que consistem em uma variedade de controles que podem minimizar os desafios referentes à aplicação dos mecanismos de segurança em SOA. Os outros artigos classificados como avaliação foram classificados como avaliações informais 4 (quatro) artigos e experimentais  1 (um) artigo totalizando 5 (cinco) artigos.
+
+No que se refere ao tipo de contribuição Validação, foram identificados 4(quatro) artigos  sendo 3(três) validações formais e 1(uma) experimental. Neste tipo de contribuição e relevante citar o trabalho realizado no artigo ~\cite{ CrossRealmSOA2012}. Neste artigo, é proposta uma ferramenta, que também é uma solução técnica, de um novo protocolo de autenticação para interações de serviços dinâmicos, com base na noção de sessões de negócios multipartidárias orientadas a serviços. Esse protocolo não requer conversão de credencial nem estabelecimento de qualquer caminho de autenticação entre os serviços que participam de uma sessão de negócios. No protocolo são realizadas provas e experimentos para verificar a viabilidade da nova técnica. Este trabalho também poderá ser útil para a arquitetura de referência que será proposta, uma vez que traz uma nova técnica que pode ser utilizada como referência nos processos de autenticação dos serviços oferecidos.
+
+E por fim, no caso dos Artigos de Opinião, foram verificados 9(nove) artigos que faziam uma abordagem geral dos panoramas e desafios de segurança em arquitetura orientada a serviços. Nesses artigos não foi proposto nenhuma contribuição relevante. Porém, como eles se enquadraram nos critérios de busca estabelecidos, foram considerados.
+
+A figura ~\ref{fig:Tipo_Contribuicao} apresenta os resultados categorizados pelo tipo da contribuição sendo apresentado o quantitativo de publicações.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.6\textwidth]{tipo_contribuicao_3.jpg}
+\caption{Gráfico representativo dos tipos de contribuições}
+\label{fig:Tipo_Contribuicao}
+\end{figure}
+
+
+\subsection{QP 3 \- Questão de Pesquisa 3}
+
+Quais atributos de segurança são os mais abordados nos estudos?
+Para responder essa pergunta inicialmente realizou-se uma análise nos artigos classificados com Solução. Em seguida foram categorizados de acordo com os atributos relativos à segurança em ambiente SOA. Os atributos analisados foram: integridade, autenticidade, disponibilidade e confidencialidade. Foi possível verificar que dentre os artigos mapeados houve artigos que faziam referência a mais de um atributo.  Um exemplo desse fato é descrito na publicação de ~\cite{pattern-driven2008} onde são abordados todos os atributos de segurança: integridade, autenticidade, disponibilidade e confidencialidade. Dessa forma, o número de artigos mapeados com os atributos descritos não será equivalente com o número de artigos totalizados no mapeamento.
+
+Sendo assim, o mapeamento identificou que os conceitos mais abordados referem-se aos atributos de autenticidade com 32\% ou 13 artigos e Integridade com 28\% ou 11 artigos. Já o atributo confidencialidade foi verificado em 20\% das publicações, com 8 artigos, e o atributo disponibilidade foi verificado em 15\% das publicações, sendo identificado em 6 artigos. Finalmente, para os artigos que foram classificados como uma solução e que não se enquadraram em nenhum dos atributos, sendo classificados como atributos de qualidade de serviços, foram identificados em apenas 5\% das publicações ou 2 artigos. A Figura ~\ref{fig:TipoConceito} apresenta graficamente essa categorização.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.7\textwidth]{Atributo_Seguranca_Solucao.jpg}
+\caption{Gráfico dos atributos de segurança abordados na solução}
+\label{fig:TipoConceito}
+\end{figure}
+
+\subsection{QP 4 \- Questão de Pesquisa 4}
+
+Quais contribuições classificadas como solução e categorizadas como: método, técnica ou ferramenta/arquitetura, foram os mais propostos nas pesquisas?
+Para responder essa pergunta, foi realizada uma análise dos artigos classificados como solução. Em seguida foram categorizados de acordo com os tipos: técnica, método ou ferramenta/arquitetura. Verificou-se que entre os artigos mapeados um artigo que fez referência a mais de um tipo de solução.  Esse artigo é descrito na publicação de ~\cite{CrossRealmSOA2012} onde são abordados os tipos de solução técnica e ferramenta/arquitetura. Dessa forma, o número de artigos mapeados como sendo uma solução do tipo: método, técnica ou ferramenta/arquitetura não será equivalente com o número de artigos totalizados no mapeamento.
+
+O mapeamento identificou dentre as contribuições classificadas como solução, que o tipo de solução mais proposta é a de solução técnica com 44\% das contribuições ou 7 artigos. As classificadas como ferramenta/arquitetura, foi observado em 31\% das contribuições, ou 5 artigos. Finalmente, o tipo de solução classificado como método, foi verificado em 25\% das contribuições selecionadas, ou 4 artigos. A figura~\ref{fig:TipoConceito} apresenta graficamente essa categorização.
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\textwidth]{tipo_solucao.jpg}
+\caption{Gráfico dos tipos de Solução mais propostos}
+\label{fig:tipo_solucao}
+\end{figure}
+
+\subsection{Discussão sobre os resultados}
+
+De acordo com os resultados obtidos por este mapeamento sistemático foi possível observar que a maioria doa artigos se concentram nos veículos: Services Computing, ARES, ICWS e Computer com 28\%, 16\%, 12\% e 8\%, respectivamente. Eles reponderam juntos por aproximadamente 64\% das publicações.
+
+No que tange os resultados obtidos a respeito do tipo de contribuições, verificou-se que a maior parte de contribuições foram de soluções com  42\% dos artigos e que destas destacaram-se as soluções técnicas com 44\% dos artigos classificados nesta faceta de pesquisa. Este resultado denota que os pesquisadores tem buscado estabelecer padrões e procedimentos  com objetivos específicos de resolver problemas ou melhorar as técnicas existentes que estejam  relacionados a segurança em SOA.
+
+No contexto das contribuições referentes aos atributos de segurança que foram abordados e classificados com solução, verificou-se que as maiores preocupações estavam associadas aos atributos de  autenticidade, integridade e confidencialidade com 33\%, 27\% e 20\% das contribuições respectivamente. Dessa forma, verifica-se que dentre as soluções anteriormente citadas a maior preocupação é em estabelecer técnicas eficientes para autenticar os serviços e garantir que o conteúdo das mensagens não seja modificado. Isso pode denotar uma preocupação com o desempenho dos serviços no momento da aplicação dos mecanismos de segurança.
+%
+%\subsection{Ameaças a validade}
+
+%As possíveis ameaças aos resultados dessa pesquisa são caracterizados a seguir e seguem  a classificação proposta por \cite{ leedy1980practical} e que foram estruturadas no artigo \cite{sbcars2013}.
+
+\subsection{Síntese do capítulo}
+
+O mapeamento sistemático realizado, possibilitou aprofundar os conhecimentos referentes à segurança em SOA. Sendo possível verificar quais são os principais veículos que publicam artigos nesta área o que ajuda a direcionar os estudos. Também foi possível identificar e analisar quais são os tipos de contribuições que mais são propostas nas pesquisas envolvendo esta temática. Além disso, verificou-se dentre as contribuições propostas como solução, quais delas envolviam atributos de segurança e que tratavam de integridade, autenticidade, disponibilidade e confidencialidade. E por fim, nas contribuições classificadas como solução, foi possível identificar e quantificar quais tipos de solução (método, técnica e ferramentas/arquitetura) foram as mais propostas.
+
+Com este mapeamento sistemático foi possível identificar alguns artigos que serão fundamentais para nortear a pesquisa desenvolvida nesta dissertação. Eles são descritos a seguir:
+
+No artigo~\cite{ WeberAM07},  são descritas formas para inspecionar os arquivos de configuração da plataforma SOA, sendo possível detectar possíveis violações de segurança. Um dos focos do trabalho está relacionado com as melhores práticas para a implantação de segurança em SOA, o que pode enriquecer a arquitetura de referência proposta nesta dissertação.
+
+Outro trabalho que também deve ser citado, e o descrito na publicação de ~\cite{pattern-driven2008} onde são abordados todos os atributos de segurança: integridade, autenticidade, disponibilidade e confidencialidade. Neste trabalho é proposto uma nova abordagem para proteger aplicativos de SOA. Outro ponto importante, e que a segurança não é considerada como um aspecto isolado, mas como um aspecto presente em todas as fases de um desenvolvimento do sistema.
+
+O artigo descrito em ~\cite{Coetzee2012}, analisa os desafios de segurança enfrentados em arquiteturas orientadas a serviço. Sendo proposta uma estrutura de segurança aplicada a SOA, baseado em componentes, que consiste em uma variedade de controles que podem minimizar os desafios referentes à aplicação dos mecanismos de segurança em SOA. Esse artigo realça os desafios de segurança em SOA e pode servir como base para a proposta de criação da arquitetura de referência.
+
+\chapter{REVISÃO DA LITERATURA}
+Este capítulo apresenta uma revisão dos principais conceitos relacionados ao tema deste trabalho, envolvendo Arquitetura Orientada a Serviço, Tecnologia Web Service e da Segurança Aplicada a SOA.
+
+\section{Arquitetura orientada a serviços}
+
+%A Arquitetura Orientada a Serviços (SOA) estabelece um modelo arquitetônico que visa aprimorar a eficiência, agilidade e a produtividade de uma empresa, posicionando os serviços como os principais meios para que a solução lógica seja representada no suporte à realização dos objetivos estratégicos associados à computação orientada a serviços \cite{ERL09}.
+
+A Arquitetura Orientada a Serviços (SOA) , consiste em uma coleção de componentes distribuídos que fornecem e ou consomem serviços~\cite{Clements2010}, tem sido amplamente utilizada por um grande número de empresas.
+
+Serviços correspondem a recursos de software bem definidos através de uma linguagem padrão, são auto-contidos,  proveem funcionalidades padrões do negócio, independentes do estado ou contexto de outros serviços~\cite{Furtado2009}.
+
+SOA pode ser caracterizada como uma arquitetura corporativa onde serviços podem ser criados, reutilizados e facilmente compartilhados entre aplicações. Neste caso as funcionalidades de um sistema são decompostas em serviços interoperáveis o que permite a integração entre aplicações. O objetivo da SOA é estruturar sistemas distribuídos com base nas abstrações de regras e funções de negócio~\cite{Josuttis07}.
+
+Existem muitas definições para SOA, no entanto elas possuem pontos em comuns pois em todos os conceitos são abordados temas que remetem ao compartilhamento do serviços, da independência da plataforma e linguagem de programação, da possibilidade de flexibilidade e agilidade no desenvolvimento de uma aplicação para gerenciar um negócio~\cite{ERL09}.
+Segundo~\cite{Josuttis07}, o funcionamento de SOA baseia-se em três conceitos: serviços, interoperabilidade e baixo acoplamento.
+
+Por serviços entende-se SOA como uma arquitetura neutra, que objetiva abstrair a realidade, concentra-se nos aspectos do negócio, possibilitando que sistemas sejam construídos em plataformas diferentes, tendo como finalidade a redução de problemas de integração, uma vez que isso  pode ser feito de forma flexível por meio dos serviços disponibilizados na arquitetura. Portanto, serviço pode ser visto como um conjunto de funções, abstrações de funcionalidades de negócios de um sistema com uma interface bem definida.
+
+A interoperabilidade visa à integração entre esses sistemas e representa um objetivo fundamental da orientação a serviços, pois estabelece uma base para a realização de outros objetivos e benefícios estratégicos. Isso é possível, pois uma das características de SOA é que seus serviços são reutilizáveis, possuem baixo acoplamento, tem contratos formais e são independentes. Logo, uma vez que esses serviços estejam disponíveis aos clientes eles não precisam conhecer a lógica ou os processos de negócio para consumir e integrar serviços a suas aplicações.
+
+O baixo acoplamento ou acoplamento fraco é um conceito vital para o funcionamento de um sistema distribuído, uma vez que ele determina que diferentes partes e funcionalidades de um sistema sejam independentes umas das outras, dessa maneira, alterações ou problemas em uma determinada parte do sistema não trará consequências para o resto do sistema, trazendo benefícios como escalabilidade, flexibilidade e tolerância a falhas. Acoplamento fraco refere-se a uma abordagem em que as interfaces podem ser desenvolvidas com o mínimo de suposições mútuas entre o emissor e os destinatários, reduzindo assim o risco de que uma mudança em um aplicativo ou módulo force uma mudança em outra aplicação ou módulo.
+
+Segundo~\cite{Bianco2007}, SOA é um estilo arquitetural e para implementá-lo podem ser usadas diversas tecnologias tais como RMI ( \emph{Remote Method Invocation}), CORBA (\emph{Common Object Request Broker Architecture}), DCOM (\emph{Distributed Component Object Model}), REST (\emph{Representational State Transfer}) e  Web Services, que é uma das principais tecnologias para implementação desses serviços.
+
+A abordagem de arquiteturas orientadas a serviços (SOA) e de Web Services estão centradas no conceito de serviço, tanto no nível de negócios quanto no nível tecnológico, e compartilham os mesmos princípios.
+
+Apesar de SOA e Web Service compartilharem os mesmos princípios, SOA representa propositadamente uma tecnologia neutra, a definição de Web Service destaca o papel central das tecnologias da Web específicas.
+
+%, a saber: o Identificador Uniforme de Recursos, e os protocolos de Internet, que oferecem, respectivamente, a identificação uniforme, mecanismos de comunicação e o XML, que é usado para definir e descrever a interface do aplicativo, bem como para codificar as mensagens trocadas entre o Web Service e seus clientes.
+
+\section{WEB SERVICES}
+
+%A seguir será realizada uma abordagem da tecnologia de Web Services, ela será descrita, pois se optou por utilizá-la como modelo a ser implementado como objeto desse trabalho. Outro motivo que originou essa escolha foi a que a Divisão de Tecnologia da Polícia Civil do Distrito Federal apesar de ainda não utilizar SOA adota de forma reduzida a tecnologia de Web Services para integrar seus sistemas legados o que pode facilitar a adequação a futuras mudanças.
+%Esta seção descreve os conceitos da tecnologia de web Services, uma vez que se optou por utilizá-la como modelo a ser implementado como objeto desse trabalho. A escolha desta tecnologia foi reforçada devido ao fato da Divisão de Tecnologia da Polícia Civil do Distrito Federal, apesar de ainda não utilizar SOA, adotar de forma reduzida a tecnologia de Web Services para integrar seus sistemas legados o que pode facilitar a adequação a futuras mudanças.
+
+%Web Service (WS) é um sistema de software identificado por um URL, cujas interfaces e ligações com o público são definidos e descritos usando XML. Sua definição pode ser descoberta por outros sistemas de software. Estes sistemas podem então interagir com o WS de uma maneira prescrita por sua definição, usando mensagens baseadas em XML transmitidas por protocolos de Internet.
+
+Web Service pode ser definido como um sistema de software projetado para suportar interações interoperáveis máquina-a-máquina sobre uma rede \cite{Booth2004}.
+
+Um dos fatores da aceitação de Web Services está no fato dele usar protocolos abertos de comunicação na Internet e XML para transacionar o seu negócio.  Um WS é, portanto, um sistema de software que pode agir a pedido de qualquer computador conectado à rede e que se comunica usando padrões XML \cite{Pulier2005}.
+
+Por meio desta tecnologia é possível promover a interoperabilidade entre aplicações e que tenham sido desenvolvidos em plataformas diferentes tornando-as compatíveis permitindo que as aplicações enviem e recebam dados em formatos variados. Cada aplicação pode ter a sua própria linguagem, que é traduzida para uma linguagem universal, como é o caso do formato XML.
+
+A abordagem de arquiteturas orientadas a serviço e Web Services estão centradas no conceito de serviço, tanto a nível de negócios  quanto a nível tecnológico, e compartilham os mesmos princípios~\cite{Bertino2010}. Dentre os princípios que mais se destacam podem ser citados:
+
+\begin{itemize}
+    \item Autonomia de serviço: Para os serviços realizarem suas capacidades de modo consistente e confiante, sua lógica precisa ter um grau significativo de controle sobre seu ambiente e recursos~\cite{ERL09}.
+
+    \item Baixo acoplamento: Acoplamento refere-se a uma conexão do relacionamento entre dois elementos. Uma medida de acoplamento se compara a um nível de dependência~\cite{ERL09}. De outra forma pode dizer que o baixo acoplamento refere-se a uma abordagem em que as interfaces podem ser desenvolvidas com a mínima dependência uma das outras o que reduz o risco  de uma mudança e qualquer uma das partes forçar a mudança na outra parte não modificada.
+
+    \item Contrato formal: O contrato informa o que o Serviço faz e como ele se comunica (o que deve receber e o que deve entregar). Em outras palavras Contratos são documentos textuais que descrevem o que o serviço faz e eles são o foco do design de serviço, porque regem praticamente tudo que é feito pelos serviços~\cite{ERL09}. Logo, todo serviço possui um contrato entre o requisitante e o provedor deste serviço.
+
+\end{itemize}
+
+Segundo~\cite{Bertino2010}, cada organização tem que ter autonomia para exercer um controle independente sobre os seus serviços. Para isso a autonomia do negócio tem que ser correspondente a do Web Service no momento do oferecimento e execução do serviço.
+%\begin{itemize}
+    %\item Um Web Service deve possuir seus próprios dados, não deve compartilhar suas informações internas com outros Web Services, nem ter um armazenamento de dados comum;
+
+    %\item As comunicações entre os serviços devem ser explícitas e de acordo com seu contrato publicado (interface). Autonomia de um serviço no nível do negócio requer um acoplamento flexível a nível técnico. Desta forma, as dependências entre os consumidores e os serviços estão limitadas a conformidade dos consumidores para o contrato de serviço.
+
+%\end{itemize}
+
+%A plataforma de Web Services é definida por vários padrões da indústria suportados por todas as comunidades de fornecedores. Essa plataforma está associada à coleção de padrões e especificações de tecnologias abertas tais como XML - Shema Definition Language, SOAP - Simple Object Access Protocol, Description Langue(WSDL)e  UDDI (Universal Description, Discovery). Nas seções a seguir será feito uma descrição de cada uma dessas tecnologias.
+A plataforma de Web Services é definida por vários padrões da indústria suportados por todas as comunidades de fornecedores. Essa plataforma está associada à coleção de padrões e especificações de tecnologias abertas tais como Simple Object Access Protocol (SOAP), Web Services Description Language (WSDL) e  Universal Description and Discovery Information (UDDI). Nas seções a seguir será feito uma descrição de cada uma dessas tecnologias.
+
+%\subsection{Extensible Markup Language-XML}
+
+%XML(eXtensible Markup Language), é uma linguagem de marcação recomendada pela W3C para a criação de documentos sendo amplamente utilizada em Web services. Ele é composto por tags que podem ser determinados livremente pelo usuário em seu documento XML, o que não ocorre na HTML (HyperText Markup Language)  que também possui tags predefinidas. A linguagem XML pode ser classificada como extensível, pois permite definir os elementos de marcação além de ser utilizado para definir a forma como os dados trocados entre aplicações devem ser estruturados, isso é possível por meio de um formato único de apresentação que permite descrever os dados e também a forma que eles serão apresentados.
+
+%A linguagem HTML possui limitações e o XML foi concebido com intuito de resolver esse problema, sendo desenvolvido para melhorar o suporte à criação e o gerenciamento de conteúdos dinâmicos. Ele é uma linguagem baseada em texto e totalmente independente da plataforma, sendo ideal para troca de mensagens entre plataformas que podem ser distintas ou não. Além disso, ele possui uma gramática rigorosa o que permite construir analisadores XML que podem ler qualquer documento XML.
+
+%O XML pode ser utilizado em uma grande variedade de transações e publicações de dados, haja vista que ele possui uma forma simples de escrever dados atribuindo significados \cite{Hunter2007}. Ele tem vantagens distintas quando comparado a outras formas de representação de dados tais como:
+
+       % \begin{itemize}
+       %     \item XML pode ser entendido tanto por pessoas quanto por máquinas haja vista que sua leitura é de fácil compreenção;
+
+       %    \item O número de plataformas que suportam XML e são capazes de realizar atividades de leitura, escrita e manipulação de dados nesse formato são relativamente grandes;
+
+       %    \item As comunicações entre os serviços devem ser explícitas e de acordo com seu contrato publicado (interface). Autonomia de um serviço no nível do negócio requer um acoplamento flexível a nível técnico. Desta forma, as dependências entre os consumidores e os serviços estão limitados a conformidade dos consumidores para o contrato de serviço.
+       % \end{itemize}
+
+%Porém, há algumas desvantagens na utilização dessa linguagem de marcação, a primeira refere-se ao tamanho dos arquivos que são grandes devido a sua natureza descritiva, uma outra está associada ao consumo elevado de processamento para a sua interpretação. Visando reduzir estes problemas, vários mecanismos têm sido desenvolvidos. Um exemplo são interpretadores de XML aprimorados.
+
+\subsection{Simple Object Accesss Protocol (SOAP)}
+SOAP é um protocolo de transporte que é responsável pela troca de mensagens entre aplicações em ambientes distribuídos e descentralizados, ele segue um padrão que foi especificado pelas normas da W3C, sendo baseado em XML o que o torna totalmente compatível com qualquer plataforma e com linguagens que tenham suporte para a manipulação de arquivos XML. Seu conteúdo é composto por informações e estruturas de dados~\cite{COYLE}.
+
+A estrutura de uma mensagem SOAP é definida em um documento XML, sua estrutura possui os seguintes elementos:\emph{ envelope, body} que são obrigatórios e \emph{header e fault} que são opcionais. As seguir uma breve descrição desses elementos:
+
+ \begin{itemize}
+            \item \emph{Envelope}: Este é o elemento raiz da mensagem SOAP sendo responsável por identificar o documento XML com uma mensagem SOAP e por definir o conteúdo da mensagem;
+
+            \item \emph{Header} (opcional): Contêm os dados do cabeçalho, este elemento possui informações especificas do aplicativo da mensagem SOAP;
+
+            \item \emph{Body}: Contém as informações de chamada e resposta ao servidor, ele contém a mensagem SOAP pretendida que o usuário espera;
+
+            \item \emph{Fault}: Este elemento possui as informações dos erros ocorridos no envio da mensagem. Esse elemento só aparece nas mensagens de resposta do servidor.
+
+ \end{itemize}
+
+
+\subsection{Web Services Description Language (WSDL)}
+
+Web Services Description Language (WSDL) é uma linguagem para descrição de serviços escrita em XML. Nela são descritos os serviços externos, ou interfaces que são oferecidos por uma determinada aplicação, independente de sua plataforma ou linguagem de programação. Além disso, ela contém as especificações de localização das operações (métodos ou serviços) que fazem parte dos Web Services. Atualmente, ela encontra-se na versão 2.0.
+
+WSDL podem ser mapeados para qualquer linguagem de implementação, plataforma, modelo de objeto e ou sistema de mensagens \cite{Bertino2010}. Ele é caracterizado por uma parte abstrata, onde é descrita a interface do serviço e outra concreta local onde são definidos os protocolos de conexão e outras informações, conforme Figura~\ref{fig:composicao_WSDL}.
+
+A parte abstrata é constituída pelos seguintes elementos: Tipos, que são elementos que definem os tipos de dados usados pelos Web Services, neles são especificados os tipos que serão trocados nas mensagens de entrada e saída do serviço; Mensagem, que é um elemento que permite descrever de forma abstrata os dados que serão transmitidos entre o serviço e o consumidor do serviço; Operações, que é um elemento que é semelhante à definição de um método, no entanto, ele só permite que você defina a entrada, saída e mensagens de erro que estão associados com uma operação e PortType, que são conjuntos de operações abstratas, que são suportadas por um serviço, cada um contendo mensagens de entrada e saída.
+
+A parte concreta do WSDL, local de definição do protocolo e do endereço onde o serviço estará disponibilizado, compõe-se pelos seguintes elementos: O binding (ligação), que é o elemento que é responsável por ligar os elementos abstratos e concretos em um documento WSDL e de fornecer detalhes de como as mensagens serão transmitidas. E os Serviços e Portas, que são elementos que especificam a localização (endereço URL ou e-mail), neste caso, o elemento de serviço atribui um nome para o serviço e o associa a uma interface abstrata e descrevendo o local onde o serviço será acessado.
+
+
+
+%\begin{itemize}
+%    \item Tipos: São os tipos de dados usados pelo Web Services neles são especificados os tipos que serão trocados nas mensagens de entrada e saída do serviço;
+
+ %   \item Mensagem:  É um elemento  que permite descrever de forma abstrata os dados que serão transmitidos entre o serviço e o consumidor do serviço;
+
+  %  \item Operações:  Este elemento é semelhante a definição de um método, no entanto, ele só permite que você defina a entrada, saída e mensagens de erro que estão associados com uma operação;
+
+   % \item PortType: São conjuntos de operações abstratas, que são suportadas por um serviço, cada um contendo mensagens de entrada e saída.
+
+%\end{itemize}
+
+%No que se refere à parte concreta do WSDL, local no qual são realizados os detalhes de implementação, ela compõem-se pelos seguintes elementos:
+
+%\begin{itemize}
+    %\item Ligação (binding): Este elemento liga os elementos abstratos e concretos  em um documento WSDL. O elemento está associada (binding)  a um elemento de (portType) específico, e que também apresenta o endereço do serviço Web que está associado com o elemento (portType). Finalmente, o elemento (binding) mostra o protocolo que é usado para comunicar com o Web Service;
+
+   % \item Service e ports: Estes elementos especificam a localização (endereço URL ou email),neste caso, o elemento de serviço atribui um nome para o serviço e o  associa a uma interface abstrata e descrevendo o local onde o serviço será acessado.
+
+%\end{itemize}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{COMPOSICAO_WSDL.jpg}
+\caption{Especificação de serviços WSDL, adaptado de~\cite{Bertino2010}}
+\label{fig:composicao_WSDL}
+\end{figure}
+
+
+\subsection{Universal Description, Discovery and Integration (UDDI)}
+
+UDDI é um componente importante da arquitetura de Web Services, sendo formado por um serviço de diretório que armazena descrições de serviço. Esse serviço obedece ao padrão integração, descoberta e descrição universal. Além disso,  ele prescreve o layout de um banco de dados que contém  descrições de serviços que permitirão a clientes de serviços web procurar serviços relevantes~\cite{TANENBAUM2007}.
+
+O UDDI provê um método padronizado para a publicação e descoberta de informações, permitindo que as empresas tanto publiquem como encontrem Web Services. Segundo~\cite{Cerami2002}, os dados capturados dentro de UDDI são divididos em três categorias principais:
+
+\begin{enumerate}[a )]
+	\item Páginas brancas: Esta categoria inclui informações gerais tais como nome, descrição e endereço dentre outras informações sobre o fornecedor do serviço;
+
+	\item Páginas amarelas: Esta categoria inclui dados de classificação geral para qualquer empresa ou serviço oferecido. Por exemplo, esses dados podem incluir a indústria, o produto, ou códigos geográficos baseados sobre taxionomias padronizadas;
+
+	\item Páginas verdes: Esta categoria inclui informações técnicas sobre um Web Service. Geralmente, essa informação inclui um apontador (ponteiro) para uma especificação externa e um endereço para invocar o serviço.
+
+\end{enumerate}
+
+\section{Representational State Transfer}
+A arquitetura \emph{Representational State Transfer (REST)}, foi proposta por Roy Fielding em
+2000 em sua tese de doutorado e pode ser descrita como um conjunto de princípios arquiteturais que podem ser utilizados para o desenvolvimento de serviços web e que utilizam o protocolo HTTP para realizar as trocas de mensagens ~\cite{ Fielding2000}.
+
+Dessa forma, para que os princípios arquiteturais que permeiam \emph{REST} sejam seguidos, um conjunto de restrições deve ser implementado ~\cite{ Fielding2000}. Um aplicação que esteja em conformidade com essas restrições, a seguir descritas, são classificadas com RESTfull.~\cite{Richardson2007}
+
+\textbf{Cliente-Servidor:} Essa restrição está associada a separação de interesses, que é o princípio por trás das restrições da arquitetura cliente-servidor. Nela procura-se separar as preocupações relacionadas à interface do usuário das preocupações de armazenamento de dados. Isso permite que os componentes possam evoluir de forma independente melhorando a portabilidade e a escalabilidade das aplicações.
+
+\textbf{\emph{Stateless}:} Diz respeito à interação entre cliente e servidor. Nesse caso, a  comunicação deve ser realizada sem que haja o armazenamento de qualquer tipo de estado no servidor. Sendo assim,  toda informação de estado deve ser conhecida somente pelo cliente.  Esta característica permite a escalabilidade do servidor, uma vez que pode liberar recursos no final de cada pedido.
+Contudo, uma desvantagem associado a essa característica  está relacionada à performance da rede, pois em decorrência das constantes requisições com dados repetidos  ela é reduzida.
+
+\textbf{\emph{Cache}:} A utilização do cachê, tem  a finalidade de diminuir o impacto da desvantagem ocasionada pela redução de performance. Uma vez que exige que os dados de uma resposta vinda de uma requisição ao servidor, sejam marcados como \emph{cacheable} (sujeito à utilização do cachê) ou \emph{noncacheable} (não sujeito à utilização do \emph{cache}). Se uma resposta for marcada como cacheable, então ela será reutilizada como resposta em futuras requisições equivalentes, permitindo que o servidor fique mais livre, e portanto, mais escalável, haja vista que algumas interações poderão ser eliminadas por completo o que melhora a eficiência e  performance  de acesso a recursos percebido pelo usuário.
+
+\textbf{Sistema em camadas:} Essa restrição caracteriza-se pela divisão do sistema em camadas hierárquicas, restringindo a visualização dos componentes participantes de forma que cada componente só possa ver a camada com a qual esteja interagindo diretamente. Ao restringir a visibilidade de um sistema a uma única camada, torna-se possível delimitar a complexidade do sistema e promover a independência de cada uma das camadas.  Essa separação permite que  o sistema seja mais robusto e resistente a erros.
+
+\textbf{Code-On-Demand:} Dentre o conjunto restrições propostas pelo estilo REST, esta é aquela que permite a opção de baixar e executar diretamente códigos no  lado cliente, sendo opcional. Com isso, busca-se  obter extensibilidade e simplificar  o cliente. No entanto, isso também reduz a visibilidade.
+
+\textbf{Interface Uniforme:} A principal característica que diferencia o estilo arquitetural REST de outros utilizados em rede é a ênfase  quanto ao uso de uma interface uniforme entre os componentes. Aplicando o princípio de generalização de engenharia de software à interface dos componentes, a arquitetura é simplificada e a visibilidade da interações é melhorada. Contudo, esta generalização pode diminuir a eficiência do sistema, devido à aplicação não poder transmitir a informação num formato especifico de acordo com a sua  necessidade.  Com o objetivo de obter uma interface uniforme, REST define quatro requisitos de interface:
+
+ \begin{itemize}
+    \item \textbf{Identificação dos recursos:} Na arquitetura REST, cada recurso deve possuir um  identificador universal  denominado Uniform Resource Identi?er (URI). Que é definido como  uma sequência de caracteres que identi?cam um recurso físico ou abstrato [RFC 3986]. E são utilizados para descoberta de recursos e serviços.
+    \item	\textbf{Representação de recursos:} Os recursos devem ser manipulados a partir de suas representações, uma vez que elas podem estar representadas em formatos diferentes formatos, tais como: JSON, XML,PDF, texto puro, etc. É importante frisar que uma aplicação REST não transmite o recurso efetivamente, mas sim a sua uma representação, em um formato pré-acordado entre o cliente e o servidor;
+    \item	\textbf{Mensagem auto descritivas:} Os recursos são dissociados da sua representação, haja vista que o seu conteúdo  pode que ser acessado em em formatos diferentes. Dessa forma, as mensagens devem conter metadados que indicam como o conteúdo transmitido deve ser tratado.  Os metadados são utilizados para controlar cache, detectar erros de envio, negociar formatos de uma representação adequada, realizar controle de autenticação e acesso, etc;
+    \item	\textbf{Utilização de hipermídia para estado da aplicação:} Neste caso, as representações de recursos obtidas em uma aplicação REST devem possuir \emph{hiperlinks} que permitam a navegação do cliente pelos recursos. Uma vez que o servidor não pode  armazenamento de qualquer tipo de estado. Dessa forma, o Cliente pode interagir com outros recursos existentes sem a necessidade de que ele conheça a relação completa destes recursos pois poderá seguir estas ligações para se deslocar de um recurso para outro.
+
+
+    %Este pré-requisito é o menos cumprido por aplicações autointituladas RESTful: As representações de recursos obtidas em uma aplicação REST devem possuir hiperlinks que permitam a navegação do cliente pelos recursos. Ou seja, diferentemente de arquiteturas baseadas em RPC (Remote Procedure Call), o cliente não deve conhecer previamente as URIs para os recursos da aplicação (apenas a raiz do serviço), sendo que o servidor deve prover links que permita a descoberta dos recursos pelo cliente; não há contrato do serviço e não há garantia que um recurso em uma determinada URI possa estar disponível no futuro;
+\end{itemize}
+
+O protocolo HTTP é o padrão utilizado na arquitetura REST para promover a comunicação entre o cliente e o servidor. Isso se dá pela manipulação dos recursos utilizando os métodos HTTP: GET, POST, PUT ou DELETE.
+
+
+
+\section{Segurança em SOA}
+
+\subsection{Conceitos básicos}
+
+Segurança da informação pode ser definida como um conjunto de ações que são executadas com a finalidade de prover segurança às informações de indivíduos e organizações. Atualmente a segurança é um requisito importante para qualquer aplicação distribuída, tais como aplicações governamentais, aplicações de segurança pública e de defesa dentre outros~\cite{Bertino2010}.
+
+A Segurança aplicada a SOA requer o estabelecimento de propriedades básicas, uma vez que os aspectos funcionais aplicados a esta arquitetura são iguais aos de aplicações tradicionais.  Logo, segundo~\cite{Verissimo2001}, a segurança está fundamentada nos seguintes atributos básicos: autenticidade, integridade, confidencialidade e disponibilidade.
+
+No que se refere à autenticidade, este é um atributo que visa estabelecer a origem da informação, buscando verificar a identidade de um usuário. Assim, objetiva-se garantir que o usuário ou serviço é realmente quem diz ser e que tem os privilégios necessários para acessar e ou enviar uma determinada informação.
+
+A integridade é aquela que se preocupa em evitar ou em detectar a modificação não autorizada de informações ou mensagens. Esse atributo busca proteger a mensagem de modificações não permitidas.
+
+A confidencialidade preocupa-se com a proteção contra acessos não autorizados de dados e informações. Segundo~\cite{Bertino2010}, esse atributo procura proteger o conteúdo de uma mensagem ou informação  para que ele não possa ser visualizado no momento da transmissão, exceto por serviços autorizados a visualizá-los por terem a necessidade de ver o conteúdo da mensagem, a fim de realizar o seu encaminhamento.
+
+Finalmente, a disponibilidade está preocupada com a garantia de que os serviços de informação permaneçam acessíveis somente a usuários autorizados. De forma que uma mensagem ou informação uma vez solicitada possa ser prontamente entregue ao destinatário, garantindo assim que os usuários legítimos recebam os serviços a que têm direito. E outra palavras esse atributo busca garantir que a informação estará disponível quando solicitada.
+
+Apesar de compartilhar estes conceitos,  a segurança em SOA exige uma abordagem  diferenciada e outros aspectos devem ser verificados. Um exemplo disto é a proposta de segurança em nível de mensagem.
+
+Segundo~\cite{SOASecurity2008}, a segurança em nível de mensagem busca sanar problemas e complementar a segurança que é oferecida na camada de transporte, que é realizada por meio dos protocolos SSL (\emph{Security Socker Layer}) e TLS (\emph{Transport Layer Security}). Neste caso, os dados são cifrados na camada de transporte sendo estabelecido um canal seguro de comunicação entre dois serviços. Dessa forma, a comunicação ponto a ponto é garantida e segura. Porém, uma vez existindo interfaces intermediárias entre provedor do serviço e o consumidor, o processo de cifrar e decifrar os dados, que ocorre na camada de transporte, irá ocorrer toda vez que os dados trafegarem por um serviço intermediário, isso faz com que o sigilo dos dados e a segurança sejam quebrados em cada serviço intermediário. Para resolver este problema, propõem-se a segurança em nível de mensagem que consiste em utilizar mecanismos de segurança como cifrar partes da mensagem, o que resolve este problema, pois a segurança é fim a fim o que significa dizer que os dados estarão seguros mesmo quando a transmissão envolver um ou mais intermediários.
+
+\subsection{Conceitos básicos de criptografia}
+
+A palavra criptografia origina do Grego kryptós, ``escondido'', e gráphein, ``escrever'',  e pode ser  conceituada como sendo a ciência a arte de manter mensagens seguras~\cite{Schneier1995}. Ela está  associada a vários aspectos da segurança da informação, tais como: privacidade ou confidencialidade, integridade do dados, autenticação e não-repúdio~\cite{Menezes1996}. Em síntese, o processo de criptografia consiste em transformar uma informação que está em texto claro (\emph{plaintext}), em uma informação cifrada (\emph{ciphertext}), criptografada. O processo inverso, que é o de transformar uma informação cifrada em um texto claro, não codificado é denominado decriptografia. A Figura~\ref{fig:processocriptografia} exemplifica esse processo.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{processocriptografia.png}
+\caption{Relação entre os termos  básicos de criptografia adaptado de~\cite{Schneier1995}.}
+\label{fig:processocriptografia}
+\end{figure}
+
+Para realizar o processo de criptografia é necessário a utilização de um sistema criptográfico que é formado pelo conjunto de textos em claro, textos cifrados e chaves. Atualmente existem dois tipos de sistemas criptográficos: o de chave simétrica e o de chave assimétrica.
+
+\subsection{Criptografia de Chave Simétrica}
+
+A criptografia de Chave Simétrica pode ser definida como sendo aquela que utiliza uma chave única tanto para cifrar quanto para decifrar um texto claro~\cite{stallings2008}. Esse sistema de criptografia possui basicamente cinco elementos: Texto claro, que é a mensagem original; Algoritmo de criptografia, que o responsável por realizar as transformações no texto claro; A chave secreta, que é a chave compartilhada entre o emissor da mensagem e o receptor,utilizada como entrada para o algoritmo de criptografia; Texto cifrado, que é a mensagem em que foi aplicada o algoritmo criptográfico, é a saída e algoritmo de criptografia: Que é basicamente o mesmo algoritmo de criptografia só que executado de forma inversa. Para isso, ele aplica ao texto cifrado a chave secreta compartilhada, utilizada no momento da cifragem, e obtém o texto claro original. O processo do Sistema Criptografia de Chave Simétrica é ilustrado na figura~\ref{fig:criptografiasimetrica}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.9\textwidth]{criptosimetrico.png}
+\caption{Processo de criptografia simétrica adaptado de ~\cite{stallings2008}.}
+\label{fig:criptografiasimetrica}
+\end{figure}
+
+Existem dois tipos de algoritmos de criptografia de chave simétrica: os de cifras de fluxo e cifras de blocos. Cifras de fluxo, cifram e decifram dados bit a bit, ou seja, um bit a cada unidade de tempo, não sendo muito adequado a implementações em software. Já a cifras de blocos, realizam as mesmas operações em blocos de bits, sendo mais fáceis de implementar em softwares~\cite{Schneier1995}. São exemplos de algoritmos de criptografia de chave simétrica: AES(Advanced Encryption Standard), BlowFish, Triple-DES e DES (Data Encryption Standard).
+
+\subsection{Criptografia de Chave Assimétrica}
+
+A criptografia de Chave Assimétrica ou de chave pública é aquela que utiliza uma chave para criptografia e outra chave diferente, porém relacionadas matematicamente, para decriptografia~\cite{stallings2008}. Dessa forma, cada usuário possui um par de chaves, uma pública e outra privada, que são utilizadas no processo de ciframento e deciframento das mensagens. Na utilização dessa técnica, todos os participantes têm acesso a chave pública porém as chaves privadas devem ser de conhecimento apenas do seu proprietário, devendo permanecer protegida e secreta ~\cite{stallings2008}. A figura~\ref{fig:criptografiaassimetrica} exemplifica o processo de Criptografia de Chave Assimétrica.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.9\textwidth]{criptografiaassimetrica.png}
+\caption{Processo de criptografia assimétrica.}
+\label{fig:criptografiaassimetrica}
+\end{figure}
+
+A criptografia assimétrica ou de chave pública pode ser utilizada tanto para prover a confidencialidade como para possibilitar a autenticidade da mensagem. Quando usada para prover a confidencialidade dos dados, a mensagem é criptografada com a chave pública do receptor e só pode ser decifrada com a chave privada do destinatário.  No caso da utilização para verificação da autenticidade, ou seja, utilizada para prover Assinaturas digitais, mensagem é criptografada com a chave privada do remetente, de forma que qualquer pessoa que possua a chave pública do remetente possa verificar a autenticidade da mensagem. Vários algoritmos de criptografia de chave pública foram propostos, porém os que mais se destacaram  tanto para  criptografia quanto para assinaturas digitais foram o RSA, ElGamal e Rabin~\cite{Schneier1995}.
+
+\subsection{Assinatura digital}
+
+\subsection{Funções de Hash}
+
+\subsection{Certificados Digitais}
+
+\section{Vulnerabilidades em SOA}
+
+Segundo~\cite{Verissimo2001}, hackers buscam por falhas e vulnerabilidades dos sistemas operacionais, aplicativos, software de rede e assim por diante. Usuários imprudentes ou administradores podem apresentar outras falhas, por causa da maneira como eles configuram ou executam os sistemas que operam. Esses problemas podem ocorrer em SOA. Para que se possa entender melhor esse contexto, são descritos a seguir conceitos que auxiliam o entendimento de vulnerabilidades.
+
+Em relação a vulnerabilidades, pode-se afirmar que elas são falhas introduzidas, acidentalmente ou intencionalmente, durante o processo de desenvolvimento, configuração, operação e manutenção do sistema. Já ataques, são ações que exploram vulnerabilidades, podendo comprometer ou não as propriedades de segurança do sistema. E intrusão no sistema, é o resultado de um ataque bem sucedido no sistema.
+
+%\begin{enumerate}[a )]
+%	\item Vulnerabilidades são falhas introduzidas, acidentalmente ou  intencionalmente, durante o  processo de desenvolvimento, configuração, operação e manutenção do sistema;
+
+%	\item Ataques são ações que exploram vulnerabilidades, podendo comprometer ou não as propriedades de segurança do sistema;
+
+%	\item Intrusão no sistema é o resultado de um ataque bem sucedido.
+
+%\end{enumerate}
+
+A segurança aplicada a SOA é algo que deve ser continuamente buscado. Porém, essa tarefa é complexa e muitas vezes difícil. Isso decorre do fato de existirem muitas vulnerabilidades nos componentes de software. Com isso, para evitar que problemas de segurança ocorram, é necessário estar sempre revisando os métodos, técnicas e ferramentas que possibilitem verificar vulnerabilidades e propiciar segurança aos sistemas computacionais. A seguir serão descritos algumas vulnerabilidades que afetam a arquitetura orientada a serviços e que são citados no trabalho~\cite{JensenGHL2007}.
+
+\subsection{Alteração das mensagens}
+
+Neste tipo de ataque, as mensagens são interceptadas por um atacante que realiza alterações na mensagem toda ou em parte dela, afetando sua integridade. \emph{SQL Injection}, \emph{XML Injection} e \emph{XPath Injection} são exemplos de ataques que utilizam essa estratégia.
+
+O \emph{SQL Injection}, é o ataque em que o atacante envia determinados parâmetros como argumentos das funções que, após processados pelo Web Service, originam  procedimentos SQL definidos pelo atacante~\cite{sonia2008}. Esses procedimentos podem retornar informações não previstas, alterar dados constantes nas bases de dados ou provocar indisponibilidade do próprio Web Service. Neste tipo de ataque podem ser executados comandos SQL inválidos.
+
+No caso do \emph{XML Injection}, que é o ataque onde se procura modificar a estrutura XML de uma mensagem SOAP (ou qualquer outro documento XML), através da inserção de elementos XML~\cite{JensenGHL2007}. Isto pode ser usado para substituir os dados inseridos por usuário no mesmo documento. Nele, são aproveitadas as situações em que o processo de validação do XML não é efetuado corretamente, são inseridas tags num documento XML. As referidas tags XML podem alterar a estrutura do documento XML de tal forma que o comportamento da aplicação seja comprometido.
+
+O \emph{XPath Injection}, é o ataque onde são inseridos parâmetros maliciosos no XPath, com o objetivo de realizar consultas a informações cujo acesso não foi autorizado. Segundo a W3C O XPath é uma linguagem utilizada para realizar consultas em documentos XML, e assim como SQL, também é suscetível a injeção de parâmetros~\cite{Sahba2007}.
+
+
+\subsection{Negação de Serviços}
+
+Ataques de negação de serviço são utilizados para impedir que o serviço funcione conforme o esperado, resultando em perda de disponibilidade~\cite{Siddavatam2008}. Esse ataque é focado em tornar indisponível (site, aplicativo de servidor, serviço). Se um serviço recebe um número muito grande de pedidos, ele pode parar de fornecer o serviço aos usuários legítimos.  Por exemplo, um ataque de negação de serviço pode ser realizado enviando uma grande quantidade de informações a um servidor com pedidos para consumir todos os recursos disponíveis no sistema, ou passando os dados de entrada mal formatados ao servidor de forma que ele pare de funcionar.
+
+Ao contrário da maior parte dos ataques, esse não tem a intenção de invadir um computador para roubar informações confidenciais, seu objetivo é o de tornar inacessíveis os serviços providos pela vítima a usuários legítimos.
+
+\subsection{Ataques de referências externas}
+
+Neste tipo de ataque, o atacante consegue burlar as proteções criadas, como por exemplo, no caso de validadores de XML, e realiza a inclusão de referências externas que só serão consultadas após a validação do XML, mas antes da aplicação iniciar o seu processamento.
+
+\subsection{Interceptação das mensagens}
+
+Neste ataque, as mensagens são interceptadas e alteradas sem que qualquer das partes, emissor ou consumidor de serviço saiba que houve a interceptação. São exemplos deste ataque: \emph{Replay Attacks} e \emph{Man-in-the-middle}.
+
+ No ataque \emph{Replay Attacks}, o atacante intercepta uma mensagem  e se faz passar pelo emissor. Dessa forma, ele pode reenviar mensagens que já tinham sido previamente enviadas, ou incluir partes de uma ou mais mensagens previamente enviadas numa nova mensagem (\emph{replay} de partes da mensagem). Já no caso do ataque \emph{Man-in-the-middle}, os dados trocados entre duas partes são de alguma forma interceptados, registrados e possivelmente alterados pelo atacante sem que as vitimas percebam as modificações.
+
+\subsection{Descoberta de informação}
+
+Neste tipo de ataque, as informações sobre os sistemas são descobertas e utilizadas para realizar um ataque, de acordo com o tipo de vulnerabilidade, que mais se adeque aos dados dos sistemas obtidos, tais como: tipo e versões do sistema operacional, localização de cópias de segurança, arquivos temporários, informações sobre os serviços dentre outras. Os principais ataques são:\emph{WSDL Scanning} e Ataques aos UDDI.
+
+No ataque \emph{WSDL Scanning}, realiza-se uma varredura no documento WSDL, com a finalidade de se obter informações sobre os métodos, parâmetros e operações constantes no WSDL. Dessa forma, o atacante busca revelar informações sensíveis e possíveis falhas em um Web Service, o que lhe permite realizar um ataque bem sucedido~\cite{Moradian2006};
+
+No caso do Ataques aos UDDI, o atacante analisa dados desprotegidos dos registros UDDI, e obtém detalhes relativos às funções disponibilizadas pelos Web Services e como acessá-los. Como, muitas vezes, os WSDL são gerados automaticamente por utilitários criados para exporem toda a informação disponível, relativa a um determinado método, é necessário ter alguma atenção na escolha/utilização desses utilitários de forma a ser possível proteger os Web Services desse tipo de ataque. Através da utilização de UDDI v.3.0.2 já é possível implementar alguma proteção relativa a este tipo de ataque. Essa versão já permite solicitar a identificação, autenticação e autorização das entidades antes de lhes dar acesso aos registos UDDI~\cite{sonia2008}.
+
+\section{Protocolos de Autenticação e Autorização}
+A comunidade web tem desenvolvido uma série de protocolos que abordam questões como identidade e confiança~\cite{Webber10}. Estes protocolos visam garantir que os sistemas possam interagir de forma segura. O principal benefício de se criar um serviço HTTP é a acessibilidade.  Uma vez que uma ampla gama de clientes em plataformas diferentes podem consumir os serviços HTTP~\cite{lakshmiraghavan2013pro}.
+
+Para aplicar segurança em aplicações, geralmente e necessário fornecer mecanismos que permitam o cliente se identificar. Para isso, realiza-se o gerenciamento de identidade, que tem por finalidade permitir que os sistemas possam interoperar com segurança,divide-se basicamente em: Autenticação, que é o processo de descobrir a identidade de uma entidade por meio de um identificador e verificar a identidade através da validação de credenciais fornecidas pela entidade ~\cite{lakshmiraghavan2013pro}.E autorização que é o processo que analisa se um usuário após ser autenticado tem permissão para executar uma determinada ação.% O protocolo HTTP oferece dois tipos de autenticação, o  Basic e Digest.
+
+%A autenticação Basic é um modelo baseado no desafio e resposta, sendo utilizada por servidores HTTP para validar a autenticação~\cite{franks1999}. Desta forma, quando o cliente tenta acessar algum recurso protegido, a sua identidade é requerida pelo servidor, o cliente então fornece a resposta codificada em base64 no header \emph{HTTP},  se a resposta for correta ela terá acesso ao sistema. Porém, por não criptografar o desafio, estando esse apenas codificado, faz com que ele seja vulnerável e sujeito a ataques, como por exemplo, os de repetição.
+
+%Já na Digest, o processo é o mesmo que na autenticação básica. Sendo que seu mecanismo de autenticação é um pouco mais complexo, uma vez que ele gera um HASH, geralmente utilizando o algoritmo MD5, do desafio que será enviado pelo servidor ao cliente ~\cite{franks1999}. Apesar de ser mais seguro do que a autenticação básica, autenticação HTTP Digest também é vulnerável à ataques, como por exemplo o man-in-the-middle.  Para evitar esse problema, deve ser empregado a segurança na camada de transporte~\cite{Webber10}.
+
+\subsection{OpenID}
+
+O OpenID é um protocolo SSO(Single Sign-On)que permite a autenticação em diversos websites através de um Uniform Resource Identifier(URI). Ele foi desenvolvido em 2005 pela comunidade open source~\cite{Recordon2006}. Dentre as caracteríticas inerentes a ele podem ser destacadas:a descentralização e a identidade única, compartilhada com consumidores diferentes. Atualmente, encontra-se na versão 2.0.
+
+OpenID é atraente por causa de sua simplicidade. Com apenas algumas interações, o cliente consegue solicitar e validar  uma autenticação um servidor OpenID e interagir com um serviço usando a alegação fundamentada. O fluxo do protocolo \emph{end-to-end} é apresentado na Figura~\ref{fig:openid}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{openiddiagram.png}
+\caption{Fluxo do protocolo OpenId, adaptado de~\cite{rfc6749}}
+\label{fig:openid}
+\end{figure}
+
+\begin{enumerate}[1 )]
+\item  Início, Um cliente envia um indentificador OpenID que alega possuir.
+
+\item  Descoberta, o Provedor do Serviço descobre o provedor OpenID correspondente ao identificador OpenID apresentado pelo cliente.
+
+\item Troca de chaves,  segredos são trocadas entre o Provedor do Serviço e o Provedor OpenID.
+
+\item O Provedor do Serviço redireciona o cliente para provedor de OpenID, para que ele possa se autenticar.
+
+\item Autenticação, o cliente se autentica no provedor OpenID. (A maneira em que a autenticação ocorre está fora do escopo OpenID.)
+
+\item O Provedor de OpenID redireciona novamente o Cliente para o Provedor do Serviço.
+
+\item Apresentação das credenciais, finalmente, a carga OpenID contendo a declaração de identidade validada é enviada para O Provedor do Serviço.
+
+\end{enumerate}
+
+\subsection{SAML}
+
+O \emph{Security Assertion Markup Language - SAML} é uma especificação padrão para troca de credenciais,\emph{tokens} de segurança, que contém informações de autenticação e autorização, baseadas em \emph{XML}, que visam garantir a interoperabilidade entre diferentes sistemas. Foi desenvolvido em 2005 pela OASIS (OASIS,2005b; OASIS, 2005c). Ele está dividido no seguintes componentes: asserções, protocolos, ligações e perfis, que são descritos a seguir~\cite{Madsen2005}
+
+Uma Asserção é um conjunto de informações que fornece uma ou mais informações feitas por uma autoridade \emph{SAML}. Ela é dividida em três tipos diferentes:  autenticação, atributo e decisão de autorização~\cite{Madsen2005,Nordbotten09,Bertino2010}. Uma asserção de autenticação, é aquela que afirma que determinada informação foi autenticada por um meio qualquer em determinado momento. Este tipo de asserção é geralmente emitido por uma autoridade \emph{SAML} denominada de fornecedor de entidades. A sua responsabilidade é a de autenticar consumidor do serviço e manter registros dos dados relacionados com a sua sessão, enquanto esta for válida. O atributo é a asserção que contém informações específicas de um determinado cliente. E finalmente a decisão de autorização, que são as informação sobre a decisão de permitir, ou não, o acesso a um determinado recurso por parte do consumidor do serviço.
+
+Os Protocolos, nesse contexto são uma série de mensagens protocolares do tipo pedido/resposta que permitem um provedor de serviços, dentre outras coisas, solicitar a uma autoridade \emph{SAML}, uma ou mais asserções, pedir a autenticação de um usuário a um provedor de identidades e obter a asserções correspondentes.
+
+As ligações, que são aquelas que realizam o mapeamento entre mensagens protocolares e as normas de comunicação entre sistemas, em linhas gerais, define como mensagens \emph{SAML} serão transportadas em cima dos protocolos padrão de mensagens e transporte.
+
+Os perfis, são aqueles que definem um conjunto de restrições e ou extensões para o suporte da utilização de \emph{SAML}  em uma determinada aplicação.
+
+Na versão 2.0 do \emph{SAML}, foram adicionadas uma série de novos recursos tais como os pseudónimos, gerenciadores de identidades e de sessões, metadados, encriptação, perfis de atributos, suporte a dispositivos móveis, mecanismos que permitem a aplicação de políticas de privacidade e métodos de pesquisa de provedores de identidades.
+
+\subsection{OAuth}
+
+O \emph{Open Authorization Protocol - OAuth} é um protocolo desenvolvido com o objetivo de solucionar os problemas relacionados com a gestão de identidades entre provedores de serviços. A primeira versão 1.0 foi lançada em 2007, e sua última revisão foi publicada em 2010, sendo especificada no Request For Comments (RFC)5849~\cite{oauth210}. Em 2012, a versão 2.0 do protocolo, \emph{OAuth 2.0}, foi lançada com objetivo de resolver problemas encontrados na versão 1.0, tais como escalabilidade e complexidade~\cite{rfc6749}.
+
+Na última versão, 2.0, quatro papéis básicos são definidos e necessários para compreensão do fluxo de execução do protocolo, são eles: proprietário do recurso, que é a entidade que tem o poder de conceder a permissão de acesso, aos seus recursos, às outras entidades; O servidor de recursos, que é o responsável por hospedar e responder às solicitações de acesso a recursos protegidos, usando \emph{tokens} de acesso; Cliente, que é uma aplicação, que realiza solicitações de acesso de recursos protegidos, ao servidor de recursos, em nome do proprietário, dono do recurso, após a obtenção de sua autorização; E o servidor de autorização, que é responsável por emitir \emph{tokens} de acesso aos clientes, após autenticar e obter autorização do proprietário de recursos~\cite{rfc6749}.
+
+%Na última versão, 2.0, quatro papéis básicos são definidos: proprietário do recurso, servidor de recursos, cliente e servidor de autorização~\cite{rfc6749}.
+
+%O proprietário do recurso é a entidade que tem o poder de conceder a permissão de acesso, aos seus recursos, às outras entidades.
+
+%O servidor de recursos é aquele responsável por hospedar os recursos protegidos, e tem a capacidade de responder às solicitações de acesso a recursos protegidos, usando \emph{tokens} de acesso.
+
+%Já o cliente, é uma aplicação que realiza solicitações de acesso de recursos protegidos, ao servidor de recursos, em nome do proprietário dono do recurso após a obtenção da de sua  autorização.
+
+%E por fim, o servidor de autorização, que é aquele que emite \emph{tokens} de acesso aos clientes, após autenticar e obter autorização do proprietário de recursos.
+
+Na maioria dos casos, o papel do servidor de autorização e o servidor de recursos podem  ser representados por uma única entidade. A Figura~\ref{fig:diagramaoauth} apresenta de forma abstrata o fluxo do protocolo OAuth 2.0 e descreve a interação entre os quatro papéis.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{diagrama_oauth2.png}
+\caption{Fluxo do protocolo OAuth 2.0 adaptado de~\cite{rfc6749}}
+\label{fig:diagramaoauth}
+\end{figure}
+
+\begin{enumerate}[a )]
+        \item O cliente solicita a autorização do proprietário do recurso.
+        \item O cliente recebe uma concessão de autorização, que representa a autorização fornecida pelo proprietário do recurso.
+        \item O cliente solicita ao servidor de autorização um \emph{token} de acesso que pode ser usado para acessar os recursos protegidos. Durante este processo, o cliente fornece suas credenciais e a concessão de autorização para autenticar-se com o servidor de autorização.
+        \item O servidor de autorização confirma a validade das credenciais do cliente e da concessão de autorização, se elas forem válidas, ele então fornece ao cliente um \emph{token} de acesso.
+        \item O cliente solicita os recursos protegidos, hospedados no servidor de recursos, apresentando o \emph{token} de acesso.
+        \item  O proprietário do recurso verifica a validade do \emph{token} de acesso e, se válido, ele atende ao pedido.
+
+\end{enumerate}
+
+\subsection{Traust}
+\subsection{eXtensible Access Control Markup Language}
+A eXtensible Access Control Markup Language (XACML) foi desenvolvida pelo OASIS Security Services Technical Commitee (SSTC). O padrão XACML define linguagens de marcação que permitem especificar políticas de segurança, requisições e respostas para decisões de controle de acesso, permitindo a organizações utilizarem essas políticas para controlar acesso a conteúdos e informações protegidas.
+
+A linguagem para definição de políticas XACML é utilizada para descrever requisitos gerais de controle de acesso, e possui pontos de extensão para definição de novas funções, tipos de dados e combinações lógicas. As políticas de segurança XACML podem controlar o acesso a informação
+utilizando identidade de clientes, o método de autenticação de clientes ou ainda uma porta pela qual um cliente se comunica.
+
+O XACML difere de outras linguagens e padrões proprietários primeiramente pelo fato de ser um padrão aberto (Open-Standard). Segundo, por ser genérico, permite que possa ser usado para prover controle de acesso para sistemas completos bem como a um recurso específico. Finalmente, por
+ser aplicável em conjunto com outros padrões, como o SAML, podendo formar a base para tomada de decisões.
+
+O uso do XACML pode ser feito tanto em ambientes e aplicações proprietárias quanto públicas, podendo facilitar o processo de tomada de decisões e  proporcionar interoperabilidade entre diferentes plataformas e domínios.
+
+\section{Síntese do capítulo}
+
+Este capítulo apresentou conceitos básicos da arquitetura orientada a serviços. Foram abordados conceitos fundamentais da tecnologia Web Services, REST, sendo apresentadas as definições de sua estrutura. Além disso, foram descritos alguns protocolos de autenticação e autorização. No que tange a segurança em SOA, foram apresentados os conceitos básicos de segurança e elencadas algumas das principais vulnerabilidades que afetam a arquitetura orientada a serviços. No próximo capítulo, será descrito o protocolo de autenticação e autorização proposto e sua análise formal, utilizando para isso a lógica BAN.
+
+\chapter{Protocolo de Autenticação e Autorização proposto}
+\section{Introdução}
+%A Polícia Civil do Distrito Federal, diante da necessidade de compartilhar suas informações com órgão parceiros, no intuito de possibilitar que os sistemas possam ser integrados de forma eficiente e principalmente segura busca estabelecer uma arquitetura de referência para a adoção de uma arquitetura orientada a serviços. Essa arquitetura deve primar pela segurança, haja vista a criticidade e sensibilidade das informações que são tratadas no âmbito da PCDF.
+
+%Dessa forma, optou-se por adotar a tecnologia de Web Services usando o protocolo REST para implementar SOA na instituição. Neste caso, estudos específicos foram realizados com vistas a estabelecer uma política de segurança eficiente que possibilite o fornecimento dos serviços e promova a integração com os órgãos parceiros.
+A Polícia Civil do Distrito Federal, diante da necessidade de compartilhar suas informações com órgão parceiros, no intuito de possibilitar que os sistemas possam ser integrados de forma eficiente e principalmente segura busca estabelecer uma arquitetura de referência para a adoção de uma arquitetura orientada a serviços. Essa arquitetura deve primar pela segurança, haja vista a criticidade e sensibilidade das informações que são tratadas no âmbito da PCDF.
+
+Dessa forma, optou-se por adotar a tecnologia \emph{REST} para implementar SOA na instituição. Neste caso, estudos específicos foram realizados com vistas a estabelecer uma política de segurança eficiente que possibilite o fornecimento dos serviços e promova a integração com os órgãos parceiros. Para que isso ocorra, surgiu a necessidade da criação de um protocolo seguro e personalizado de autenticação e autorização que atenda às necessidades da PCDF.
+
+\section{REQUISITOS DO PROTOCOLO}
+
+O protocolo de autenticação e autorização proposto deverá ser aderente a arquitetura REST, de forma que possa permitir que os serviços ofertados pela Divisão de Tecnologia possam ser acessados por um número relativamente grande de clientes. Os requisitos inerentes ao protocolo são descritos nesta seção.
+
+\begin{enumerate}[RQ1]
+
+\item Para promover a segurança de sessão, toda comunicação entre o cliente e o servidor será realizada utilizando HTTPS \emph{(Hypertext Transfer Protocol over Secure Sockets Layer)}, usando o SSL/TLS para garantir a confidencialidade e integridade para a sessão. Para isso será usado o certificado digital X.509, emitido por uma autoridade de certificação, para encriptar as comunicações e garantir a autenticidade do servidor e do cliente. Devendo os clientes realizar a validação do certificado antes de interagir com o servidor.
+
+\item Será utilizado a criptografia assimétrica para promover a segurança na troca de mensagens realizada entre o Cliente e a PCDF. Todas as mensagens deverão ser assinadas digitalmente. Para isso, será utilizado uma função hash, com o algoritmo SHA-3 (Secure Hash Algorithm version 3).
+
+\item O protocolo deverá permitir acesso aos serviços apenas ao pessoal autorizado, de forma que a autenticação e autorização, siga padrões definidos na política de segurança. Sendo que para ser autenticado e autorizado o usuário deverá apresentar credenciais válidas. Essas credenciais deverão ser criptografadas, assinadas e enviadas no cabeçalho do protocolo HTTPS. Devendo ser escalável em termos de sobrecarga, tamanho do domínio de proteção e de manutenção. Além disso, ele deverá permitir a preservação de privacidade, uma vez que para proteger os clientes e fornecedores de recursos de entidades maliciosas, suas interações deverão revelar o mínimo de informações possíveis.
+
+\item A autenticação e autorização será baseada em desafios e resposta, que serão elaborados a partir da apresentação de declarações de identidade (Claims). Tal requisito torna mais flexível o gerenciamento da identidade do usuário, uma vez que possibilita ao administrador desabilitar credenciais que tenham sido comprometidas de forma transparente ao usuário.
+
+\item A política de autenticação e autorização proposta no protocolo será estabelecia por meio de contrato onde serão definidos todas as regras que deverão ser atendidas pelos usuário e pelo fornecedor do serviço.
+
+    Dessa forma, para que qualquer usuário possa ter acesso aos serviços ofertados pela Divisão de Tecnologia da PCDF ele deverá concordar com um contrato prévio de acesso. Devendo primeiramente ser cadastrado e ter definido quais são seus privilégios de acesso/autorização. Uma vez cadastrado o usuário deverá informar os dados que possam comprovar sua identidade no momento da autenticação de forma que ele possa ser autorizado de acordo com o seus privilégios.
+
+    No momento do credenciamento será gerado para o cliente múltiplas credenciais, que serão utilizadas no processo de autenticação e autorização, essas informações serão compartilhados entre o Cliente o Servidor de Autenticação e Autorização e o Servidor REST. Além disso, o Contrato poderá ter acesso a múltiplos serviços. A Figura ~\ref{fig:diagrama_relacionamento} apresenta o relacionamento entre o contrato, credenciais e serviços.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{modelo_relacionamento_contrato1.png}
+    \caption{Diagrama de relacionamento entre contrato, credenciais e usuários}
+    \label{fig:diagrama_relacionamento}
+\end{figure}
+
+\end{enumerate}
+
+
+%Para a implementação de segurança em aplicações REST, verificou-se que ela passa basicamente pela aplicação de segurança em protocolos \emph{HTTP}, que oferece dois tipos de autenticação:  \emph{Basic} e \emph{Digest}.
+
+%A autenticação Basic é um modelo baseado no desafio e resposta, sendo utilizada por servidores HTTP para validar a autenticação~\cite{franks1999}. Desta forma, quando o cliente tenta acessar algum recurso protegido, a sua identidade é requerida pelo servidor, o cliente então fornece a resposta codificada em base64 no header \emph{HTTP},  se a resposta for correta ela terá acesso ao sistema. Porém, por não criptografar o desafio, estando esse apenas codificado, faz com que ele seja vulnerável e sujeito a ataques, como por exemplo, os de repetição.
+
+%Já na Digest, o processo é o mesmo que na autenticação básica. Sendo que seu mecanismo de autenticação é um pouco mais complexo, uma vez que ele gera um HASH, geralmente utilizando o algoritmo MD5, do desafio que será enviado pelo servidor ao cliente ~\cite{franks1999}. Apesar de ser mais seguro do que a autenticação básica, autenticação HTTP Digest também é vulnerável à ataques, como por exemplo o man-in-the-middle.  Para evitar esse problema, deve ser empregado a segurança na camada de transporte~\cite{Webber10}.
+
+\section{ARQUITETURA DO PROTOCOLO}
+
+A arquitetura do protocolo proposto é apresentada na Figura~\ref{fig:arquiteturaprotocolo}. O protocolo é composto por quatro componentes: Cliente, Servidor de Autenticação e Autorização, Servidor REST, e Banco de Dados de Autenticação e Autorização.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{arquitetura_protocolo.png}
+    \caption{Fluxo do protocolo de autenticação/autorização proposto, 1º cenário.}
+    \label{fig:arquiteturaprotocolo}
+\end{figure}
+
+Os componentes da arquitetura são detalhados a seguir.
+
+Cliente: O componente Cliente na arquitetura do protocolo representa as Instituições ou Órgãos conveniados, que após firmar um contrato, podem consumir os serviços ofertados pela PCDF.
+
+Servidor de Autenticação e Autorização: Este componente tem um papel fundamental na arquitetura do protocolo, pois é nele que o gerenciamento de autenticação e autorização é realizado. Desta forma, o servidor de Autenticação e Autorização é responsável por realizar os processos de verificação e validação de credenciais, criação dos desafios desafios de autenticação, criação de \emph{tokens} JSON e a criação e o gerenciamento das credenciais de autenticação e autorização temporárias, que são utilizados pelos clientes para consumir os serviços requisitados.
+
+Servidor de REST: O servidor REST é um servidor de fachada que abstrai toda lógica necessária para o consumo dos serviços. Nele estão concentrados os serviços REST disponibilizados pela PCDF. Desta forma, quando um Cliente necessita acessar um serviço, primeiramente ele deve ser autenticado e autorizado no servidor de Autenticação e Autorização. Após esse processo, o Cliente faz a requisição ao servidor de REST, que realiza as verificações necessárias para saber se o Cliente tem privilêgios ou não para acessar o serviço. Ele acessa a base de dados de Autenticação e Autorização para confirmar as credenciais de autenticação e autorização temporária informadas e caso elas sejam válidas ele permite que o Cliente acesse o serviço requerido. Um ponto importante a ser destacado e que os desenvolvedores, aos desenvolver um serviço, não necessitam ter preocupações de segurança, uma vez que e esse componente que realiza esse atividade.
+
+Banco de Autenticação e Autorização: Servidor de banco de dados que contem a estrutura de banco de dados necessário  para o funcionamento dos serviços de autenticação e autorização. E nele que são gravados as credenciais, usuários, os desafios e as credenciais de autorização e autenticação temporária.
+
+
+\subsection{Visão geral do protocolo de Autenticação e Autorização proposto}
+
+Para ter acesso a API \emph{REST}, referente aos serviços ofertados, o cliente deverá ser autenticado e autorizado a acessar o serviço. Para isso, será usado a autenticação baseada em \emph{tokens} de segurança, que são recipientes de reivindicações da autoridade emissora. Os \emph{tokens} de segurança utilizados serão os \emph{Web Tokens} no formato \emph{JSON}. Esse, ao contrário dos tokens \emph{SAML}, que são baseados em \emph{XML}, são mais compactos e, portanto mais adequados para serem usados em um cabeçalho \emph{HTTP}. Além disso, todas as mensagens deverão ser assinadas e criptografadas de forma assimétrica. O processo de autenticação e autorização é descrito em dois cenários distintos. No primeiro cenário, representado na figura ~\ref{fig:protocoloseguro}, o Cliente, não está autenticado. Já no segundo ele esta autenticado e possui uma credencial de autorização. %Esse último é representado na figura ~\ref{fig:cenario2}.
+
+\subsubsection{Primeiro cenário}
+Logo, no primeiro cenário, o cliente não está autenticado, e irá solicitar a autenticação pela primeira vez, conforme descrito a seguir:
+\newline
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=1.0\textwidth]{fluxo_autenticacao.png}
+    \caption{Fluxo do protocolo de autenticação/autorização proposto, 1º cenário.}
+    \label{fig:protocoloseguro}
+\end{figure}
+
+
+O protocolo tem início quando o Cliente envia uma solicitação de autenticação ao servidor de Autenticação e Autorização. Esse pedido é realizado por meio de um mensagem (mensagem 1 na Figura~\ref{fig:protocoloseguro}) que contém um \emph{token} JSON, enviado no cabeçalho HTTP da requisição REST. O \emph{token} contém uma credencial, extraída de forma aleatória da tabela de credenciais do Cliente. O token é assinado digitalmente pelo Cliente e cifrado com a chave pública do servidor de Autenticação e Autorização. É importante frisar que tanto o Cliente quanto o servidor de Autenticação e Autorização possuem as mesmas tabelas de credenciais e de serviços, pois elas são geradas no momento de assinatura do contrato de prestação do serviço.
+
+Na segunda mensagem, ao receber uma solicitação de autenticação, o servidor de Autenticação e Autorização extrai o token cifrado com sua chave privada e verifica a autenticidade e integridade da requisição por meio da verificação da assinatura digital do Cliente.  Se houver qualquer problema, uma mensagem de erro HTTP (código 401), usuário não autorizado, é retornada ao Cliente.
+Outra verificação que é realizada e a do \emph{timestamp}, que se refere ao tempo de envio da mensagem, se ela tiver sido enviada em um período de tempo superior ao pré-estabelecido no contrato, o Cliente também recebe uma mensagem de erro HTTP de usuário não autenticado.
+
+Caso não haja problemas, procede-se com o processo de validação da credencial informada, que consiste em consultar a credencial em uma base de dados e se a credencial for válida e estiver associada ao Cliente, o Servidor de Autenticação e Autorização gera um desafio de autenticação. Tal desafio consiste em fazer uma busca aleatória à tabela de credenciais e selecionar um código de credencial que esteja associado ao Cliente. Em seguida grava-se o desafio, a data e hora de geração do desafio e a resposta que o Cliente deverá fornecer. um \emph{token} JSON, contendo o código do desafio, o código da credencial e um \emph{timestamp} representando a data e hora de criação do desafio, é enviado ao Cliente,  assinado digitalmente pelo o servidor de Autenticação e Autorização e cifrado com a chave pública do Cliente que está solicitando a autenticação.
+
+Na terceira mensagem, após receber o desafio do servidor de Autenticação e Autorização, o Cliente, extrai o token cifrado com sua chave privada e verifica a autenticidade e integridade da requisição por meio da verificação da assinatura digital do servidor de Autenticação e Autorização. Em seguida verifica o \emph{timestamp}, cujo objetivo e o de verificar se a mensagem foi enviada em um período de tempo superior ao pré-estabelecido no contrato.  Se houver qualquer problema, o processo de autenticação atual é descartado e inicia-se um novo processo de autenticação.
+
+Caso não haja problemas, o Cliente verifica e responde o desafio solicitado, enviando-o, juntamente com um \emph{timestamp} e o código do serviço, que ele deseja consumir, para o Servidor de Autenticação e Autorização por meio de um \emph{token} JSON, que é assinado digitalmente pelo Cliente e cifrado com a chave pública do servidor de Autenticação e Autorização.
+
+Já na quarta mensagem, o servidor de Autenticação e Autorização recebe a resposta do desafio de autenticação, decifra o token e verifica a autenticidade e integridade da requisição por meio da verificação da assinatura digital do Cliente.  Não ocorrendo problemas, inicia-se o processo de verificação da resposta. A primeira verificação que é realizada refere-se ao tempo de geração do desafio, por meio do \emph{timestamp}. Se a resposta tiver sido enviada em um período de tempo superior ao pré-estabelecido em contrato, o servidor de Autenticação e Autorização envia uma mensagem de erro HTTP (código 401), usuário não autorizado, ao Cliente. Caso contrário, ele procede com a verificação do desafio que consiste em realizar uma consulta na tabela de desafios verificando se a resposta dada é a mesma que a esperada. Caso a resposta esteja correta o servidor de Autenticação e Autorização autentica o Cliente. Em seguida ele verifica, pelo código do serviço requisitado se o Cliente tem privilégios necessários para consumir o serviço requisitado.
+
+Se a resposta for positiva, o servidor de Autenticação e Autorização gera uma credencial de autenticação e autorização temporária para o serviço solicitado. Ela é gravada em uma tabela de credencias de autorização temporária juntamente com a data e hora de criação, data de expiração e o código do cliente. A tabela de credencias de autorização temporária será acessada pelo Servidor REST  para verificar quais privilégios a entidade requisitante do serviço tem acesso e se ela está autenticada. O token, contendo a credencial de autenticação e autorização temporária, é  assinado digitalmente pelo servidor de Autenticação e Autorização   e cifrado  com a chave pública do Cliente. Após esse processo ele é enviado ao Cliente.
+
+Caso a resposta do desafio esteja em desacordo com esperada ou se o Cliente não tiver privilégios suficientes para acessar o serviço requisitado, ele recebe uma mensagem de erro HTTP (código 401), usuário não autorizado.
+É importante frisar que a credencial de autenticação e autorização temporária será gerada apenas para o serviço que o Cliente tenha solicitado e possua o privilégio de acesso para utilizá-la. Ela será válida por um período  de tempo que será definido no momento da assinatura do contrato de prestação de serviço, entre o órgão conveniado e a PCDF.
+
+Na quinta mensagem, o Cliente, extrai o token cifrado com sua chave privada e verifica a autenticidade e integridade da requisição por meio da verificação da assinatura digital do servidor de Autenticação e Autorização. Em seguida verifica o \emph{timestamp}, cujo objetivo e o de verificar se a mensagem foi enviada em um período de tempo superior ao pré-estabelecido no contrato.  Se houver qualquer problema, o processo de autenticação atual é descartado e inicia-se um novo processo de autenticação.
+
+Caso não haja problemas, o Cliente verifica a data e hora de validade da credencial de autorização temporária para saber se ela é válida. Confirmada sua validade, ele envia ao servidor REST, a requisição do serviço que deseja consumir juntamente com a credencial de autenticação e autorização temporária.  O token de autenticação e autorização temporária é assinado com a chave privada do Cliente e cifrado com chave pública do servidor REST, sendo enviado no cabeçalho da requisição.
+
+Finalmente, após receber a requisição, o Servidor REST, extrai o token cifrado com sua chave privada e verifica a autenticidade e integridade da requisição por meio da verificação da assinatura digital do servidor de Autenticação e Autorização. Em seguida verifica o \emph{timestamp}, para saber se a mensagem foi enviada em um período de tempo superior ao pré-estabelecido no contrato. Não havendo problemas, o Servidor REST verifica se a credencial de autenticação e autorização temporária é valida. Para isso, ele realiza uma consulta na tabela de credenciais temporárias, com a finalidade de confirmar se a credencial informada não expirou, se  foi realmente gerada para o Cliente e se ela está associada ao serviço solicitado.
+
+Caso não haja problemas, o Cliente recebe os dados referentes à sua requisição. Havendo qualquer problema ele recebe uma mensagem de erro HTTP (código 401) de usuário não autorizado.
+
+%Já no segundo cenário, que é representado na figura ~\ref{fig:cenario2}. O Cliente, já possui uma credencial de autorização temporária, neste caso ele deverá apresentá-la sempre que desejar consumir algum serviço que ele tenha acesso.
+\subsubsection{Segundo cenário}
+
+Já no segundo cenário, o Cliente, já possui uma credencial de autorização temporária, neste caso ele deverá apresentá-la sempre que desejar consumir algum serviço que ele tenha acesso conforme descrito a seguir:
+
+Neste caso, o Cliente envia um token contendo uma credencial temporária no cabeçalho da requisição do serviço que deseja consumir, ao Servidor de REST.
+
+O servidor de REST, recebe o token de autenticação e autorização, faz a verificação na tabela de credenciais temporárias para saber se o Cliente possui uma credencial válida, em caso positivo ele verifica quais são os privilégios de autorização da credencial, se ele tiver permissão para acessar o serviço, sua requisição é atendida.
+
+Caso a credencial não seja válida ou tenha expirado o Cliente é redirecionado para o servidor de Autenticação e Autorização para que possa se autenticar novamente e obter uma nova credencial conforme descrito no primeiro cenário. %Esse processo é descrito no fluxo alternativo da figura ~\ref{fig:cenario2}.
+
+%\begin{figure}[!htb]
+%    \centering
+%     \includegraphics[width=0.8\textwidth]{cenario2_autenticacao.png}
+%     \caption{Fluxo do protocolo de autenticação/autorização proposto, 2º cenário.}
+%     \label{fig:cenario2}
+%\end{figure}
+
+
+\section{Formalização do protocolo}
+
+O emprego de avaliações mais formais na área de criptografia não é recente. Grande parte dos trabalhos nesta área foram desenvolvidos na década de 90~\cite{Meadows95}. O emprego destes métodos possibilita uma análise completa do protocolo criptográfico e sua função principal é especificar se os objetivos propostos pelos autores são alcançados.
+
+Neste trabalho, o protocolo proposto foi descrito formalmente, utilizando a lógica BAN, com o intuito de favorecer a comunicação e o entendimento utilizando uma linguagem mais precisa. Além disso, a propriedade de terminação com a geração da credencial temporária de autenticação e autorização foi verificada com um programa escrito em Prolog (ver Apêndice em anexo).
+
+
+\section{Lógica BAN}
+
+A lógica BAN foi desenvolvida por Burrows, Abadi e Needham em 1989, ela e uma das mais populares para a análise de crenças e de conhecimento entre os participantes dos protocolos criptográficos. É a primeira lógica a analisar formalmente os protocolos criptográficos,principalmente os de autenticação e distribuição de chaves~\cite{Burrows1990}.
+
+\subsection{Notação básica}
+Na lógica BAN, existem vários tipos distintos de objetos tais como entidades ou partes que se comunicam, chaves de criptografia e fórmulas lógicas. Uma fórmula lógica é uma versão idealizada da mensagem original, e às vezes ela pode ser referenciada como uma declaração lógica. Normalmente, os símbolos A, B e S denotam entidades ou participantes; Kab, Kas e Kbs denotam chaves compartilhadas; Ka, Kb e Ks denotam chaves públicas e $Ka^{-1}, Kb^{-1} e Ks^{-1}$ denotam as chaves privadas dos participantes. Já Na, Nb e Ns são os identificadores gerados pelos participantes. As construções mais frequentemente utilizadas são apresentadas na Tabela~\ref{tab:notacaobasicaBAN}:
+
+ \newcommand{\RHQuery}{\textbf{[???]}}
+\newcommand{\RHRemark}[1]{\textbf{[#1]}}
+\newcommand{\Believess}[2]{{#1}\mathrel{\textbf{\mid\equiv}}{#2}}
+\newcommand{\Seess}[2]{{#1}\mathrel{\textbf{\triangleleft}}{#2}}
+\newcommand{\Saids}[2]{{#1}\mathrel{\textbf{\mid\sim}}{#2}}
+
+\newcommand{\Believes}[2]{{#1}\mathrel{\textbf{acredita}}{#2}}
+\newcommand{\Sees}[2]{{#1}\mathrel{\textbf{recebeu}}{#2}}
+\newcommand{\Said}[2]{{#1}\mathrel{\textbf{disse}}{#2}}
+\newcommand{\Controls}[2]{{#1}\mathrel{\textbf{controla}}{#2}}
+\newcommand{\Fresh}[1]{{#1}\,\textbf{novo}}
+\newcommand{\Share}[3]{{#1}\stackrel{#2}{\longleftrightarrow}{#3}}
+\newcommand{\ShareSecret}[3]{{#1}\stackrel{#2}{\rightleftharpoons}{#3}}
+\newcommand{\PubKey}[2]{{}\stackrel{#1}{\mapsto}{#2}}
+\newcommand{\Secret}[3]{{#1}\stackrel{#2}{\leftrightharpoons}{#3}}
+\newcommand{\Encrypt}[2]{\{\,{#1}\,\}_{#2}}
+\newcommand{\EncryptFrom}[3]{\{\,{#1}\,\}_{#2}^{#3}}
+\newcommand{\Attach}[2]{\langle {#1}\rangle_{#2}}
+
+%  \begin{tabular}{cp{16cm}}
+\begin{table}[h]
+    \begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{\emph{Expressão }}         & \textbf{\emph{Leitura/Significado}}                                                                               \\ \hline
+    ${P}\mid\equiv{X}$               & $\Believes{P}{X}$: $P$ crê em $X$, ou $P$ acredita que $X$ é verdadeiro \\ \hline
+    ${P}\triangleleft{X}$            & $\Sees{P}{X}$:Alguém enviou uma mensagem para $P$ contendo $X$ ou de outra forma $P$ recebeu $X$   \\ \hline
+    ${P}\mid\sim{X}$                 & $\Said{P}{X}$:$P$ disse uma vez $X$. A entidade $P$ em algum momento enviou uma mensagem incluíndo a declaração $X$.\\ \hline
+    ${P}\Rightarrow {X}$                 & $\Controls{P}{X}$:$P$ tem jurisdição sobre $X$. Onde $P$ é uma autoridade sobre $X$ é deve ser confiável \\ \hline
+    \#(X)                            & novo$(X)$: a fórmula novo $X$, ela não foi usada numa mensagem anterior à execução protocolo atual.  \\ \hline
+    $\Share{P}{k}{Q}$                & (lê-se ``k é uma chave satisfatória para $P$ e $Q$''). A chave $k$ nunca será descoberta por qualquer participante, exceto por P, Q ou por alguém em quem eles confiam \\ \hline
+    $\{{X}\}_K$                  & fórmula $X$ foi cifrada com a chave $K$. As mensagens cifradas somente são legíveis e verificáveis pelo possuidor da chave \\ \hline
+    $\ShareSecret{P}{k}{Q}$         & ${k}$ é o segredo compartilhado entre ${P}$ e ${Q}$ e possivelmente também com as entidades de confiança deles. Somente ${P}$ e ${Q}$ podem usar k para provar suas identidades \\ \hline
+    $\PubKey{K}{P}$:               & ${k}$ é a chave pública de ${P}$  \\ \hline
+    \end{tabular}
+    \caption {Notação básica Lógica BAN, adaptação de ~\cite{Burrows1990}.}
+\label{tab:notacaobasicaBAN}
+\end{table}
+
+
+
+\subsection{Postulados lógicos}
+
+No estudo de protocolos de segurança é importante diferenciar o tempo das demonstrações ou eventos.  Haja vista que se isso não for observado, problemas, como a não detecção  do  reenvio de mensagens,  poderá acontecer.  Segundo~\cite{Burrows1990}, a lógica BAN trata dessa distinção dividindo-a em duas épocas: presente, que é o tempo durante a execução do protocolo, e o passado,  que refere-se às mensagens enviadas antes da execução do protocolo, o que faz com que elas sejam rejeitadas, uma vez que não são confiáveis .  Essa divisão de tempo é suficiente para facilitar o entendimento de como a lógica pode ser manipulada.
+Para realizar a análise dos protocolos de segurança a lógica BAN possui uma serie de postulados lógicos, regras~\cite{Burrows1990}. Alguns deles  são descritos  a seguir:
+
+\begin{enumerate}[ A )]
+
+ \item Regra de significado da mensagem. Esta regra faz parte da interpretação das mensagens
+    A1.1. Para as chaves secretas compartilhadas:
+    \begin{displaymath}
+        \infer
+        {{P}\mid\equiv{{Q}\mid\sim{X}}}
+        {{P}\mid\equiv{\Share{P}{k}{Q,}}& {P}\triangleleft{\Encrypt{X}{k}}}
+        %{\Believes{P}{\Said{Q}{X}}}
+        %{\Believes{P}{\Share{P}{k}{Q,}}&\Sees{P}{\Encrypt{X}{k}}}
+    \end{displaymath}
+
+    Se $P$ acredita que $k$ é uma chave satisfatória para se comunicar com $Q$ e se $P$ recebeu a mensagem $X$ cifrada com a chave $k$, então $P$ acredita que $Q$ uma vez disse $X$
+
+    A1.2. De forma similar, aplicada a para as chaves públicas:
+
+    \begin{displaymath}
+        \infer
+        {{P}\mid\equiv{{Q}\mid\sim{X}}}
+        {{P}\mid\equiv{\PubKey{K}{Q}}& {P}\triangleleft{\Encrypt{X}{k ^{-1}}}}
+                %{\Believes{P}{\Said{Q}{X}}}
+                %{\Believes{P}{\Share{P}{k}{Q,}}&\Sees{P}{\Encrypt{X}{k}}}
+    \end{displaymath}
+
+
+
+\item Regra de verificação do identificador. Essa regra verifica se a mensagem é recente, se foi enviada durante a execução atual do protocolo e conseqüentemente, se o emissor acredita nela.
+
+  \begin{displaymath}
+    \infer
+    {{P}\mid\equiv{{Q}\mid\equiv{X}}}
+    {{P}\mid\equiv{\#(X),}& {P}\mid\equiv{{Q}\mid\sim{X}}}
+    %{\Believes{P}{\Believes{Q}{X}}}
+    %{\Believes{P} novo$(X),$ &\Believes{P}{\Said{Q}{X}}}
+  \end{displaymath}
+
+   Se $P$ acredita que $X$ é novo e $P$ acredita que em algum momento $Q$ disse $X$,então $P$ também acredita que $Q$ acredita em X.
+
+\item Regra da jurisdição. Esta regra representa a confiança e a autoridade de uma entidade sobre as declarações.
+\begin{displaymath}
+    \infer
+    {{P}\mid\equiv{X}}
+    {{P}\mid\equiv{{Q}\Rightarrow {X},}& {P}\mid\equiv{{Q}\mid\equiv{X}}}
+   % {\Believes{P}{X}}
+   % {\Believes{P}{\Controls{Q}{X},} &\Believes{P}{\Believes{Q}{X}}}
+  \end{displaymath}
+
+   Se $P$  acredita que $Q$ tem jurisdição sobre a declaração $X$ e $P$ acredita que $Q$ acredita em $X$, então $P$ confia na declaração $X$.
+
+\end{enumerate}
+
+Estes são alguns dos principais postulados utilizados na construção da análise formal de protocolos criptográficos. A utilização destas regras juntamente com as notações descritas na sessão anterior possibilita que a crença dos participantes de um protocolo possa ser declarada.
+
+\section{Análise formal do protocolo proposto}
+Nesta sessão será realizado a análise formal do protocolo de autenticação e autorização proposto. Para isso será utilizada a lógica BAN.
+
+Na lógica BAN a análise de um protocolo é dividido em quatro etapas: A idealização do protocolo, que é originada a partir do protocolo original. As Hipóteses, que são a suposições a respeito do estado inicial, nessa etapa são definidas as fórmulas lógicas estão ligados às declarações do protocolo, as declarações que são afirmações sobre o estado do sistema. As regras de inferência ou postulados lógicos que são aplicadas para os pressupostos e as afirmações a fim de descobrir as crenças detidas pelas partes no protocolo. %Normalmente, as premissas incluem as declarações sobre bens essenciais e partilha, geração de uso único e de confiança entre os diretores. nalanisisisisii %%http:www.tml.tkk.fi/Opinnot/Tik-110.501/1995/ban.html
+
+\subsection{Idealização do protocolo}
+\newcommand{\HT}[3]{\{\,{#1}\,\}\,{#2}\,\{\,{#3}\,\}}
+\newcommand{\Msg}[3]{{#1}\longrightarrow{#2}:\,{#3}}
+
+Para especificar o protocolo formalmente foram utilizadas algumas notações para representar os elementos participantes. Logo, os símbolos ${A}$, ${B}$ e ${C}$ são utilizadas representar respectivamente as entidades, elementos participantes, que trocam mensagens: Cliente, Servidor REST e Servidor de Autenticação e Autorização. As chaves públicas das entidades ${A}$, ${B}$ e ${C}$ são representadas respectivamente por ${Ka}$, ${Kb}$ e  ${Kc}$. Já as chaves privadas, seguindo o mesmo pressuposto, são representadas pelos símbolos ${{Ka} ^{-1}}$, ${{Kb} ^{-1}}$ e ${{Kc} ^{-1}}$. Os elementos ${Cred_A}$ e ${Cod_{Srv_A}}$ representam respectivamente a credencial utilizada pela entidade ${A}$ e o código que identifica o serviço que a entidade ${A}$ está requerendo.
+
+O desafio gerado pela entidade ${C}$ e enviado a entidade ${A}$ é representado pela fórmula ${N_{CA}}$ que corresponde aos elementos: Código do Desafio gerado pela entidade ${C}$ e Código da Credencial aleatória da entidade ${A}$.  A resposta do desafio gerada pela entidade ${C}$ à entidade ${A}$ é representado  pelo símbolo ${Resp_{AC}}$ que corresponde aos elementos: Código do Desafio gerado pela entidade ${C}$ e Credencial Solicitada da entidade ${A}$. ${Ts_A}$ e ${Ts_C}$ são respectivamente os Timestamps emitidos pelas entidades ${A}$ e ${C}$.
+
+O símbolo ${Msg_{AC}}$ representa o resumo da mensagem enviada pela entidade ${A}$ a entidade ${C}$,  ${Msg_{CA}}$ representa o resumo da mensagem enviada pela entidade ${C}$ a entidade ${A}$ e ${Msg_{AB}}$ representa o resumo da mensagem enviada pela entidade ${A}$ a entidade ${B}$. O elemento ${H}$ representa o Hashing aplicado a uma mensagem utilizando o algoritmo SHA3.
+
+E finalmente, o símbolo ${Exp_A}$ representa a data/hora  de expiração da Credencial Temporária de autorização e autenticação, ${C_{Aut}}$ corresponde à credencial temporária de autorização e autenticação gerada para a entidade A e ${Req_A}$, que refere-se à requisição de serviço de A ( Get, Put, Post ou Delete).
+
+Para especificar formalmente um protocolo de segurança utilizando a lógica BAN, é necessário primeiro idealizar o protocolo, objeto da análise, e a partir da aplicação dos postulados e das suposições iniciais verificar se ele atinge ou não o seu objetivo. A idealização do protocolo proposto e descrito a seguir, a figura ~\ref{fig:protocoidealizado} representa o fluxo de troca de mensagens executado pelo protocolo. Todas as mensagens são consideradas na análise, pois utilizam criptografia assimétrica desde a primeira troca de mensagens.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fluxo_autenticacao_BAN.png}
+    \caption{Diagrama de idealização do protocolo de autenticação/autorização proposto}
+    \label{fig:protocoidealizado}
+\end{figure}
+
+\begin{enumerate}
+  \item Mensagem 1: $\Msg{A}{C}{\Encrypt{Ts_A,Cred_A,H{\Encrypt{Msg_{AC}}{Ka ^{-1}}}}{Kc}}$.
+  \item Mensagem 2: $\Msg{C}{A}{\Encrypt{Ts_C,{N_{CA}},H{\Encrypt{Msg_{CA}}{Kc ^{-1}}}}{Ka}}$.
+  \item Mensagem 3: $\Msg{A}{C}{\Encrypt{Ts_A,{Resp_{AC}},Cod_{Srv_A},H{\Encrypt{Msg_{AC}}{Ka ^{-1}}}}{Kc}}$.
+  \item Mensagem 4: $\Msg{C}{A}{\Encrypt{Ts_C,Exp_A,\#(\ShareSecret{A}{{C_{Aut}}}{C}),H{\Encrypt{Msg_{CA}}{Kc ^{-1}}}}{Ka}}$.
+  \item Mensagem 5: $\Msg{A}{B}{\Encrypt{Ts_A,(\ShareSecret{A}{{C_{Aut}}}{C}),H{\Encrypt{Msg_{AB}}{Ka ^{-1}}}}{Ka}},{Req_A}$.
+\end{enumerate}
+\subsection{Suposições}\label{sec:Suposicoes}
+O objetivo do protocolo é fazer que a entidade ${A}$ seja autenticada pela entidade ${C}$ e obtenha uma credencial de autenticação e autorização temporária referente a uma requisição de um serviço que a entidade ${A}$ deseja consumir. De forma que a credencial de autenticação e autorização temporária  possa ser utilizada pela entidade ${A}$ no momento da requisição do serviço a entidade ${B}$ e obtenha o que deseja. Para isso, algumas suposições iniciais são estabelecidas e juntamente com a aplicação  dos postulados da lógica BAN, busca-se concluir que o protocolo alcance o objetivo proposto. Todas as suposições, apresentadas na Tabela~~\ref{tab:suposicoesBAN} a seguir são baseadas em um canal seguro de comunicação SSL/TSL, onde tanto o receptor  quanto o emissor do serviço são conhecidos e autenticados usando-se certificados digitais X.509.
+
+\begin{table}[h]
+\begin{tabular}{cllcl}
+\textbf{Suposição} & \textbf{Descrição} &  & \textbf{Suposição} & \textbf{Descrição} \\
+\textbf{1 -}       & $ A \mid\equiv$  ${\PubKey{Kc}{C}}$                 &  & \textbf{9 -}       & $ B \mid\equiv$ $ C \Rightarrow $ $\#(\ShareSecret{A}{{C_{Aut}}}{C})$ \\
+\textbf{2 -}       & $ B \mid\equiv$  ${\PubKey{Ka}{A}}$                 &  & \textbf{10 -}      & $ A \mid\equiv$ $ C \mid\equiv $ $\#(\ShareSecret{A}{{C_{Aut}}}{C})$ \\
+\textbf{3 -}       & $ C \mid\equiv$  ${\PubKey{Ka}{A}}$                 &  & \textbf{11 -}      & $ B \mid\equiv$ $ C \mid\equiv $ $\#(\ShareSecret{A}{{C_{Aut}}}{C})$ \\
+
+\textbf{4 -}       & $ A \mid\equiv$  $\#{Ts_C}$                         &  & \textbf{12 -}      & $ A \mid\equiv$  $\#(\ShareSecret{A}{{C_{Aut}}}{C})$  \\
+
+\textbf{5 -}       & $ B \mid\equiv$  $\#{Ts_A}$                         &  & \textbf{13 - }      & $ B \mid\equiv$  $\#(\ShareSecret{A}{{C_{Aut}}}{C})$  \\
+
+\textbf{6 -}       & $ C \mid\equiv$  $\#{Ts_A}$                         &  & \textbf{ }                    &                                      \\
+\textbf{7 -}       & $ A \mid\equiv$  ${Exp_A}$                          &  & \textbf{ }                   &
+\\
+\textbf{8 -}       & $ A \mid\equiv$  $ C \Rightarrow $ $\#(\ShareSecret{A}{{C_{Aut}}}{C})$   &   & \textbf{ }     &                               \\
+\end{tabular}
+\caption {Suposições aplicadas ao protocolo proposto.}
+\label{tab:suposicoesBAN}
+\end{table}
+
+
+Dessa forma, temos que as suposições 1,2 e 3 garantem que as entidades participantes ${A}$, ${B}$ e ${C}$ confiam  nas chaves públicas das entidades que farão as trocas de mensagem. A suposições 4, 5 e 6 são \emph{timestamps}, o que denota que as entidades ${A}$, ${B}$ e ${C}$ devem estar sincronizadas. Sendo assim, a entidade ${A}$ acredita que o \emph{timestamp} ${Ts_C}$ é novo e foi gerado recentemente. Da mesma forma que as entidades ${B}$ e ${C}$ acreditam  que o \emph{timestamp} ${Ts_A}$ também é novo e foi gerado recentemente. A suposição 7 é utilizada pela entidade ${A}$ para garantir que a credencial de autenticação e autorização gerado pela entidade ${C}$ não expirou e que pode ser utilizada. As suposições 8 e 9 denotam que as entidades ${A}$, ${B}$ acreditam que entidade ${C}$ tem jurisdição  sobre a credencial de autenticação e autorização gerada. Portanto, as suposições 10 e 11 garantem que as entidades ${A}$, ${B}$ acreditam que a credencial de autenticação e autorização gerada é nova é foi realmente gerada pela entidade ${C}$. Finalmente, as suposições 12 e 13 garantem que as entidades ${A}$, ${B}$ acreditam na nova credencial de autenticação e autorização temporária, ${C_{Aut}}$.
+
+\subsection{Provas}
+
+Como o objetivo final do protocolo é autenticar entidade ${A}$, de forma que ela obtenha uma credencial de autenticação e autorização temporária, referente a uma requisição de serviço desejado. Será realizado uma análise de cada mensagem  do protocolo idealizado. Para isso, serão aplicados os postulados lógicos e suposições, a fim de provar que o protocolo consegue atingir o objetivo proposto.
+
+Na primeira mensagem, a entidade ${A}$ envia sua credencial, um \emph{timestamp} e o código do serviço que ele está querendo consumir ao servidor de autenticação e autorização, representado pela entidade ${C}$. A mensagem enviada é assinada com a chave privada da participante ${A}$  e cifrada com a chave pública do participante ${C}$. Esse processo e descrito a seguir:
+
+\textbf{Mensagem 1}: $\Msg{A}{C}{\Encrypt{Ts_A,Cred_A,H{\Encrypt{Msg_{AC}}{Ka ^{-1}}}}{Kc}}$.
+
+$C\triangleleft$ ${\Encrypt{Ts_A,Cred_A,Cod_{Srv_A},H{\Encrypt{Msg_{AC}}{Ka ^{-1}}}}{Kc}}$
+
+$C\mid\equiv A \mid\sim $  $H\{Msg_{AC}\}$
+
+$C\mid\equiv A \mid\sim$ ${\#Ts_A}$
+
+$C\mid\equiv$ ${Cred_A,Cod_{Srv_A}}$
+
+Sendo assim, ${\textbf{C}}$ recebe a fórmula ${\Encrypt{Ts_A,Cred_A,Cod_{Srv_A},H{\Encrypt{Msg_{AC}}{Ka ^{-1}}}}{Kc}}$, e usando sua chave privada, decifra a fórmula recebida. Após decifrar a fórmula, e aplicando a regra do significado da mensagem na suposição 3 usando a função $H \{Msg_{AC}\}$ confirma a autenticidade e integridade da mensagem. Por fim, aplica a regra de verificação do identificador na suposição 6 usando a fórmula ${Ts_A}$ para obter a credencial da entidade ${A}$ :  ${Cred_A}$.
+
+Resultado:
+
+${C}$ obtém  a credencial da entidade $A$: ${Cred_A}$
+
+Na segunda mensagem, após receber e validar os dados enviados por $A$, a entidade ${C}$ gera um desafio de autenticação, ${N_{CA}}$. Tal desafio consiste em fazer uma busca aleatória à tabela de credenciais e selecionar um código de credencial que esteja associado a entidade $A$. Em seguida grava-se o desafio, a data e hora de geração do desafio e a resposta esperada em uma base de dados. Na sequência, uma mensagem, contendo o desafio e um \emph{timestamp}, é enviada a entidade $A$, assinada com a chave privada da entidade ${C}$ e criptografada com a chave pública da entidade ${A}$. Logo temos:
+
+\textbf{Mensagem 2}: $\Msg{C}{A}{\Encrypt{Ts_C,{N_{CA}},H{\Encrypt{Msg_{CA}}{Kc ^{-1}}}}{Ka}}$.
+
+$\textbf{A}\triangleleft$ ${\Encrypt{Ts_C,{N_{CA}},H{\Encrypt{Msg_{CA}}{Kc ^{-1}}}}{Ka}}$
+
+$\textbf{A}\mid\equiv \textbf{C} \mid\sim $  $H \{Msg_{CA}\}$
+
+$\textbf{A}\mid\equiv \textbf{C} \mid\sim$ ${Ts_C}$
+
+$\textbf{A}\mid\equiv$ ${N_{CA}}$
+
+A entidade ${\textbf{A}}$ recebe a fórmula ${\Encrypt{Ts_C,{N_{CA}},H{\Encrypt{Msg_{CA}}{Kc ^{-1}}}}{Ka}}$ e a decifra usando sua chave privada, em seguida aplicando a regra do significado da mensagem na suposição 1 usando a função $H \{Msg_{CA}\}$ confirma a autenticidade e integridade da mensagem. Por fim, aplica a regra de verificação do identificador na suposição 4 e usando a fórmula ${Ts_C}$ para obter o desafio,${N_{CA}}$, gerado pela entidade ${C}$.
+
+Resultado:
+
+${A}$ obtém  o desafio de autenticação gerado pela entidade ${C}$: ${N_{CA}}$
+
+Na terceira mensagem, a entidade ${A}$, após receber e validar o desafio gerado pela entidade ${C}$, envia a resposta ${Resp_{AC}}$, conforme solicitado. Essa resposta consiste em informar o código do desafio gerado pela entidade ${C}$ e a credencial associada ao código de credencial  solicitada pela entidade ${C}$. Além disso, a entidade ${A}$ deve informar o código do serviço deseja consumir. Sendo assim, temos:
+
+\textbf{Mensagem 3}: $\Msg{A}{C}{\Encrypt{Ts_A,{Resp_{AC}},Cod_{Srv_A},H{\Encrypt{Msg_{AC}}{Ka ^{-1}}}}{Kc}}$.
+
+$C\triangleleft$ ${\Encrypt{Ts_A,{Resp_{AC}},H{\Encrypt{Msg_{AC}}{Ka ^{-1}}}}{Kc}}$
+
+$C\mid\equiv A \mid\sim $  $H \{Msg_{AC}\}$
+
+$C\mid\equiv A \mid\sim$ ${\#Ts_A}$
+
+$C\mid\equiv$ ${Resp_{AC}}$
+
+${\textbf{C}}$ recebe a fórmula ${\Encrypt{Ts_A,{Resp_{AC}},H{\Encrypt{Msg_{AC}}{Ka ^{-1}}}}{Kc}}$, e a decifra usando sua chave privada, em seguida aplicando a regra do significado da mensagem na suposição 3 usando a função $H \{Msg_{AC}\}$ confirma a autenticidade e integridade da mensagem. Por fim, aplica a regra de verificação do identificador na suposição 6 usando a fórmula ${Ts_A}$ para obter os dados da resposta do desafio ${Resp_{AC}}$, e assim, validar a resposta enviada e autenticar a entidade ${A}$. Dando início ao processo de autorização.
+
+Resultado:
+
+${C}$ autentica a entidade ${A}$.
+
+Na mensagem 4, após autenticar a entidade ${A}$, a entidade ${C}$ procede com o processo de autorização, que consiste em verificar qual serviço a entidade está querendo consumir, para isso verifica o código de serviço solicitado pela entidade ${A}$, $Cod_{Srv_A}$, que foi informado no envio da mensagem 3. Se a entidade ${A}$ possuir privilégios necessários para consumir o serviço requisitado, a entidade ${C}$ gera uma nova credencial de autorização temporária para o serviço solicitado. Em seguida, a entidade ${C}$ grava a credencial ${(\ShareSecret{A}{{C_{Aut}}}{C})}$, o código do serviço que a entidade ${A}$ está requerendo, a data e hora de criação, a data de expiração e o código do contrato da entidade ${A}$. Terminado esse procedimento, a entidade ${C}$, envia, uma mensagem contendo a credencial ${(\ShareSecret{A}{{C_{Aut}}}{C})}$, a data e hora de expiração da credencial,${Exp_A}$ e um \emph{timestamp} a entidade ${A}$. Esta mensagem e assinada com a privada da entidade ${C}$ e cifrada com a chave pública da entidade ${A}$. Logo temos:
+
+\textbf{Mensagem 4}: $\Msg{C}{A}{\Encrypt{Ts_C,Exp_A,\#(\ShareSecret{A}{{C_{Aut}}}{C}),H{\Encrypt{Msg_{CA}}{Kc ^{-1}}}}{Ka}}$.
+
+$\textbf{A}\triangleleft$ $\Msg{C}{A}{\Encrypt{Ts_C,Exp_A,\#(\ShareSecret{A}{{C_{Aut}}}{C}),H{\Encrypt{Msg_{CA}}{Kc ^{-1}}}}{Ka}}$.
+
+$\textbf{A}\mid\equiv \textbf{C} \mid\sim $  $H \{Msg_{CA}\}$
+
+$\textbf{A}\mid\equiv \textbf{C} \mid\sim$ ${Ts_C}$
+
+$\textbf{A}\mid\equiv \textbf{C} \mid\sim$ ${Exp_A}$
+
+$\textbf{A}\mid\equiv \textbf{C} \Rightarrow $  ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$
+
+$\textbf{A}\mid\equiv \textbf{C} \mid\equiv $  ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$
+
+$\textbf{A}\mid\equiv$ ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$
+
+A entidade ${A}$ recebe a fórmula ${\Encrypt{Ts_C,Exp_A,\#(\ShareSecret{A}{{C_{Aut}}}{C}),H{\Encrypt{Msg_{CA}}{Kc ^{-1}}}}{Ka}}$, e a decifra usando sua chave privada, em seguida aplicando a regra do significado da mensagem na suposição 1 usando a função $H \{Msg_{CA}\}$ confirma a autenticidade e integridade da mensagem. Ela aplica a regra de verificação do identificador nas suposições 4 e 7 usando as fórmulas ${Ts_C}$  e ${Exp_A}$. E, finalmente, aplicando a regra da jurisdição, nas suposições 7 e 9, obtém a credencial de autorização temporária ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$.
+
+Resultado:
+
+${\textbf{A}}$ obtém a credencial de autorização temporária: ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$.
+
+Finalmente, na quinta mensagem, a entidade ${A}$ após receber a e validar a mensagem enviada pela entidade ${C}$, obtendo assim a credencial de autenticação e autorização temporária, ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$, envia uma mensagem a entidade ${B}$  contendo a requisição do serviço que deseja consumir juntamente com a credencial de autorização temporária. Esta mensagem e assinada com a privada da entidade ${A}$ e cifrada com a chave pública da entidade ${B}$. Logo temos:
+
+\textbf{Mensagem 5}: $\Msg{A}{B}{\Encrypt{Ts_A,(\ShareSecret{A}{{C_{Aut}}}{C}),H{\Encrypt{Msg_{AB}}{Ka ^{-1}}}}{Kb}},{Req_A}$.
+
+$\textbf{B}\triangleleft$  ${\Encrypt{Ts_A,(\ShareSecret{A}{{C_{Aut}}}{C}),H{\Encrypt{Msg_{AB}}{Ka ^{-1}}}}{Kb}},{Req_A}$
+
+$\textbf{B}\mid\equiv \textbf{A} \mid\sim $  $H\{Msg_{AB}\}$
+
+$\textbf{B}\mid\equiv \textbf{A} \mid\sim$ ${Ts_A}$
+
+$\textbf{B}\mid\equiv \textbf{A} \Rightarrow $  ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$
+
+$\textbf{B}\mid\equiv \textbf{A} \mid\equiv $  ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$
+
+$\textbf{B}\mid\equiv$ ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$
+
+A entidade ${\textbf{B}}$ recebe a fórmula ${\Encrypt{Ts_A,(\ShareSecret{A}{{C_{Aut}}}{C}),H{\Encrypt{Msg_{AB}}{Ka ^{-1}}}}{Kb}},{Req_A}$, e a decifra, usando sua chave privada. Em seguida aplicando a regra do significado da mensagem na suposição 2 usando a função $H\{Msg_{AB}\}$ confirma a autenticidade e integridade da mensagem. Ela aplica a regra de verificação do identificador na suposições 5 usando as fórmulas ${Ts_A}$. E, finalmente, aplicando a regra da jurisdição, nas suposições 8 e 10, obtém a credencial de autorização temporária ${\#(\ShareSecret{A}{{C_{Aut}}}{C})}$ e autoriza a entidade \textbf{A} a consumir a requisição ${Req_A}$.
+
+Conclusão :
+
+${B}$ autoriza ${A}$ a partir da nova credencial ${(\ShareSecret{A}{{C_{Aut}}}{C})}$ a consumir a requisição ${Req_A}$
+
+\subsection{Análise}
+
+A análise demonstra que o protocolo de autenticação e autorização proposto alcança os objetivos propostos na Seção~\ref{sec:Suposicoes}. Que é a autenticação da entidade ${A}$ e a emissão da credencial de autenticação e autorização temporária. Isso permite que a entidade ${A}$ consuma o serviço requerido. É importante frisar que a lógica BAN foi utilizada para demonstrar a execução do protocolo e é que a utilização da lógica é apenas um dos passos necessários para verificar se existem possíveis falhas no protocolo.
+
+Para verificar a segurança do protocolo é necessário que seja empregado um método de criptoanálise sobre a criptografia utilizada e assim verificar quais são vulnerabilidades que o protocolo ou os algoritmos criptográficos empregados estão sujeitos.
+
+\chapter{Avaliação e análise de desempenho}
+
+Após a definição da estrutura da arquitetura de referencia SOA, conforme citado no capitulo anterior, que utiliza web services REST, e onde foi proposto um protocolo de autenticação e autorização, que tem por finalidade prover segurança. Se faz necessário realizar experimentos que possibilitem a mensuração do impacto desta arquitetura na infraestrutura da PCDF. Desta forma, este capítulo apresenta a avaliação de desempenho da referida arquitetura.
+
+\section{\emph{Testes de desempenho}}
+Testes de desempenho são de?nidos como uma investigação técnica realizada para determinar a capacidade de resposta, produtividade, con?abilidade e ou escalabilidade de um sistema sob uma determinada carga de trabalho~\cite{Meier2007}.
+A análise de desempenho possibilita identificar problemas que geralmente são encontrados em sistema computacionais. Tais problemas podem ser agrupados em tópicos de: comparação de sistemas, identificação de gargalos, caracterização de cargas de trabalho, configuração de sistemas e a previsão de desempenho (Braghetto, 2011). Sendo assim, a análise de desempenho da arquitetura propostas está dividida em dois estudos de caso, conforme descrito a seguir.
+
+\section{\emph{Estudo de caso 1}}
+
+Nesta seção será apresentada a metodologia empregada para a realização do teste de desempenho bem como os resultados e análise obtidos com sua aplicação.
+
+Para este estudo de caso inicial foram utilizados dois web services, o primeiro é traz informações sobre ocorrências policiais, tais como quais tipos de ocorrências criminais estão registras, dados gerais da vítima, autor dentre outros. Já segundo, apresenta informações sobre procedimentos policiais, como por exemplo, informações sobre mandado de prisões, medidas cautelares, pedidos de prisão dentre outros. Ambos são importantes e amplamente utilizados pela PCDF e por órgão parceiros. Eles foram construídos utilizando a tecnologia SOAP, desenvolvidos com a ferramenta Visual Studio 2005.
+
+Para a realização da análise foram desenvolvidos outros dois web services, que implementam os mesmos serviços, só que utilizando a tecnologia REST. Com isso, busca-se realizar uma comparação de desempenho entre as duas tecnologias. Para isso, veri?car-se-á o tempo médio de resposta.
+\subsection{\emph{Configuração do Ambiente de Teste}}
+
+Ambiente de teste foi o da Divisão de Tecnologia da Policia Civil do Distrito Federal, uma vez que se busca resultados mais próximos da realidade hoje vivenciado pela PCDF.
+
+Para a sua realização dos testes foram utilizados configurações distintas de computadores, conforme tabela abaixo.
+%\begin{table}[!htpb]
+%
+%  \begin{tabular}{cp{13cm}}
+\begin{table}[h]
+    \begin{tabular}{|l|c|p{6cm}|}
+    \hline
+    \textbf{\emph{Máquina }}                   & \textbf{\emph{Quantidade}} & \textbf{\emph{Configuração}}                                                                               \\ \hline
+    Provedor de Serviço        & 1          & Servidor Intel com 4 processadores Intel Xeon E7  4870 2,4 GHz, 8 Gb de RAM e 120 Gb de HD \\ \hline
+    Provedor de Banco de Dados & 1          & Servidor Intel com 4 processadores Intel Xeon E7  4870 2,4 GHz, 8 Gb de RAM e 120 Gb de HD \\ \hline
+    Cliente                    & 100        & Desktop HP Intel Core I5-2500 3,3 GHz, 4 Gb RAM, 500 HD                                    \\ \hline
+    \end{tabular}
+    \caption {Ambiente de configuração estudo de caso 1}
+\end{table}
+
+
+É importante frisar que essa estrutura é utilizada atualmente para disponibilização dos serviços. Os serviços estão publicados no provedor de serviço que utilizam o sistema operacional Windows Server 2008 R2 Enterprise Edition x64, utilizando o ISS 7.0 como servidor Web. Já o provedor de Banco de dados é o SQL 2008 r2 que utiliza o mesmo sistema operacional.
+
+\subsection{\emph{Planejamento do experimento}}
+
+Essa é uma fase de extrema importância, uma vez que nela será realizada a identificação dos cenários de uso, a determinação da variabilidade entre os usuários, a identificação e geração dos dados de teste e a especificação das métricas que serão coletadas. Em síntese serão criadas as bases e perfis para cargas de trabalho~\cite{Meier2007}.
+Os termos que mais se destacam e que são utilizados durante a etapa de projeto e experimentos de um teste de desempenho em são: as Variáveis de Resposta, Fatores, Níveis e Interação (Jain, 1991).
+
+As Variáveis de resposta são as medidas de desempenho do sistema e representam o resultado de um experimento. Os Fatores, são termos relacionados com variáveis que influenciam a resposta do sistema. Já os Níveis tem relação direta com os valores que um fator pode assumir. Finalmente a Interação, que aponta a dependência entre os fatores que foram avaliados.
+Dessa forma, com intuito de verificar qual tecnologia tem melhor desempenho, optou-se por realizar um teste automatizado utilizando as ferramentas SOAPUI e ou JMeter.
+Sendo assim, a abordagem utilizada foi a da utilização de dois fatores: tecnologia adotada (REST/SOAP)  e o número de clientes (10, 100)  com dois níveis respectivamente. Para realizar o experimento serão realizados 100 requisições por cada cliente, sendo adotado um índice de 95\% para intervalo de confiança. Já a variável de resposta adotada, será o tempo médio de resposta das requisições.
+
+\section{\emph{Estudo de caso 2}}
+
+Nesta seção será realizado um estudo cuja finalidade será a de verificar o desempenho do web service REST com a aplicação do protocolo de segurança proposto na arquitetura de referência, objeto dessa dissertação, que envolve a aplicação de criptografia  e assinatura e a utilização do Web service REST sem nenhum mecanismo de segurança.
+
+Os web services adotados serão os mesmos definidos no estudo de caso 1, web service de ocorrências criminais, que retornam informações gerais do sistema de ocorrência e o de procedimentos policiais, que retorna informações criminais do sistema PROCED.
+
+\subsection{\emph{Configuração do Ambiente de Teste}}
+
+Ambiente de teste foi o da Divisão de Tecnologia da Policia Civil do Distrito Federal, uma vez que se buscam resultados mais próximos da realidade hoje vivenciados pela PCDF.
+
+Para a sua realização dos testes foram utilizados configurações distintas de computadores, conforme tabela abaixo. Essa configuração é idêntica a utilizada no estudo de caso 1.
+
+%\begin{table}[!htpb]
+%
+%  \begin{tabular}{cp{13cm}}
+\begin{table}[h]
+    \begin{tabular}{|l|c|p{6cm}|}
+    \hline
+    \textbf{\emph{Máquina }}                   & \textbf{\emph{Quantidade}} & \textbf{\emph{Configuração}}                                                                               \\ \hline
+    Provedor de Serviço        & 1          & Servidor Intel com 4 processadores Intel Xeon E7  4870 2,4 GHz, 8 Gb de RAM e 120 Gb de HD \\ \hline
+    Provedor de Banco de Dados & 1          & Servidor Intel com 4 processadores Intel Xeon E7  4870 2,4 GHz, 8 Gb de RAM e 120 Gb de HD \\ \hline
+    Cliente                    & 100        & Desktop HP Intel Core I5-2500 3,3 GHz, 4 Gb RAM, 500 HD                                    \\ \hline
+    \end{tabular}
+    \caption {Ambiente de configuração estudo de caso 2}
+\end{table}
+
+
+Com a finalidade de se automatizar o teste de desempenho e de emular os clientes foi adotada a utilização da ferramenta de teste SOAPUI ou JMeter.
+
+\subsection{\emph{Planejamento do experimento}}
+
+O planejamento adotado neste estudo de caso procurou abordar combinações considerando os fatores e níveis. Sendo assim, a abordagem utilizada foi a da utilização de três fatores: Utilização de Criptografia e Assinatura utilizando algoritmos criptográficos RSA 1.5 para criptografa e RSA SHA-1 para assinatura com dois níveis (SIM e NÃO),  Utilização de Criptografia e Assinatura utilizando algoritmos criptográficos ECDSA (Curvas elípticas) para criptografa e  assinatura com dois níveis (SIM e NÃO) e o número de clientes com três níveis (1,10 e 100). Para realizar o experimento serão realizados 100 requisições por cada cliente, sendo adotado um índice de 95\% para intervalo de confiança. Já a variável de resposta adotada, será o tempo médio de resposta das requisições.
+Ao final do estudo será também realizado mais um teste de hipótese, com nível de significância de 5\%, onde se procura verificar se há um impacto significativo na utilização da arquitetura proposta ou não. Logo, as hipóteses investigadas foram:
+
+$H_{0}$: Não há impacto na arquitetura com utilização dos mecanismos de segurança com o Web service REST.
+
+ $H_{alternativa}$: Há um impacto significativo com utilização dos mecanismos de segurança com o Web service REST.
+
+%\chapter{Cronograma}
+%\label{cap:cronograma}
+%Visando atingir os objetivos propostos apresenta-se um cronograma de atividades a ser realizado no âmbito do Departamento de Ciência da Computação da Universidade de Brasília (UNB). Estas atividades e o cronograma estão ilustrados nas tabelas \ref{tb:atividades} e
+%\ref{tb:cronograma}, respectivamente.
+
+%%%% INICIO ATIVIDADES PREVISTAS %%%%%%%%%%%%%%%%%
+%/
+%\begin{table}[!htpb]
+%
+%  \begin{tabular}{cp{13cm}}
+%    \hline \hline &\\[-0.4cm]
+%    {\bf Atividades} & \multicolumn{1}{c}{\bf Descrição} \\
+%    \hline
+%    &\\[-0.4cm]
+%    \textbf{A} & Revisão bibliográfica. \\[0.2cm]
+%    \textbf{B} & Seleção de técnicas , ferramentas e padrões que permitam aplicar os mecanismos de segurança em SOA;.\\[0.2cm]
+%    \textbf{C} & Implantação do estudo de caso utilizando técnicas selecionados;\\[0.2cm]
+%    \textbf{D} & Produção de um artigo como resultado dos trabalhos realizados; \\[0.2cm]
+%    \textbf{E} & Revisão e redação final da dissertação;\\[0.2cm]
+%    \textbf{F} & Defesa da dissertação;\\[0.2cm]
+%    \hline \hline
+%  \end{tabular}
+%  \caption{Atividades Previstas}\label{tb:atividades}
+%\end{table}
+%
+%%%% FIM ATIVIDADES PREVISTAS %%%%%%%%%%%%%%%%%
+
+%%%%%% INICIO DO CRONOGRAMA %%%%%%%%%%%%%%
+%\begin{table}[!htpb]
+%
+%\centering
+%
+%% definindo o tamanho da fonte para small
+%% outros possÃ­veis tamanhos: footnotesize, scriptsize
+%\begin{normalsize}
+%
+%% redefinindo o espaÃ§amento das colunas
+%\setlength{\tabcolsep}{5pt}
+%
+%% \cline Ã© semelhante ao \hline, porÃ©m Ã© possÃ­vel indicar as colunas que terÃ£o essa a linha horizontal
+%% \multicolumn{10}{c|}{Meses} indica que dez colunas serÃ£o mescladas e a palavra Meses estarÃ¡ centralizada dentro delas.
+%
+%\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\bottomrule \bottomrule
+% & \multicolumn{6}{c|}{Meses}\\ \cline{2-7}
+%  \raisebox{2.0ex}{Atividades} & SET/13 & OUT/13 & NOV/13 & DEZ/13 & JAN/14 & FEV/14 \\ \bottomrule
+%
+%      \centering \textbf{A} & \cellcolor{green}  & \cellcolor{green}  & \cellcolor{green} &  &  &  \\ \hline
+%
+%      \centering \textbf{B} & \cellcolor{magenta}  & \cellcolor{magenta}  & \cellcolor{magenta}   &  &  & \\ \hline
+%
+%      \centering \textbf{C} &  &  & \cellcolor{yellow} & \cellcolor{yellow} &  & \\ \hline
+%
+%      \centering \textbf{D} &  &  & \cellcolor{blue} & \cellcolor{blue} &   &  \\ \hline
+%
+%      \centering \textbf{E} &  &  &  &  \cellcolor{orange} & \cellcolor{orange} &  \\ \hline
+%
+%      \centering \textbf{F} &  &  &  &  &  & \cellcolor{red} \\ \hline
+%     \bottomrule
+%     \bottomrule
+%
+%
+%\end{tabular}
+%\end{normalsize}
+%\caption{Cronograma das atividades previstas}\label{tb:cronograma}
+%\label{t_cronograma}
+%\end{table}
+%%%%%% FIM DO cronograma%%%%%%%%%%%%%%
+
+
+%---------- Referencias ----------
+\clearpage % this is need for add +1 to pageref of bibstart used in 'ficha catalografica'.
+\label{bibstart}
+\bibliography{reflatex} % geracao automatica das referencias a partir do arquivo reflatex.bib
+\label{bibend}
+
+%---------- Apendices (opcionais) ----------
+%\apendice
+%\chapter{Nome do Apêndice}
+
+%Use o comando {\ttfamily \textbackslash apendice} e depois comandos {\ttfamily \textbackslash chapter\{\}}
+%para gerar títulos de apêndices.
+
+
+% ---------- Anexos (opcionais) ----------
+%\anexo
+%\chapter{Nome do Anexo}
+
+%Use o comando {\ttfamily \textbackslash anexo} e depois comandos {\ttfamily \textbackslash chapter\{\}}
+%para gerar t\'itulos de anexos.
+
+
+% --------- Ordenacao Afabetica da Lista de siglas --------
+%\textbf{* Observa\c{c}\~oes:} a ordenacao alfabetica da lista de siglas ainda nao eh realizada de forma automatica, porem
+% eh possivel se de realizar isto manualmente. Duas formas:
+%
+% ** Primeira forma)
+%    A ordenacao eh feita com o auxilio do comando 'sort', disponivel em qualquer
+% sistema Linux e UNIX, e tambem em sistemas Windows se instalado o coreutils (http://gnuwin32.sourceforge.net/packages/coreutils.htm)
+% comandos para compilar e ordenar, supondo que seu arquivo se chame 'dissertacao.tex':
+%
+%      $ latex dissertacao
+%      $ bibtex dissertacao && latex dissertacao
+%      $ latex dissertacao
+%      $ sort dissertacao.lsg > dissertacao.lsg.tmp
+%      $ mv dissertacao.lsg.tmp dissertacao.lsg
+%      $ latex dissertacao
+%      $ dvipdf dissertacao.dvi
+%
+%
+% ** Segunda forma)
+%\textbf{Sugest\~ao:} crie outro arquivo .tex para siglas e utilize o comando \sigla{sigla}{descri\c{c}\~ao}.
+%Para incluir este arquivo no final do arquivo, utilize o comando \input{arquivo.tex}.
+% PDF do seu documento.
+
+
+%-------- Citacoes ---------
+% - Utilize o comando \citeonline{...} para citacoes com o seguinte formato: Autor et al. (2011).
+% Este tipo de formato eh utilizado no comeco do paragrafo. P.ex.: \citeonline{autor2011}
+
+% - Utilize o comando \cite{...} para citacoeses no meio ou final do paragrafo. P.ex.: \cite{autor2011}
+
+
+
+%-------- Titulos com nomes cientificos (titulo, capitulos e secoes) ----------
+% Regra para escrita de nomes cientificos:
+% Os nomes devem ser escritos em italico,
+%a primeira letra do primeiro nome deve ser em maiusculo e o restante em minusculo (inclusive a primeira letra do segundo nome).
+% VEJA os exemplos abaixo.
+%
+% 1) voce nao quer que a secao fique com uppercase (caixa alta) automaticamente:
+%\section[nouppercase]{\MakeUppercase{Estudo dos efeitos da radiacao ultravioleta C e TFD em celulas de} {\textit{Saccharomyces boulardii}}
+%
+% 2) por padrao os cases (maiusculas/minuscula) sao ajustados automaticamente, voce nao precisa usar makeuppercase e afins.
+% \section{Introducao} % a introducao sera posta no texto como INTRODUCAO, automaticamente, como a norma indica.
+
+
+\end{document}

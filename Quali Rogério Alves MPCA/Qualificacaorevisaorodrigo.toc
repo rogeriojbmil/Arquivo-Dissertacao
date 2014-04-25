@@ -1,0 +1,68 @@
+\select@language {brazil}
+\contentsline {chapter}{\numberline {1}\MakeUppercase {Introdu\c c\~ao}}{13}
+\contentsline {section}{\numberline {1.1}\MakeUppercase {Problema da pesquisa}}{13}
+\contentsline {section}{\numberline {1.2}\MakeUppercase {Justificativa}}{14}
+\contentsline {section}{\numberline {1.3}\MakeUppercase {Objetivos}}{15}
+\contentsline {subsection}{\numberline {1.3.1}Objetivo Geral}{15}
+\contentsline {subsection}{\numberline {1.3.2}Objetivos Espec\'ificos}{15}
+\contentsline {section}{\numberline {1.4}\MakeUppercase {Organiza\c c\~ao do Trabalho}}{15}
+\contentsline {chapter}{\numberline {2}\MakeUppercase {Mapeamento Sistem\'atico}}{16}
+\contentsline {section}{\numberline {2.1}\MakeUppercase {Introdu\c c\~ao}}{16}
+\contentsline {section}{\numberline {2.2}\MakeUppercase {Mapeamento Sistem\'atico}}{16}
+\contentsline {section}{\numberline {2.3}\MakeUppercase {Protocolo de Estudo}}{16}
+\contentsline {section}{\numberline {2.4}\MakeUppercase {Quest\~oes de pesquisa (QP)}}{17}
+\contentsline {section}{\numberline {2.5}\MakeUppercase {Estrat\'egia de Busca}}{17}
+\contentsline {section}{\numberline {2.6}\MakeUppercase {Crit\'erios de Inclus\~ao e Exclus\~ao}}{18}
+\contentsline {section}{\numberline {2.7}\MakeUppercase {Coleta, Armazenamento dos Dados e An\'alise}}{19}
+\contentsline {section}{\numberline {2.8}\MakeUppercase {Resultados}}{20}
+\contentsline {subsection}{\numberline {2.8.1}QP 1 \discretionary {-}{}{} Quest\~ao de Pesquisa 1}{20}
+\contentsline {subsection}{\numberline {2.8.2}QP 2 \discretionary {-}{}{} Quest\~ao de Pesquisa 2}{21}
+\contentsline {subsection}{\numberline {2.8.3}QP 3 \discretionary {-}{}{} Quest\~ao de Pesquisa 3}{22}
+\contentsline {subsection}{\numberline {2.8.4}QP 4 \discretionary {-}{}{} Quest\~ao de Pesquisa 4}{23}
+\contentsline {subsection}{\numberline {2.8.5}Discuss\~ao sobre os resultados}{24}
+\contentsline {subsection}{\numberline {2.8.6}Conclus\~ao}{25}
+\contentsline {chapter}{\numberline {3}\MakeUppercase {REVIS\~AO DA LITERATURA}}{26}
+\contentsline {section}{\numberline {3.1}\MakeUppercase {Arquitetura orientada a servi\c cos}}{26}
+\contentsline {section}{\numberline {3.2}\MakeUppercase {WEB SERVICES}}{27}
+\contentsline {subsection}{\numberline {3.2.1}Simple Object Accesss Protocol (SOAP)}{29}
+\contentsline {subsection}{\numberline {3.2.2}Web Services Description Language (WSDL)}{29}
+\contentsline {subsection}{\numberline {3.2.3}Universal Description, Discovery and Integration (UDDI)}{30}
+\contentsline {section}{\numberline {3.3}\MakeUppercase {\emph {Representational State Transfer}}}{31}
+\contentsline {section}{\numberline {3.4}\MakeUppercase {Seguran\c ca em SOA}}{33}
+\contentsline {section}{\numberline {3.5}\MakeUppercase {Vulnerabilidades em SOA}}{35}
+\contentsline {subsection}{\numberline {3.5.1}Altera\c c\~ao das mensagens}{35}
+\contentsline {subsection}{\numberline {3.5.2}Nega\c c\~ao de Servi\c cos}{36}
+\contentsline {subsection}{\numberline {3.5.3}Ataques de refer\^encias externas}{36}
+\contentsline {subsection}{\numberline {3.5.4}Intercepta\c c\~ao das mensagens}{36}
+\contentsline {subsection}{\numberline {3.5.5}Descoberta de informa\c c\~ao}{37}
+\contentsline {section}{\numberline {3.6}\MakeUppercase {Protocolos de Autentica\c c\~ao e Autoriza\c c\~ao}}{37}
+\contentsline {subsection}{\numberline {3.6.1}\emph {OpenID}}{38}
+\contentsline {subsection}{\numberline {3.6.2}\emph {SAML}}{39}
+\contentsline {subsection}{\numberline {3.6.3}\emph {OAuth}}{40}
+\contentsline {subsection}{\numberline {3.6.4}\emph {TRAUSTH}}{41}
+\contentsline {subsection}{\numberline {3.6.5}\emph {eXtensible Access Control Markup Language}}{41}
+\contentsline {section}{\numberline {3.7}\MakeUppercase {Considera\c c\~oes finais}}{42}
+\contentsline {chapter}{\numberline {4}\MakeUppercase {Protocolo de Autentica\c c\~ao e Autoriza\c c\~ao proposto}}{43}
+\contentsline {section}{\numberline {4.1}\MakeUppercase {\emph {Introdu\c c\~ao}}}{43}
+\contentsline {section}{\numberline {4.2}\MakeUppercase {\emph {Requisitos do Protocolo}}}{43}
+\contentsline {section}{\numberline {4.3}\MakeUppercase {\emph {ARQUITETURA DO PROTOCOLO}}}{44}
+\contentsline {subsection}{\numberline {4.3.1}\emph {Seguran\c ca de sess\~ao}}{44}
+\contentsline {subsection}{\numberline {4.3.2}\emph {Defini\c c\~ao do contrato}}{44}
+\contentsline {subsection}{\numberline {4.3.3}\emph {Autentica\c c\~ao/Autoriza\c c\~ao}}{45}
+\contentsline {section}{\numberline {4.4}\MakeUppercase {Formaliza\c c\~ao do Protocolo}}{49}
+\contentsline {section}{\numberline {4.5}\MakeUppercase {L\'ogica BAN}}{49}
+\contentsline {subsection}{\numberline {4.5.1}NOTA\c C\~AO B\'ASICA}{49}
+\contentsline {subsection}{\numberline {4.5.2}\emph { POSTULADOS L\'OGICOS}}{50}
+\contentsline {section}{\numberline {4.6}\MakeUppercase {\emph { AN\'ALISE FORMAL DO PROTOCOLO PROPOSTO}}}{51}
+\contentsline {subsection}{\numberline {4.6.1}\emph { Idealiza\c c\~ao do Protocolo}}{52}
+\contentsline {subsection}{\numberline {4.6.2}\emph { Suposi\c c\~oes}}{54}
+\contentsline {subsection}{\numberline {4.6.3}\emph { Provas}}{55}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {Avalia\c c\~ao e an\'alise de desempenho}}{59}
+\contentsline {section}{\numberline {5.1}\MakeUppercase {\emph {Testes de desempenho}}}{59}
+\contentsline {section}{\numberline {5.2}\MakeUppercase {\emph {Estudo de caso 1}}}{59}
+\contentsline {subsection}{\numberline {5.2.1}\emph {Configura\c c\~ao do Ambiente de Teste}}{60}
+\contentsline {subsection}{\numberline {5.2.2}\emph {Planejamento do experimento}}{60}
+\contentsline {section}{\numberline {5.3}\MakeUppercase {\emph {Estudo de caso 2}}}{61}
+\contentsline {subsection}{\numberline {5.3.1}\emph {Configura\c c\~ao do Ambiente de Teste}}{61}
+\contentsline {subsection}{\numberline {5.3.2}\emph {Planejamento do experimento}}{62}
+\contentsline {chapter}{REFER\^ENCIAS}{63}

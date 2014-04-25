@@ -1,0 +1,213 @@
+%% Exemplo de utilizacao do estilo de formatacao normas-utf-tex (http://normas-utf-tex.sourceforge.net)
+%% Autores: (200?-2011) Hugo Vieira Neto (hvieir@utfpr.edu.br)
+%%          (200?-2011) Diogo Rosa Kuiaski (diogo.kuiaski@gmail.com)
+%%          (2011-2012) Marcos Talau <talau@users.sourceforge.net>
+%% Colaborador:
+%%          (2011) César M. Vargas Benitez <cesarvargasb@gmail.com>
+
+%\documentclass[openright]{normas-utf-tex} %openright = o capitulo comeca sempre em paginas impares
+\documentclass[oneside,openright,brazil]{normas-utf-tex} %oneside = para dissertacoes com numero de paginas menor que 100 (apenas frente da folha)
+
+% force A4 paper format
+\special{papersize=210mm,297mm}
+
+\usepackage[alf,abnt-emphasize=bf,bibjustif,recuo=0cm, abnt-etal-cite=2, abnt-etal-list=99]{abntcite} %configuracao correta das referencias bibliograficas.
+
+\usepackage[brazil]{babel} % pacote portugues brasileiro
+\usepackage[latin1]{inputenc} % pacote para acentuacao direta
+\usepackage{amsmath,amsfonts,amssymb} % pacote matematico
+\usepackage{graphicx} % pacote grafico
+\usepackage{times} % fonte times
+\usepackage[final]{pdfpages} % adicao da ata
+
+%Podem utilizar GEOMETRY{...} para realizar pequenos ajustes das margens. Onde, left=esquerda, right=direita, top=superior, bottom=inferior. P.ex.:
+%\geometry{left=3.0cm,right=1.5cm,top=4cm,bottom=1cm}
+
+% ---------- Preambulo ----------
+\logo{unb.jpg} %logo da UNB
+\instituicao{Universidade de Brasília} % nome da instituicao
+\instituto{Instituto de Ciências Exatas}
+\departamento{Departamento de Ciência da Computação}
+\programa{Programa de Pós-Graduação em Computação Aplicada} % nome do programa
+\area{Ciência da Computação}
+
+\documento{Dissertação} %
+\nivel{Mestrado} % [Mestrado] ou [Doutorado]
+\titulacao{Mestre} % [Mestre] ou [Doutor]
+
+\titulo{{ESTIMADOR DO TAMANHO DE CLUSTER HADOOP}} % titulo do trabalho em portugues
+\title{\MakeUppercase{ESTIMATOR OF THE SIZE OF CLUSTER HADOOP}} % titulo do trabalho em ingles
+
+\autor{José Benedito de Souza Brito} % autor do trabalho
+\cita{BRITO, José} % sobrenome (maiusculas), nome do autor do trabalho
+
+\palavraschave{Sistemas Distribuídos, Hadoop, MapReduce} % palavras-chave do trabalho
+\keywords{Distributed Systems, Hadoop, MapReduce} % palavras-chave do trabalho em ingles
+
+\comentario{\UTFPRdocumentodata\ apresentada ao \UTFPRprogramadata\ da \ABNTinstituicaodata\ como requisito parcial para obtenção do grau de ``\UTFPRtitulacaodata\ em Ciências'' -- \'Area de Concentração: \UTFPRareadata.}
+
+\orientador[Orientadora:]{Profª. Drª. Aletéia Patrícia Favacho de Araújo Von Paumgartten} % nome do orientador do trabalho
+%\orientador[Orientadora:]{Nome da Orientadora} % <- no caso de orientadora, usar esta sintaxe
+%\coorientador{Nome do Co-orientador} % nome do co-orientador do trabalho, caso exista
+%\coorientador[Co-orientadora:]{Nome da Co-orientadora} % <- no caso de co-orientadora, usar esta sintaxe
+%\coorientador[Co-orientadores:]{Nome do Co-orientador} % no caso de 2 co-orientadores, usar esta sintaxe
+%\coorientadorb{Nome do Co-orientador 2}	% este comando inclui o nome do 2o co-orientador
+
+\local{Brasília} % cidade
+\data{\the\year} % ano automatico
+
+% desativa hifenizacao mantendo o texto justificado.
+% thanks to Emilio C. G. Wille
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\sloppy
+
+%---------- Inicio do Documento ----------
+\begin{document}
+\capa % geracao automatica da capa
+\folhaderosto % geracao automatica da folha de rosto
+
+% Lembre-se de que a ficha catalografica eh impressa no verso da folha de rosto
+% Ficha catalografica
+\fichacatpum{T137}
+\fichacatautor{BRITO, José Benedito de Souza}
+\fichacatpgbib{\pageref{bibstart}-\pageref{bibend}}
+\fichacatpalcha{1. Sistemas Distribuídos. 2. Hadoop. 3. MapReduce.}
+\fichacatpdois{CDU 004}
+\fichacatbib{Universidade de Brasília - Biblioteca Central}
+\fichacat
+
+% insercao da ATA
+\includepdf{ata.pdf}
+
+% dedicatoria
+\begin{dedicatoria}
+Texto da dedicatória.
+\end{dedicatoria}
+
+% agradecimentos (opcional)
+\begin{agradecimentos}
+Texto dos agradecimentos.
+\end{agradecimentos}
+
+% epigrafe (opcional)
+\begin{epigrafe}
+Texto da epígrafe (vou pensar em uma frase...).
+\end{epigrafe}
+
+%resumo
+\begin{resumo}
+Texto do resumo (máximo de 500 palavras).
+\end{resumo}
+
+%abstract
+\begin{abstract}
+Abstract text (maximum of 500 words).
+\end{abstract}
+
+% listas (opcionais, mas recomenda-se a partir de 5 elementos)
+\listadefiguras % geracao automatica da lista de figuras
+\listadetabelas % geracao automatica da lista de tabelas
+\listadequadros % adivinhe :)
+\listadesiglas % geracao automatica da lista de siglas
+%\listadesimbolos % geracao automatica da lista de simbolos
+
+% sumario
+\sumario % geracao automatica do sumario
+
+
+%---------- Inicio do Texto ----------
+% recomenda-se a escrita de cada capitulo em um arquivo texto separado (exemplo: intro.tex, fund.tex, exper.tex, concl.tex, etc.) e a posterior inclusao dos mesmos no mestre do documento utilizando o comando \input{}.
+
+\setcounter{page}{12}
+
+%---------- Primeiro Capitulo ----------
+\input{introducao.tex}
+
+%---------- Segundo Capitulo ----------
+\input{fundamentacao.tex}
+
+%---------- Terceiro Capitulo ----------
+\input{trabalhos_correlacionados.tex}
+
+%---------- Terceiro Capitulo ----------
+\input{solucao_proposta.tex}
+
+%---------- Quarto Capitulo ----------
+%\input{cronograma.tex}
+
+%---------- Quinto Capitulo ----------
+\input{conclusao.tex}
+
+
+
+%---------- Referencias ----------
+\clearpage % this is need for add +1 to pageref of bibstart used in 'ficha catalografica'.
+\label{bibstart}
+\bibliography{bib} % geracao automatica das referencias a partir do arquivo reflatex.bib
+\label{bibend}
+
+%---------- Apendices (opcionais) ----------
+%\apendice
+%\chapter{Nome do Apêndice}
+
+%Use o comando {\ttfamily \textbackslash apendice} e depois comandos {\ttfamily \textbackslash chapter\{\}}
+%para gerar títulos de apêndices.
+
+
+% ---------- Anexos (opcionais) ----------
+%\anexo
+%\chapter{Nome do Anexo}
+
+%Use o comando {\ttfamily \textbackslash anexo} e depois comandos {\ttfamily \textbackslash chapter\{\}}
+%para gerar t\'itulos de anexos.
+
+
+% --------- Ordenacao Afabetica da Lista de siglas --------
+%\textbf{* Observa\c{c}\~oes:} a ordenacao alfabetica da lista de siglas ainda nao eh realizada de forma automatica, porem
+% eh possivel se de realizar isto manualmente. Duas formas:
+%
+% ** Primeira forma)
+%    A ordenacao eh feita com o auxilio do comando 'sort', disponivel em qualquer
+% sistema Linux e UNIX, e tambem em sistemas Windows se instalado o coreutils (http://gnuwin32.sourceforge.net/packages/coreutils.htm)
+% comandos para compilar e ordenar, supondo que seu arquivo se chame 'dissertacao.tex':
+%
+%      $ latex dissertacao
+%      $ bibtex dissertacao && latex dissertacao
+%      $ latex dissertacao
+%      $ sort dissertacao.lsg > dissertacao.lsg.tmp
+%      $ mv dissertacao.lsg.tmp dissertacao.lsg
+%      $ latex dissertacao
+%      $ dvipdf dissertacao.dvi
+%
+%
+% ** Segunda forma)
+%\textbf{Sugest\~ao:} crie outro arquivo .tex para siglas e utilize o comando \sigla{sigla}{descri\c{c}\~ao}.
+%Para incluir este arquivo no final do arquivo, utilize o comando \input{arquivo.tex}.
+% PDF do seu documento.
+
+
+%-------- Citacoes ---------
+% - Utilize o comando \citeonline{...} para citacoes com o seguinte formato: Autor et al. (2011).
+% Este tipo de formato eh utilizado no comeco do paragrafo. P.ex.: \citeonline{autor2011}
+
+% - Utilize o comando \cite{...} para citacoeses no meio ou final do paragrafo. P.ex.: \cite{autor2011}
+
+
+
+%-------- Titulos com nomes cientificos (titulo, capitulos e secoes) ----------
+% Regra para escrita de nomes cientificos:
+% Os nomes devem ser escritos em italico,
+%a primeira letra do primeiro nome deve ser em maiusculo e o restante em minusculo (inclusive a primeira letra do segundo nome).
+% VEJA os exemplos abaixo.
+%
+% 1) voce nao quer que a secao fique com uppercase (caixa alta) automaticamente:
+%\section[nouppercase]{\MakeUppercase{Estudo dos efeitos da radiacao ultravioleta C e TFD em celulas de} {\textit{Saccharomyces boulardii}}
+%
+% 2) por padrao os cases (maiusculas/minuscula) sao ajustados automaticamente, voce nao precisa usar makeuppercase e afins.
+% \section{Introducao} % a introducao sera posta no texto como INTRODUCAO, automaticamente, como a norma indica.
+
+
+\end{document}

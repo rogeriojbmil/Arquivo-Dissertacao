@@ -1,0 +1,102 @@
+[Main Window]
+Create=1
+Visible=1
+State=0
+Left=0
+Top=0
+Width=640
+Height=105
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=632
+ClientHeight=78
+
+[PropertyInspector]
+Create=1
+Visible=1
+State=0
+Left=0
+Top=132
+Width=190
+Height=305
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=180
+ClientHeight=279
+TBDockHeight=309
+LRDockWidth=190
+Dockable=1
+SplitPos=81
+
+[Closed Files]
+File_0=SourceModule,'C:\Program Files\Borland\Delphi 3\Source\WinEdt\Main.pas',0,1,1,1,1,1,0
+File_1=SourceModule,'C:\Program Files\Borland\Delphi 3\OBJREPOS\OKCANCL1.pas',0,1,1,1,1,0,0
+File_2=SourceModule,'C:\PROGRAM FILES\BORLAND\DELPHI 3\OBJREPOS\OKCANCL2.pas',0,1,1,1,1,0,0
+File_3=SourceModule,'C:\Program Files\Borland\Delphi 3\Source\WinEdt\Prefer.pas',0,1,815,2,821,1,0
+File_4=SourceModule,'C:\Program Files\Borland\Delphi 3\Source\WinEdt\Commands.pas',0,1,114,5,121,1,0
+File_5=SourceModule,'C:\Program Files\Borland\Delphi 3\Source\WinEdt\MenuItems.pas',0,1,217,5,223,1,0
+File_6=SourceModule,'C:\Program Files\Borland\Delphi 3\Source\WinEdt\Menu.pas',0,1,1104,5,1110,1,0
+File_7=SourceModule,'C:\Program Files\Borland\Delphi 3\Source\WinEdt\Enter.pas',0,1,20,10,26,1,0
+File_8=SourceModule,'C:\Program Files\Borland\Delphi 3\Source\WinEdt\GetCnt.pas',0,1,31,3,35,1,0
+File_9=SourceModule,'C:\Program Files\Borland\Delphi 3\Source\WinEdt\GetDim.pas',0,1,35,3,37,1,0
+
+[Modules]
+Module0=C:\Program Files\WinEdt\Plugins\Array\Unit1.pas
+Count=1
+EditWindowCount=1
+
+[C:\Program Files\WinEdt\Plugins\Array\Unit1.pas]
+ModuleType=SourceModule
+FormState=1
+FormOnTop=0
+
+[C:\Program Files\Borland\Delphi4\Projects\ProjectGroup1.bpg]
+FormState=0
+FormOnTop=0
+
+[C:\Program Files\WinEdt\Plugins\Array\Arrayd.dpr]
+FormState=0
+FormOnTop=0
+
+[EditWindow0]
+CodeExplorer=CodeExplorer@EditWindow0
+MessageView=MessageView@EditWindow0
+Create=1
+Visible=1
+State=0
+Left=210
+Top=127
+Width=435
+Height=304
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=427
+ClientHeight=277
+LeftPanelSize=0
+RightPanelSize=0
+BottomPanelSize=0
+ViewCount=1
+CurrentView=0
+View0=0
+
+[View0]
+Module=C:\Program Files\WinEdt\Plugins\Array\Unit1.pas
+CursorX=1
+CursorY=299
+TopLine=293
+LeftCol=1
+
+[DockHosts]
+DockHostCount=0
+
+[Watches]
+Count=2
+Watch0='isCancelled',256,0,18,1
+Watch1='Match',256,0,18,1
+
+[Breakpoints]
+Count=0
+
+[AddressBreakpoints]
+Count=0
+

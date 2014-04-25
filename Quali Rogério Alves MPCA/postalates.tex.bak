@@ -1,0 +1,313 @@
+\documentclass{article}
+%\renewcommand{\baselinestretch}{2}
+\usepackage{amsthm}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+\title{Comment on ``On the logical consistency of special relativity
+theory and non-Euclidean geometries: Platonism versus formalism''}
+\author{Radhakrishnan Srinivasan\thanks{R \& D Group,
+IBM India Software Labs, 5th floor, Golden Enclave,
+Airport Road, Bangalore~560017, India.
+E-Mail:~\texttt{sradhakr@in.ibm.com}}}
+\date{}
+\maketitle
+
+\begin{abstract}
+As observed in the PhilSci preprint ID Code~1255~[1], consistency in the
+author's proposed non-Aristotelian finitary logic~(NAFL) demands that
+Euclid's fifth postulate must necessarily be provable from the first four,
+and that diagrammatic reasoning with Euclidean concepts must necessarily be
+admitted into the rules of inference for plane neutral geometry in order
+to argue for the said provability. Two important consequences, namely,
+the indispensable role of diagrams as formal objects of Euclidean
+geometry in NAFL and the resulting NAFL concept of `line' as an infinite
+proper class of line segments are highlighted and elaborated upon.
+A misleading comment in Remark~6 of [1], regarding negation for
+undecidable propositions in the theory of special relativity~(SR), is
+corrected. This comment is unrelated to the main argument in [1] and
+the resulting analysis reinforces the conclusions of [1] that negation
+and implication are problematic concepts for undecidable propositions in SR.
+\end{abstract}
+
+\section{The essential role of diagrammatic reasoning in NAFL and the
+resulting concept of `line' as an infinite proper class in Euclid's geometry}
+Consider plane neutral geometry~(NG) as formalised in classical
+first-order predicate logic~(FOPL). Our goal in this section is
+to highlight and further elaborate upon two important results deduced
+in~\cite{srneg}, namely, the \emph{essential} role of diagrams as formal
+geometric objects in the non-Aristotelian finitary logic~(NAFL) proposed
+by the author~\cite{nafl, nafl2} and the consequent NAFL concept of
+`line' as an infinite proper class of line segments. In contrast, classical
+logic admits a line as a mathematical object and considers diagrams to
+be informal (and sometimes unreliable) reasoning tools.
+
+An excellent reference for the formalization of diagrammatic reasoning
+is the work of Miller~\cite{miller}. The modern attitude
+towards diagrams is neatly summarized by the following quote
+from Chapter~1 of~\cite{miller}:
+\begin{quote}
+It has often been asserted that proofs like this, which make crucial
+use of diagrams, are inherently informal. The comments made by Henry
+Forder in \emph{The Foundations of Geometry} are typical: `Theoretically,
+figures are unnecessary; actually they are needed as a prop to human
+infirmity. Their sole function is to help the reader to follow the
+reasoning; in the reasoning itself they must play no part.' \dots
+The transition from mathematics with geometry at its core to
+mathematics with arithmetic at its core had a profound influence
+on the way in which people viewed geometric diagrams. When geometric
+diagrams were seen as the foundation of mathematics, the geometric
+diagrams used in these proofs had an important role to play. Once
+geometry had come to be seen as an extension of arithmetic, however,
+geometric diagrams could be viewed as merely being a way of trying to
+visualize underlying sets of real numbers. It was in this context
+that it became possible to view diagrams as being ``theoretically
+unnecessary'' and mere ``props to human infirmity''.
+\end{quote}
+Miller~\cite{miller} proceeds to develop the thesis that diagrams can
+indeed be considered as formal objects in plane Euclidean geometry and
+that diagrammatic proofs are as rigorous as their sentential counterparts.
+NAFL takes this a step further: diagrams are \emph{necessarily} formal
+objects and diagrammatic reasoning must \emph{necessarily} be admitted
+into the rules of inference of classical NG in order to argue for the
+provability, required by consistency in NAFL, of Euclid's fifth postulate
+from the first four; see Sec.~2 of~\cite{srneg}.
+
+The theory NG(NAFL) is the NAFL version of NG with diagrammatic reasoning
+(admitting only Euclidean concepts) introduced formally into the rules of
+inference. For an idea of how this can be done, see~\cite{miller}.
+In order to argue for the provability of the fifth postulate
+in NG(NAFL), `parallel' was re-defined in~\cite{srneg} as follows:
+\begin{definition}\label{df1}
+Two distinct coplanar lines are parallel if and only if they are
+equidistant at all points, where distance between the lines at a
+point (on either line) is defined as the length of the
+perpendicular to the other line dropped from that point.
+Similarly, a line segment AB that does not lie on a line $l$ is
+parallel to $l$ if and only if AB is equidistant from $l$ at
+every point of AB.
+\end{definition}
+It was stated in \cite{srneg} that Definition~\ref{df1} is first due
+to Posidonius in the first century B.C.; however, it appears that
+Archimedes~(287--212~B.C.) in his treatise \emph{On parallel lines}
+had already defined parallelism similarly. Definition~\ref{df1} can
+be extended in an obvious manner to define parallelism between two
+coplanar line segments and we assume that this has been done.
+Proposition~\ref{pr1} of \cite{srneg} is stated below for
+convenience:
+\begin{proposition}\label{pr1}
+Given a line $l$ and a point \emph{P} at an arbitrary non-zero distance
+$D$ from $l$, there exists a unique line segment \emph{M}
+through \emph{P} parallel to $l$, such that \emph{P} is
+at the midpoint of \emph{M} and \emph{M} is of a given arbitrary non-zero
+length $L$. Here $D$ and $L$ are (standard) finite lengths.
+The line segment \emph{M} will remain parallel to
+$l$ when extended by an arbitrary (standard) finite length
+such that \emph{P} continues to remain at the midpoint of M.
+Here `parallel' is defined in Definition~\ref{df1}.
+\end{proposition}
+A diagrammatic proof of Proposition~\ref{pr1} was given in~\cite{srneg},
+with a scaling argument to represent line segments~M of arbitrary length
+in a single diagram drawn to scale; different line segments will imply
+different scale factors for the diagram. Here we emphasize that Tarski's
+axioms for NG do not permit the consideration of `arbitrary' entities, such
+as, line segments; if NG is suitably modified to permit this, it becomes
+classically incomplete, since NG would then interpret classical Peano
+Arithmetic~\cite{simpson}. NAFL, however, rejects G\"odel's incompleteness
+theorems~\cite{nafl2} and so NG(NAFL) can admit arbitrary line segments
+without becoming incomplete~(equivalently in NAFL, inconsistent). In fact
+consistency \emph{demands} that NG(NAFL) interpret Peano Arithmetic,
+for the notion of `arbitrary' line segment is essential in the above
+diagrammatic proof.
+
+The rationale for the diagrammatic proof is that NAFL permits only
+constructive Euclidean concepts, and the diagram represents precisely
+the constructions we must have in mind when we think of `line' or
+`line segment'. The scaling argument is simply justified by noting
+that the ideal `lengths' of line segments in NG(NAFL) have nothing to do
+with the \emph{physical} length of the line segment drawn in the
+diagram; we are completely free to attribute an arbitrary scale factor
+to represent arbitrary \emph{ideal} lengths, which are \emph{mental}
+constructions, by a single \emph{physical} diagram. Let `\emph{idlg}'
+represent the unit ideal length of a line segment in NG(NAFL), and let the
+(usual, real-world) `inch' be the corresponding unit length in the diagram.
+One might take the scale factor for the line segment~M of
+Proposition~\ref{pr1} in the diagram as ``one inch = one
+hundred~\emph{idlgs}''; one could also take the scale factor as,
+for example, ``one inch = one hundred thousand~\emph{idlgs}'', etc.
+It should be emphasized that these two scale factors correspond to two
+\emph{different} line segments~M in NG(NAFL), represented in a
+single diagram. The point here is that there is no reality for the
+question of how many \emph{idlgs} are `actually' contained in one
+inch, since NAFL does not require our mental constructions of line
+segments and their unit length scale \emph{idlg} to have any connection
+whatsoever with the real world; formally, this question is undecidable
+in NG(NAFL), and the Main Postulate for NAFL~\cite{nafl,nafl2} makes
+truth for such a proposition purely \emph{axiomatic} in nature. It follows
+that in the absence of any axiomatic declaration as to the value of the
+length $L$ (in \emph{idlgs}) of the line segment $M$ represented in the
+diagram, \emph{all} ideal length scales are present in one inch in a
+superposed state, as required by NAFL. It is this fact that
+permits the scaling argument in NAFL, and the consequent representation of
+arbitrarily long (mentally constructed) line segments superposed in a single
+(physical) diagram. In fact this scaling argument is absolutely essential for
+consistency of NG(NAFL), as will be argued shortly. In contrast, FOPL
+requires that the line segment~M in the diagram represents one and only one
+instance of Proposition~\ref{pr1}, which prevents the diagram from being a
+direct proof of Proposition~\ref{pr1} and amounts to a Platonic assertion
+that the line segments of NG `really' exist. Clearly, FOPL requires that
+there is a fact of the matter as to the conversion factor between the ideal
+length scale~\emph{idlg} and the physical length scale of one inch in the
+diagram, despite the undecidability of this proposition in NG; different
+conversion factors only succeed in redefining \emph{idlg} in terms
+of inches from the FOPL point of view, and we are looking at one and only
+one line segment~M of a fixed length. Of course,
+similar diagrammatic proofs can be given in NG(NAFL) for each of the other
+four postulates of Euclid which must also be asserted as tautologously
+true in NG(NAFL). The fifth postulate was perceived to be
+`counter-intuitive' precisely because FOPL does not permit such a
+diagrammatic proof, as will be explained below.
+
+Playfair's postulate, logically equivalent to Euclid's fifth
+postulate~$\psi$, asserts that for every line $l$ and for every
+point P that does not lie on $l$, there exists a unique line $m$
+through P that is parallel to $l$. We use Playfair's postulate
+interchangeably with $\psi$. It was argued in \cite{srneg} that
+Proposition~\ref{pr1} provides a \emph{direct, constructive} proof of
+$\psi$ in NG(NAFL). An indirect proof of $\psi$ may also be obtained
+in NG(NAFL) by dropping perpendiculars from the end-points of the line
+segment~M to the line $l$ of Proposition~\ref{pr1} and exhibiting
+diagrammatically the rectangle bounded by $M$, $l$ and the two
+perpendiculars. Since only Euclidean concepts are permitted in
+diagrammatic proofs, the existence of such a rectangle is equivalent to
+and proves $\psi$ in NG(NAFL). It was noted in \cite{srneg} that such a
+diagrammatic proof is not legitimate in classical NG, because
+FOPL requires that even infinitely many instances of
+Proposition~\ref{pr1} (with Euclidean concepts) do \emph{not} prove
+$\psi$ in NG; none of these instances represent the line $m$, which has
+infinite length and is a separate mathematical object in classical logic.
+Thus we have the classical anomaly that infinitely many instances
+of Proposition~\ref{pr1} should not prove $\psi$ in NG, but if
+the diagrammatic proof (with Euclidean concepts) is permitted, $\psi$
+can be inferred \emph{indirectly} from a single such instance.
+It was concluded in~\cite{srneg} that consistency in FOPL
+necessarily requires the uninterpreted entities of NG to have
+a non-constructive existence, and consequently, $\psi$ must
+necessarily be undecidable in NG with non-Euclidean concepts permitted.
+The above classical scenario is diametrically opposite
+to the notion of consistency in NG(NAFL), as noted in \cite{srneg}.
+
+The first observation is that the scaling argument in the diagrammatic
+proof of Proposition~\ref{pr1} in NG(NAFL) neatly removes the
+classical anomaly noted above; a single instance of Proposition~\ref{pr1},
+as represented in the diagram, can be \emph{interpreted} via the
+scaling argument to represent infinitely many instances and hence
+provides a direct as well as indirect proof (via the rectangle
+construction noted above) of Proposition~\ref{pr1}. Hence it is
+absolutely essential to incorporate the scaling argument into the
+rules of inference of NG(NAFL). Once this is done, we might as well
+rename the resulting theory as EG(NAFL), where `EG' stands for Euclidean
+geometry; all the axioms of classical EG are theorems of EG(NAFL),
+provable by diagrammatic constructions. Here we have in mind a
+finitely axiomatizable version of EG proposed by Tarski~\cite{simpson},
+all of whose theorems are provable by elementary ruler and compass
+constructions. EG(NAFL) has only diagrammatic rules of inference and no
+axioms. It follows that diagrams of EG(NAFL) are formal objects that come
+prior to and are more fundamental than the axioms of Tarski's elementary EG.
+Indeed, since all of the theorems of EG are provable by ruler and
+compass constructions, it is obvious that the axioms of EG must also be
+so provable. It is striking that diagrammatic reasoning, which plays a
+crucial and indispensable role in preventing inconsistency in EG(NAFL),
+would be considered as `inconsistent' and `unreliable' in classical
+neutral geometry. Note that the diagrams are  physical (real-world)
+devices by which we communicate our mental geometric constructions
+as `proofs' of the Euclidean postulates to our fellow-human beings.
+As shown in Sec.~2 of \cite{srneg}, we can only have these Euclidean
+constructions in mind; the classical non-Euclidean models neccessarily
+have to assume the metamathematical (Platonic) truth of the Euclidean
+postulates and so are not models at all by the NAFL truth definition.
+If there were only one human being in the whole world, such an
+individual need not construct any diagrams as formal devices to
+prove the Euclidean postulates; the mental constructions would
+suffice for this purpose.
+
+The second observation is that the line segment~M of
+Proposition~\ref{pr1} is of \emph{arbitrary} length~$L$, which is to be
+interpreted in NAFL as being in a superposed state of (quantification
+over) all possible \emph{standard} values for $L$. As
+noted in \cite{srneg}, this amounts to an explicit construction
+for the line $m$ because there are no nonstandard models for
+arithmetic (and hence, for EG) in NAFL. Thus the line~$m$
+of Proposition~\ref{pr1} is modelled as the union
+of an infinite proper class of line segments~M, as represented
+by the superposed state. Here we wish to make a few remarks on the
+notion of infinite class, which is a \emph{proper class} and not a
+mathematical object in NAFL~\cite{nafl}.
+
+In NAFL, whenever infinitely many mathematical objects identified by
+a given property (such as, that of being a natural number) exist within
+a theory, that theory must also necessarily admit the corresponding
+infinite class of such objects. The class comprehension scheme
+is necessarily a theorem of NAFL theories which admit infinitely many
+objects in the universe of discourse; quantification is
+restricted to be only over objects that belong to classes.
+NAFL interprets the axiom of extensionality for classes
+(which is also necessarily a theorem of such NAFL theories) to mean
+that an infinite class must be identified by \emph{all}
+and \emph{only} its elements; the infinite proper class is by
+itself not a mathematical object. The existence and uniqueness
+of an infinite class can be inferred from, and is equivalent to,
+the existence and uniqueness of every element of that class.
+In the example of Proposition~\ref{pr1},
+EG(NAFL) requires it to be universally quantified over all possible
+lengths $L$; that there are infinitely many such line segments~M of
+arbitrarily large lengths results from Euclid's second postulate,
+which is a theorem of EG(NAFL). It immediately follows in NAFL that
+an infinite proper class of such line segments, identified
+constructively by a given property, exists; call this class $C$.
+The assertion that $m$ is parallel to $l$ is to be
+interpreted in NAFL as meaning that every line segment of the infinite
+class $C$ is parallel to every line segment of the corresponding
+infinite class constituting $l$. The `existence' and `uniqueness' of
+the line $m$ is to be identified with, and may be inferred from,
+the existence and uniqueness of every element of $C$.
+
+At this stage the reader might wonder \emph{why} NAFL requires
+quantification to be restricted to classes when infinitely
+many objects are involved. This has been formally established
+in~\cite{nafl2}; here we will give an intuitive explanation as follows.
+Let us take the example of a line segment
+of initial length $L_0$, and successively extended (equally on both
+sides of the segment) to lengths $2L_0$, $3L_0$, $4L_0$, etc.
+NAFL asserts that the process of extending the line segment may be said
+to have been `completed', or equivalently, reached an `arbitrary'
+length $nL_0$, if and only if the infinite proper class
+$C=\{L_0, 2L_0, 3L_0, \dots, nL_0, (n+1)L_0, \dots,\}$ exists.
+This infinite class represents \emph{all} extensions of the original
+line segment \emph{at the same time}. If $C$ did not
+exist, one can only imagine the line segment being extended, say, one
+instance (in general, at most finitely many instances) at a time, but
+by induction, such a process can never ever be `completed' and it would be
+wrong to quantify over `all' such extensions. Equivalently, one can never
+exhaust the class $N$ of natural numbers by counting them one at a time;
+induction says that there will always be infinitely many natural numbers
+left to be counted. Therefore quantification over infinitely many natural
+numbers automatically implies the existence of $N$ in NAFL~\cite{nafl2}.
+However, $N$ is a paradoxical entity because \emph{any} element of $N$ is
+clearly accessible by counting one at a time. It is clear that `any'
+in the preceding sentence does not translate to `all', for then the above
+induction (that $N$ cannot be exhausted by counting one at a time) would be
+violated. This is the intuitive explanation for why $N$ must be a proper
+class in NAFL; for the formal argument that results from the axiomatic
+nature of NAFL truth, see Sec.~3 of ~\cite{nafl}. To summarize,
+for the purposes of quantification over infinitely many mathematical
+objects, NAFL requires that $N$ must necessarily exist as a `completed'
+infinite class, but the `incomplete' or `potential' nature of $N$ is
+recognized by not admitting it as a mathematical object~(i.e., a set)
+in NAFL theories. Thus NAFL provides the correct logical framework for
+assertions denying the existence of a `completed' infinity by a
+long list of famous logicians/mathematicians/philosophers, including

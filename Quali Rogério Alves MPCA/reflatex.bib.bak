@@ -1,0 +1,1085 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: Cp1252
+
+@INPROCEEDINGS{JensenGHL2007,
+  author = {Jensen, Meiko and Gruschka, Nils and Herkenhöner, Ralph and Luttenberger,
+	Norbert},
+  title = {SOA and Web Services: New Technologies, New Standards - New Attacks.},
+  booktitle = {ECOWS},
+  year = {2007},
+  pages = {35-44},
+  publisher = {IEEE Computer Society},
+  added-at = {2008-06-09T00:00:00.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2785ea3fef0296d77a0e0f36fc418f9e7/dblp},
+  crossref = {conf/ecows/2007},
+  date = {2008-06-09},
+  description = {dblp},
+  ee = {http://doi.ieeecomputersociety.org/10.1109/ECOWS.2007.24},
+  interhash = {21f2f15ecb6f2249e0833938e3202275},
+  intrahash = {785ea3fef0296d77a0e0f36fc418f9e7},
+  keywords = {dblp}
+}
+
+@MISC{abnTeX2009,
+  author = {abnTeX},
+  title = {Absurdas normas para \TeX},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://sourceforge.net/apps/ mediawiki/abntex/index.php},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@BOOK{TANENBAUM2007,
+  title = {SISTEMAS DISTRIBUÍDOS PRINCIPIOS E PARADIGMAS 2ª EDIÇÃO},
+  publisher = {SÃO PAULO},
+  year = {2007},
+  editor = {PEARSON PRENTICE HALL},
+  author = {ANDREW S. TANENBAUM, MAARTEN VAN STEEN},
+  owner = {Rogerio},
+  timestamp = {2013.08.20}
+}
+
+@ARTICLE{Arksey2005,
+  author = {Arksey, Hilary and O'Malley, Lisa},
+  title = {{Scoping studies: towards a methodological framework}},
+  journal = {International Journal of Social Research Methodology},
+  year = {2005},
+  volume = {8},
+  pages = {19--32},
+  number = {1},
+  month = feb,
+  abstract = {{This paper focuses on scoping studies, an approach to reviewing the
+	literature which to date has received little attention in the research
+	methods literature. We distinguish between different types of scoping
+	studies and indicate where these stand in relation to full systematic
+	reviews. We outline a framework for conducting a scoping study based
+	on our recent experiences of reviewing the literature on services
+	for carers for people with mental health problems. Where appropriate,
+	our approach to scoping the field is contrasted with the procedures
+	followed in systematic reviews. We emphasize how including a consultation
+	exercise in this sort of study may enhance the results, making them
+	more useful to policy makers, practitioners and service users. Finally,
+	we consider the advantages and limitations of the approach and suggest
+	that a wider debate is called for about the role of the scoping study
+	in relation to other types of literature reviews.}},
+  booktitle = {International Journal of Social Research Methodology},
+  citeulike-article-id = {160687},
+  citeulike-linkout-0 = {http://dx.doi.org/10.1080/1364557032000119616},
+  citeulike-linkout-1 = {http://www.ingentaconnect.com/content/tandf/tsrm/2005/00000008/00000001/art00002},
+  citeulike-linkout-2 = {http://www.tandfonline.com/doi/abs/10.1080/1364557032000119616},
+  day = {1},
+  doi = {10.1080/1364557032000119616},
+  issn = {1364-5579},
+  keywords = {rapid, reviews, scoping},
+  posted-at = {2013-07-19 11:22:31},
+  priority = {2},
+  publisher = {Routledge},
+  url = {http://dx.doi.org/10.1080/1364557032000119616}
+}
+
+@INPROCEEDINGS{Avizienis2004,
+  author = {Avizienis, Algirdas and Laprie, Jean-Claude and Randell, Brian},
+  title = {Dependability and its threats - A taxonomy.},
+  booktitle = {IFIP Congress Topical Sessions},
+  year = {2004},
+  editor = {Jacquart, René},
+  pages = {91-120},
+  publisher = {Kluwer},
+  added-at = {2005-02-28T00:00:00.000+0100},
+  biburl = {http://www.bibsonomy.org/bibtex/21bb9df63502a9b3e062cef550e208714/dblp},
+  date = {2005-02-28},
+  description = {dblp},
+  interhash = {2ff9fad899c13b36086a138c6eb69479},
+  intrahash = {1bb9df63502a9b3e062cef550e208714},
+  isbn = {1-4020-8156-1},
+  keywords = {dblp}
+}
+
+@BOOK{bass2003software,
+  title = {Software Architecture in Practice},
+  publisher = {Pearson Education},
+  year = {2003},
+  author = {Bass, L. and Clements, P. and Kazman, R.},
+  isbn = {9780321680419}
+}
+
+@BOOK{Bertino2010,
+  title = {Security for Web Services and Service-Oriented Architectures},
+  publisher = {Springer},
+  year = {2010},
+  author = {Elisa Bertino and Lorenzo Martino and Federica Paci and Anna Cinzia
+	Squicciarini},
+  pages = {I-XII, 1-226},
+  bibsource = {DBLP, http://dblp.uni-trier.de},
+  ee = {http://dx.doi.org/10.1007/978-3-540-87742-4},
+  isbn = {978-3-540-87741-7}
+}
+
+@ARTICLE{Sahba2007,
+  author = {Nishchal Bhalla and Sahba Kazerooni},
+  title = {WEB SERVICES VULNERABILITIES},
+  journal = {Security Compass Inc},
+  year = {2007},
+  owner = {Rogerio},
+  timestamp = {2013.09.05}
+}
+
+@TECHREPORT{Bianco2007,
+  author = {Bianco, Phil and Kotermanski,Rick and Merson,Paulo},
+  title = {Evaluating a Service-Oriented Architecture},
+  institution = {Carnegie Mellon University},
+  year = {2007},
+  owner = {Rogerio},
+  timestamp = {2013.08.25}
+}
+
+@MISC{BibTeX2009,
+  author = {BibTeX},
+  title = {Bib\TeX.org},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://www.bibtex.org},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@MISC{Booth2004,
+  author = {Booth, David and Haas, Hugo and McCabe, Francis and Newcomer, Eric
+	and Champion, Mike and Ferris, Christopher and Orchard, David},
+  title = {Web Services Architecture},
+  howpublished = {World Wide Web Consortium, Note NOTE-ws-arch-20040211},
+  month = {February},
+  year = {2004},
+  abstract = {This document defines the Web Services Architecture. It identifies
+	the functional components and defines the relationships among those
+	components to effect the desired properties of the overall architecture.},
+  added-at = {2010-06-17T17:35:00.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/249d28783446bf44cba9752567bfdbe84/munozjuan},
+  description = {dret'd bibliography},
+  interhash = {6af35120a2bdd56f1aef5f3337590a06},
+  intrahash = {49d28783446bf44cba9752567bfdbe84},
+  keywords = {services web},
+  timestamp = {2010-06-17T17:35:00.000+0200},
+  uri = {http://www.w3.org/TR/2004/NOTE-ws-arch-20040211}
+}
+
+@BOOK{Buerger1989,
+  title = {\LaTeX\ for scientists and engineers},
+  publisher = {McGraw-Hill},
+  year = {1989},
+  author = {Buerger, David John},
+  address = {Singapura},
+  owner = {Hugo},
+  timestamp = {2009.11.08}
+}
+
+@ARTICLE{Burrows1990,
+  author = {Burrows, Michael and Abadi, Martin and Needham, Roger},
+  title = {A Logic of Authentication},
+  journal = {ACM Trans. Comput. Syst.},
+  year = {1990},
+  volume = {8},
+  pages = {18--36},
+  number = {1},
+  month = feb,
+  acmid = {77649},
+  address = {New York, NY, USA},
+  doi = {10.1145/77648.77649},
+  issn = {0734-2071},
+  issue_date = {Feb. 1990},
+  numpages = {19},
+  publisher = {ACM},
+  url = {http://doi.acm.org/10.1145/77648.77649}
+}
+
+@BOOK{Cerami2002,
+  title = {Web Services Essentials},
+  publisher = {O'Reilly \& Associates, Inc.},
+  year = {2002},
+  editor = {St.Laurent, Simon},
+  author = {Cerami, Ethan},
+  address = {Sebastopol, CA, USA},
+  edition = {1st},
+  isbn = {0596002246}
+}
+
+@BOOK{Clements2010,
+  title = {Documenting Software Architectures: Views and Beyond},
+  publisher = {Addison-Wesley Professional},
+  year = {2010},
+  author = {Clements, Paul and Garlan, David and Bachmann, Felix and Ivers, James
+	and Stafford, Judith and Bass, Len and Merson, Paulo},
+  edition = {2nd},
+  isbn = {0321552687, 9780321552686}
+}
+
+@ARTICLE{Coetzee2012,
+  author = {Marijke Coetzee},
+  title = {Towards a Holistic Information Security Governance Framework for
+	SOA},
+  journal = {2012 Seventh International Conference on Availability, Reliability
+	and Security},
+  year = {2012},
+  volume = {0},
+  pages = {155-160},
+  address = {Los Alamitos, CA, USA},
+  doi = {http://doi.ieeecomputersociety.org/10.1109/ARES.2012.62},
+  isbn = {978-1-4673-2244-7},
+  publisher = {IEEE Computer Society}
+}
+
+@BOOK{COYLE,
+  title = {XML, Web Services, and the Data Revolution},
+  publisher = {Boston: Addison-Wesley},
+  year = {2002},
+  author = {COYLE, F. P},
+  owner = {Rogerio},
+  timestamp = {2013.08.20}
+}
+
+@MISC{uddiufrj,
+  author = {Sérgio Manuel Serra da Cruz},
+  title = {Serviços Web Uma breve introdução},
+  year = {2005},
+  owner = {Rogerio},
+  timestamp = {2013.08.21},
+  url = {http://www.nce.ufrj.br/conceito/artigos/2005/01p1-1.htm}
+}
+
+@MISC{CTAN2009,
+  author = {CTAN},
+  title = {The comprehensive \TeX\ archive network},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://www.ctan. org},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@BOOK{DAELN2006,
+  title = {Normas de apresenta\c{c}\~ao de trabalhos acad\^emicos do {DAELN}},
+  publisher = {Departamento Acad\^emico de Eletr\^onica da UTFPR},
+  year = {2006},
+  editor = {David, Denise Elizabeth Hey and Crocetti, Simone},
+  author = {DAELN},
+  address = {Curitiba},
+  owner = {Hugo},
+  timestamp = {2009.11.08}
+}
+
+@MISC{Daemen98,
+  author = {Joan Daemen and Joan Daemen and Joan Daemen and Vincent Rijmen and
+	Vincent Rijmen},
+  title = {AES Proposal: Rijndael},
+  year = {1998}
+}
+
+@ARTICLE{Ontology2012,
+  author = {Stefania DAgostini and Valentina Di Giacomo and Claudia Pandolfo
+	and Domenico Presenza},
+  title = {An Ontology for Run-Time Verification of Security Certificates for
+	SOA},
+  journal = {2012 Seventh International Conference on Availability, Reliability
+	and Security},
+  year = {2012},
+  volume = {0},
+  pages = {525-533},
+  address = {Los Alamitos, CA, USA},
+  doi = {http://doi.ieeecomputersociety.org/10.1109/ARES.2012.49},
+  isbn = {978-1-4673-2244-7},
+  publisher = {IEEE Computer Society}
+}
+
+@BOOK{CHAPPELL2002,
+  title = {Java Web Services},
+  publisher = {O'Reilly},
+  year = {2002},
+  editor = {O Reilly},
+  author = {David Chappell,Tyler Jewell},
+  owner = {Rogerio},
+  timestamp = {2013.08.20}
+}
+
+@PHDTHESIS{pattern-driven2008,
+  author = {Delessy, Nelly A. and Fernandez, Eduardo.B},
+  title = {A pattern-driven process for secure service-oriented applications},
+  year = {2008},
+  address = {Boca Raton, FL, USA},
+  publisher = {Florida Atlantic University}
+}
+
+@BOOK{ERL09,
+  title = {Soa Principios De Design De Servi{\c{c}}os},
+  publisher = {PRENTICE HALL BRASIL},
+  year = {2009},
+  author = {Erl, T.},
+  isbn = {9788576051893}
+}
+
+@PHDTHESIS{Fielding2000,
+  author = {Fielding, Roy Thomas},
+  title = {Architectural Styles and the Design of Network-based Software Architectures},
+  year = {2000},
+  note = {AAI9980887},
+  isbn = {0-599-87118-0},
+  publisher = {University of California, Irvine}
+}
+
+@TECHREPORT{franks1999,
+  author = {Franks, J. and Hallam-Baker, P. and Hostetler, J. and Lawrence, S.
+	and Leach, P. and Luotonen, A. and Stewart, L.},
+  title = {{HTTP} Authentication: Basic and Digest Access Authentication},
+  institution = {Internet Engineering Task Force},
+  year = {1999},
+  type = {RFC},
+  number = {2617},
+  month = {June},
+  abstract = {{"}HTTP/1.0{"}, includes the specification for a Basic Access Authentication
+	scheme. This scheme is not considered to be a secure method of user
+	authentication (unless used in conjunction with some external secure
+	system such as SSL, as the user name and password are passed over
+	the network as cleartext.},
+  added-at = {2007-05-29T15:45:23.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/25a3a11470ede6305355329b69a99c1cf/yeah},
+  days = {15},
+  description = {My Master Thesis bibliography},
+  interhash = {81bf67020f8ada55041e6fa4502ad1d4},
+  intrahash = {5a3a11470ede6305355329b69a99c1cf},
+  keywords = {imported},
+  pages = {34},
+  timestamp = {2007-05-29T15:45:23.000+0200},
+  url = {http://www.rfc-editor.org/rfc/rfc2617.txt}
+}
+
+@TECHREPORT{Furtado2009,
+  author = {Furtado,Camille and Pereira,Vinícios and Azevedo,Leonardo and Baião,Fernanda
+	and Santoro,Flávia},
+  title = {Arquitetura Orientada a Serviço - Conceituação},
+  institution = {Departamento de Informática Aplicada (DIA) – Universidade Federal
+	do Estado do Rio de Janeiro (UNIRIO)},
+  year = {2009},
+  owner = {Rogerio},
+  timestamp = {2013.08.25}
+}
+
+@BOOK{Garlan2010,
+  title = {Documenting Software Architectures: Views and Beyond},
+  publisher = {Addison-Wesley Professional},
+  year = {2010},
+  author = {Garlan, David and Bachmann, Felix and Ivers, James and Stafford,
+	Judith and Bass, Paul and Merson, Paulo},
+  edition = {2nd},
+  isbn = {0321552687, 9780321552686}
+}
+
+@BOOK{Gil1991,
+  title = {Como elaborar projetos de pesquisa},
+  publisher = {São Paulo: Atlas},
+  year = {1991},
+  editor = {Atlas},
+  author = {GIL, Antonio Carlos},
+  owner = {Rogerio},
+  timestamp = {2013.08.25}
+}
+
+@BOOK{Goossens2007,
+  title = {The \LaTeX\ graphics companion},
+  publisher = {Addison-Wesley},
+  year = {2007},
+  author = {Goossens, Michel and Mittelbach, Frank and Rahtz, Sebastian and Roegel,
+	Denis and Voss, Herbert},
+  address = {Boston},
+  edition = {2},
+  owner = {Hugo},
+  timestamp = {2009.11.08}
+}
+
+@BOOK{GUEDES2004,
+  title = {UML Uma Abordagem Prática},
+  publisher = {Novatec},
+  year = {2004},
+  editor = {Novatec},
+  author = {Guedes, Gilleanes T. A.}
+}
+
+@TECHREPORT{oauth210,
+  author = {E. Hammer-Lahav},
+  title = {{The OAuth 1.0 Protocol}},
+  institution = {RFC Editor},
+  year = {2010},
+  number = {5849},
+  address = {Fremont, CA, USA},
+  month = apr,
+  abstract = {{OAuth provides a method for clients to access server resources on
+	behalf of a resource owner (such as a different client or an end-
+	user). It also provides a process for end-users to authorize third-
+	party access to their server resources without sharing their credentials
+	(typically, a username and password pair), using user- agent redirections.
+	This document is not an Internet Standards Track specification; it
+	is published for informational purposes.}},
+  citeulike-article-id = {12318033},
+  citeulike-linkout-0 = {http://www.rfc-editor.org/rfc/rfc5849.txt},
+  citeulike-linkout-1 = {http://tools.ietf.org/html/rfc5849},
+  citeulike-linkout-2 = {http://tools.ietf.org/rfc/rfc5849.txt},
+  howpublished = {Internet Requests for Comment},
+  issn = {2070-1721},
+  keywords = {cnsm, oauth},
+  posted-at = {2013-05-03 12:56:56},
+  publisher = {RFC Editor},
+  url = {http://www.rfc-editor.org/rfc/rfc5849.txt}
+}
+
+@TECHREPORT{rfc6749,
+  author = {Hardt, Dick},
+  title = {The {OA}uth 2.0 Authorization Framework},
+  institution = {RFC Editor},
+  year = {2012},
+  type = {RFC},
+  number = {6749},
+  address = {Fremont, CA, USA},
+  month = oct,
+  abstract = {The {OAuth} 2.0 authorization framework enables a third-party application
+	to obtain limited access to an {HTTP} service, either on behalf of
+	a resource owner by orchestrating an approval interaction between
+	the resource owner and the {HTTP} service, or by allowing the third-party
+	application to obtain access on its own behalf. This specification
+	replaces and obsoletes the {OAuth} 1.0 protocol described in {RFC}
+	5849. [{STANDARDS}-{TRACK}]},
+  citeulike-article-id = {11836766},
+  citeulike-linkout-0 = {http://www.rfc-editor.org/rfc/rfc6749.txt},
+  citeulike-linkout-1 = {http://www.rfc-editor.org/rfc/rfc6749.txt},
+  citeulike-linkout-2 = {http://tools.ietf.org/html/rfc6749},
+  citeulike-linkout-3 = {http://tools.ietf.org/rfc/rfc6749.txt},
+  editor = {Hardt, Dick},
+  howpublished = {Internet Requests for Comment},
+  issn = {2070-1721},
+  keywords = {authentication, oauth, token, web},
+  posted-at = {2012-12-10 00:34:24},
+  publisher = {RFC Editor},
+  url = {http://www.rfc-editor.org/rfc/rfc6749.txt}
+}
+
+@BOOK{Hunter2007,
+  title = {Beginning XML},
+  publisher = {Wiley},
+  year = {2007},
+  author = {Hunter, D. and Rafter, J. and Fawcett, J. and van der Vlist, E. and
+	Ayers, D. and Duckett, J. and Watt, A. and McKinnon, L.},
+  series = {Wrox beginning guides},
+  isbn = {9780470173329},
+  url = {http://books.google.com.br/books?id=YrFywWs1IL0C}
+}
+
+@MISC{JabRef2009,
+  author = {JabRef},
+  title = {JabRef reference manager},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://jabref.sourceforge.net},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@BOOK{Josuttis07,
+  title = {SOA in Practice: The Art of Distributed System Design},
+  publisher = {O'Reilly Media, Inc.},
+  year = {2007},
+  author = {Josuttis, Nicolai M.},
+  address = {Beijing},
+  added-at = {2012-05-30T11:06:07.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2316b31057139df5ac9c08bb76fccfc12/flint63},
+  groups = {public},
+  interhash = {c3557993d2f7b0a95a001d5b6ce63a0d},
+  intrahash = {316b31057139df5ac9c08bb76fccfc12},
+  isbn = {978-0-596-52955-0},
+  username = {flint63}
+}
+
+@BOOK{Jung2004,
+  title = {Metodologia para pesquisa \& desenvolvimento: aplicada a novas tecnologias,
+	produtos e processos.},
+  publisher = {Axcel Books do Brasil Editora},
+  year = {2004},
+  editor = {Axcel Books do Brasil Editora},
+  author = {JUNG, C. F.}
+}
+
+@BOOK{SOASecurity2008,
+  title = {SOA security},
+  publisher = {Manning Publications Co.},
+  year = {2008},
+  author = {Kanneganti, Ramarao and Chodavarapu, Prasad},
+  address = {Greenwich, CT, USA},
+  isbn = {9781932394689}
+}
+
+@INPROCEEDINGS{Kitchenham2010,
+  author = {Kitchenham, Barbara A. and Budgen, David and Brereton, O. Pearl},
+  title = {The value of mapping studies - A participant-observer case study},
+  booktitle = {Proceedings of the 14th international conference on Evaluation and
+	Assessment in Software Engineering},
+  year = {2010},
+  series = {EASE'10},
+  pages = {25--33},
+  address = {Swinton, UK, UK},
+  publisher = {British Computer Society},
+  acmid = {2227061},
+  keywords = {case study, mapping studies, systematic literature review},
+  location = {UK},
+  numpages = {9},
+  url = {http://dl.acm.org/citation.cfm?id=2227057.2227061}
+}
+
+@TECHREPORT{guidelines-2007,
+  author = {Barbara Kitchenham and Stuart Charters},
+  title = {Guidelines for performing systematic literature reviews in software
+	engineering},
+  institution = {Keele University and Durham University Joint Report},
+  year = {2007},
+  number = {EBSE 2007-001}
+}
+
+@BOOK{Kopka2003,
+  title = {Guide to \LaTeX},
+  publisher = {Addison-Wesley},
+  year = {2003},
+  author = {Kopka, Helmut and Daly, Patrick W.},
+  address = {Boston},
+  edition = {4},
+  owner = {Hugo},
+  timestamp = {2009.11.08}
+}
+
+@BOOK{lakatos,
+  title = {Fundamentos de metodologia cient{\'\i}fica},
+  publisher = {Ed. Atlas},
+  year = {2003},
+  author = {LAKATOS, E.V.A.M. and DE ANDRADE MARCONI MARCONI, M.}
+}
+
+@BOOK{lakshmiraghavan2013pro,
+  title = {Pro ASP.NET Web API Security: Securing ASP.NET Web API},
+  publisher = {Apress},
+  year = {2013},
+  author = {Lakshmiraghavan, Badrinarayanan},
+  address = {Berkely, CA, USA},
+  edition = {1st},
+  isbn = {1430257822, 9781430257820}
+}
+
+@BOOK{Lamport1986,
+  title = {\LaTeX: \normalfont a document preparation system},
+  publisher = {Addison-Wesley},
+  year = {1986},
+  author = {Lamport, Leslie},
+  address = {Reading},
+  owner = {Hugo},
+  timestamp = {2009.11.08}
+}
+
+@MISC{LaTeX2009,
+  author = {LaTeX},
+  title = {The \LaTeX\ project},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://www.latex-project.org},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@BOOK{leedy1980practical,
+  title = {Practical Research: Planning and Design},
+  publisher = {Macmillan Publ.},
+  year = {1980},
+  author = {Leedy, P.D.},
+  isbn = {9780023692307},
+  lccn = {79012922},
+  url = {http://books.google.com.br/books?id=eWVQAAAAMAAJ}
+}
+
+@ARTICLE{sun2008,
+  author = {Lili Sun;Yan Li},
+  title = {XML and web services security},
+  journal = {Computer Supported Cooperative Work in Design, 2008. CSCWD 2008.
+	12th International Conference on},
+  year = {2008},
+  pages = {765 - 770},
+  owner = {774081},
+  timestamp = {2014.01.09}
+}
+
+@ARTICLE{Vulnerability_Analysis2011,
+  author = {Lutz Lowis and Rafael Accorsi},
+  title = {Vulnerability Analysis in SOA-Based Business Processes},
+  journal = {IEEE Transactions on Services Computing},
+  year = {2011},
+  volume = {4},
+  pages = {230-242},
+  number = {3},
+  address = {Los Alamitos, CA, USA},
+  doi = {http://doi.ieeecomputersociety.org/10.1109/TSC.2010.37},
+  issn = {1939-1374},
+  publisher = {IEEE Computer Society}
+}
+
+@TECHREPORT{Madsen2005,
+  author = {Madsen,Paul and Maler,Eve and Wisniewski, Thomas and Nadalin, Tony
+	and Cantor, Scott and Hodges, Jeff and Mishra, Prateek},
+  title = {SAML V2.0 Executive Overview},
+  year = {2005},
+  month = apr,
+  citeulike-article-id = {6948487},
+  citeulike-linkout-0 = {http://www.oasis-open.org/committees/download.php/13525/sstc-saml-exec-overview-2.0-cd-01-2col.pdf},
+  day = {12},
+  editor = {Madsen, Paul and Maler, Eve},
+  keywords = {saml},
+  posted-at = {2010-04-04 12:25:05},
+  url = {http://www.oasis-open.org/committees/download.php/13525/sstc-saml-exec-overview-2.0-cd-01-2col.pdf}
+}
+
+@BOOK{Lakatos2003,
+  title = {Fundamentos de Metodologia Científica},
+  year = {2003},
+  editor = {EDITORA ATLAS S.A},
+  author = {Marina de Andrade Marconi, Eva Maria Lakatos.},
+  owner = {Rogerio},
+  timestamp = {2013.08.04}
+}
+
+@BOOK{marks2006,
+  title = {Service Oriented Architecture (SOA): A Planning and Implementation
+	Guide for Business and Technology},
+  publisher = {Wiley},
+  year = {2006},
+  author = {Marks, E.A. and Bell, M.},
+  series = {Gu{\'\i}as de Espa{\~n}a},
+  isbn = {9780471768944},
+  lccn = {2005034273}
+}
+
+@INPROCEEDINGS{Meadows95,
+  author = {Catherine A. Meadows},
+  title = {Formal Verification of Cryptographic Protocols: A Survey},
+  year = {1995},
+  pages = {133--150},
+  publisher = {Springer-Verlag}
+}
+
+@BOOK{Meier2007,
+  title = {Performance testing guidance for web applications: patterns \& practices},
+  publisher = {Microsoft Press},
+  year = {2007},
+  author = {Meier, J. and Farre, Carlos and Bansode, Prashant and Barber, Scott
+	and Rea, Dennis},
+  address = {Redmond, WA, USA},
+  isbn = {9780735625709}
+}
+
+@MISC{Mendeley2009,
+  author = {Mendeley},
+  title = {Mendeley: \normalfont academic software for research papers},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://www.mendeley.com},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@ARTICLE{sbcars2013,
+  author = {MENDONÇA,Danilo Filgueira and Rodrigues, Genaína Nunes and Favacho,
+	Aletéia and Holanda, Maristela},
+  title = {Mapeamento Sistemático de Computação Orientada a Serviços no Contexto
+	de QoS},
+  journal = {Departamento de Ciência da Computação Universidade de Brasília, Brasil},
+  year = {2013},
+  owner = {Rogerio},
+  timestamp = {2013.08.25}
+}
+
+@BOOK{Menezes1996,
+  title = {Handbook of Applied Cryptography},
+  publisher = {CRC Press, Inc.},
+  year = {1996},
+  author = {Menezes, Alfred J. and Vanstone, Scott A. and Oorschot, Paul C. Van},
+  address = {Boca Raton, FL, USA},
+  edition = {1st},
+  isbn = {0849385237}
+}
+
+@MISC{MiKTeX2009,
+  author = {MiKTeX},
+  title = {The MiK\TeX\ project},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://www.miktex.org},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@BOOK{Mittelbach2004,
+  title = {The \LaTeX\ companion},
+  publisher = {Addison-Wesley},
+  year = {2004},
+  author = {Mittelbach, Frank and Goossens, Michel and Braams, Johannes and Carlisle,
+	David and Rowley, Chris},
+  address = {Boston},
+  edition = {2},
+  owner = {Hugo},
+  timestamp = {2009.11.08}
+}
+
+@ARTICLE{Moradian2006,
+  author = {Esmiralda Moradian and Anne Håkansson},
+  title = {Possible attacks on XML Web Services},
+  journal = {IJCSNS International Journal of Computer Science and 154 Network
+	Security},
+  year = {2006},
+  volume = {VOL.6 No.1B},
+  owner = {Rogerio},
+  timestamp = {2013.09.05}
+}
+
+@ARTICLE{Nordbotten09,
+  author = {Nordbotten, Nils Agne},
+  title = {XML and Web Services Security Standards.},
+  journal = {IEEE Communications Surveys and Tutorials},
+  year = {2009},
+  volume = {11},
+  pages = {4-21},
+  number = {3},
+  added-at = {2011-12-02T00:00:00.000+0100},
+  biburl = {http://www.bibsonomy.org/bibtex/21aa4d56128e695db13386bd1cd1d51fc/dblp},
+  ee = {http://doi.ieeecomputersociety.org/10.1109/SURV.2009.090302},
+  interhash = {6c16b2a5e8cc6b42aa029f2d9aa4bb40},
+  intrahash = {1aa4d56128e695db13386bd1cd1d51fc},
+  keywords = {dblp},
+  timestamp = {2011-12-02T00:00:00.000+0100}
+}
+
+@STANDARD{oasis2006reference,
+  title = {Reference Model for Service Oriented Architecture 1.0},
+  author = {{OASIS}},
+  type = {OASIS Standard},
+  month = oct,
+  year = {2006},
+  url = {http://docs.oasis-open.org/soa-rm/v1.0/},
+  added-at = {2012-10-01T11:58:21.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2ff4ef0145c2721f9f01f19fa192b22f6/phm02},
+  day = {12},
+  interhash = {eb741433b4ed4eb92761958bdd6027a7},
+  intrahash = {ff4ef0145c2721f9f01f19fa192b22f6},
+  keywords = {grundlagen soa},
+  publisher = {OASIS Open},
+  timestamp = {2012-10-01T11:58:21.000+0200}
+}
+
+@INPROCEEDINGS{Petersen2008,
+  author = {Petersen, Kai and Feldt, Robert and Mujtaba, Shahid and Mattsson,
+	Michael},
+  title = {Systematic mapping studies in software engineering},
+  booktitle = {Proceedings of the 12th international conference on Evaluation and
+	Assessment in Software Engineering},
+  year = {2008},
+  series = {EASE'08},
+  pages = {68--77},
+  address = {Swinton, UK, UK},
+  publisher = {British Computer Society},
+  acmid = {2227123},
+  keywords = {evidence based software engineering, systematic mapping studies, systematic
+	reviews},
+  location = {Italy},
+  numpages = {10},
+  url = {http://dl.acm.org/citation.cfm?id=2227115.2227123}
+}
+
+@MASTERSTHESIS{sonia2008,
+  author = {Sónia Cristina Santos de Pinho},
+  title = {Arquitectura de Segurança num ambiente SOA},
+  school = {Faculdade de Engenharia da Universidade do Porto},
+  year = {2008},
+  owner = {Rogerio},
+  timestamp = {2013.09.05}
+}
+
+@BOOK{Pulier2005,
+  title = {{Understanding Enterprise SOA}},
+  publisher = {{Manning Publications}},
+  year = {2005},
+  author = {Pulier, Eric and Taylor, Hugh},
+  citeulike-article-id = {2722449},
+  citeulike-linkout-0 = {http://www.amazon.ca/exec/obidos/redirect?tag=citeulike09-20\&amp;path=ASIN/1932394591},
+  citeulike-linkout-1 = {http://www.amazon.de/exec/obidos/redirect?tag=citeulike01-21\&amp;path=ASIN/1932394591},
+  citeulike-linkout-2 = {http://www.amazon.fr/exec/obidos/redirect?tag=citeulike06-21\&amp;path=ASIN/1932394591},
+  citeulike-linkout-3 = {http://www.amazon.co.uk/exec/obidos/ASIN/1932394591/citeulike00-21},
+  citeulike-linkout-4 = {http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20\&path=ASIN/1932394591},
+  citeulike-linkout-5 = {http://www.worldcat.org/isbn/1932394591},
+  citeulike-linkout-6 = {http://books.google.com/books?vid=ISBN1932394591},
+  citeulike-linkout-7 = {http://www.amazon.com/gp/search?keywords=1932394591\&index=books\&linkCode=qs},
+  citeulike-linkout-8 = {http://www.librarything.com/isbn/1932394591},
+  day = {10},
+  howpublished = {Paperback},
+  isbn = {1932394591},
+  keywords = {soa},
+  posted-at = {2010-09-14 13:27:46}
+}
+
+@INPROCEEDINGS{Recordon2006,
+  author = {Recordon, David and Reed, Drummond},
+  title = {OpenID 2.0: A Platform for User-centric Identity Management},
+  booktitle = {Proceedings of the Second ACM Workshop on Digital Identity Management},
+  year = {2006},
+  series = {DIM '06},
+  pages = {11--16},
+  address = {New York, NY, USA},
+  publisher = {ACM},
+  acmid = {1179532},
+  doi = {10.1145/1179529.1179532},
+  isbn = {1-59593-547-9},
+  keywords = {authentication, authorization, identity, open source, open standard,
+	user-centric},
+  location = {Alexandria, Virginia, USA},
+  numpages = {6},
+  url = {http://doi.acm.org/10.1145/1179529.1179532}
+}
+
+@BOOK{Richardson2007,
+  title = {Restful Web Services},
+  publisher = {O'Reilly},
+  year = {2007},
+  author = {Richardson, Leonard and Ruby, Sam},
+  edition = {First},
+  isbn = {9780596529260}
+}
+
+@INPROCEEDINGS{securewsSaravanaguru2013,
+  author = {R. A. K. Saravanaguru and George Abraham and Krishnakumar Ventakasubramanian
+	and Kiransinh Borasia},
+  title = {Securing Web Services Using XML Signature and XML Encryption},
+  year = {2013},
+  ee = {http://arxiv.org/abs/1303.0910},
+  journal = {CoRR}
+}
+
+@BOOK{Schneier1995,
+  title = {Applied Cryptography (2Nd Ed.): Protocols, Algorithms, and Source
+	Code in C},
+  publisher = {John Wiley \& Sons, Inc.},
+  year = {1995},
+  author = {Schneier, Bruce},
+  address = {New York, NY, USA},
+  isbn = {0-471-11709-9}
+}
+
+@ARTICLE{Siddavatam2008,
+  author = {Irfan Siddavatam and Jayant Gadge},
+  title = {Comprehensive Test Mechanism to Detect Attack on Web Services},
+  journal = {Networks, 2008. ICON 2008. 16 IEEE Conferência Internacional sobre},
+  year = {2008},
+  pages = {1 - 6},
+  owner = {Rogerio},
+  timestamp = {2013.09.05}
+}
+
+@BOOK{SilvaMenezes2005,
+  title = {{Metodologia da Pesquisa e Elabora\c{c}\~{a}o de Disserta\c{c}\~{a}o,
+	4a edi\c{c}\~{a}o revisada e atualizada}},
+  publisher = {Universidade Federal de Santa Catarina},
+  year = {2005},
+  author = {Silva, Edna L. and Menezes, Estera M.},
+  abstract = {{A Metodologia tem como fun\c{c}\~{a}o mostrar a voc\^{e} como andar
+	no "caminho das pedras" da pesquisa, ajud\'{a}-lo a refletir e insti-gar
+	um novo olhar sobre o mundo: um olhar curioso, indaga-dor e criativo.
+	A elabora\c{c}\~{a}o de um projeto de pesquisa e o desenvolvimento
+	da pr\'{o}pria pesquisa, seja ela uma disserta\c{c}\~{a}o ou tese,
+	neces-sitam, para que seus resultados sejam satisfat\'{o}rios, estar
+	ba-seados em planejamento cuidadoso, reflex\~{o}es conceituais s\'{o}li-das
+	e alicer\c{c}ados em conhecimentos j\'{a} existentes. Pesquisar \'{e}
+	um trabalho que envolve um planejamento an\'{a}lo-go ao de um cozinheiro.
+	Ao preparar um prato, o cozinheiro precisa saber o que ele quer fazer,
+	obter os ingredientes, asse-gurar-se de que possui os utens\'{\i}lios
+	necess\'{a}rios e cumprir as etapas requeridas no processo. Um prato
+	ser\'{a} saboroso na medida do envolvimento do cozinheiro com o ato
+	de cozinhar e de suas habilidades t\'{e}cnicas na cozinha. O sucesso
+	de uma pesquisa tamb\'{e}m depender\'{a} do procedimento seguido,
+	do seu envolvimento com a pesquisa e de sua habilidade em escolher
+	o caminho para atingir os objetivos da pesquisa. A pesquisa \'{e}
+	um trabalho em processo n\~{a}o totalmente contro-l\'{a}vel ou previs\'{\i}vel.
+	Adotar uma metodologia significa escolher um caminho, um percurso
+	global do esp\'{\i}rito. O percurso, muitas vezes, requer ser reinventado
+	a cada etapa. Precisa-mos, ent\~{a}o, n\~{a}o somente de regras e
+	sim de muita criatividade e imagina\c{c}\~{a}o. Esta publica\c{c}\~{a}o
+	Metodologia da Pesquisa e Elabora\c{c}\~{a}o de Disserta\c{c}\~{a}o
+	visa fornecer para voc\^{e} informa\c{c}\~{o}es b\'{a}sicas de metodologia
+	da pesquisa servindo de guia \`{a} elabora\c{c}\~{a}o do projeto
+	e da disserta\c{c}\~{a}o de mestrado e da tese de doutorado do Programa
+	de P\'{o}s-Gradua\c{c}\~{a}o em Engenharia de Produ\c{c}\~{a}o da
+	Universidade Federal de Santa Catarina. Descreve princ\'{\i}pios
+	te\'{o}ricos e fornece orienta\c{c}\~{o}es pr\'{a}ticas que ajudar\~{a}o
+	voc\^{e} a aprender a pensar criticamente, ter disciplina, escrever
+	e apresentar trabalhos conforme padr\~{o}es metodol\'{o}gicos e acad\^{e}micos.}},
+  citeulike-article-id = {3936237},
+  keywords = {phd-life, research-methods, writing},
+  posted-at = {2009-01-24 18:41:08},
+  priority = {2}
+}
+
+@BOOK{stallings2008,
+  title = {Criptografia e segurança de redes: princípios e práticas},
+  publisher = {Pearson Prentice Hall},
+  year = {2008},
+  author = {Stallings, W.},
+  isbn = {9788576051190}
+}
+
+@MISC{TeX-Br2009,
+  author = {TeX-BR},
+  title = {Comunidade \TeX-Br},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://www.tex-br.org/index.php},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@MISC{TeXnicCenter2009,
+  author = {TeXnicCenter},
+  title = {\TeX nicCenter: \normalfont the center of your \LaTeX\ universe},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://www.texniccenter.org},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@BOOK{prowebapi2013,
+  title = {Pro ASP.NET Web API: HTTP Web Services in ASP.NET},
+  publisher = {Apress},
+  year = {2013},
+  author = {Ugurlu, Tugberk and Zeitler, Alexander and Kheyrollahi, Ali},
+  address = {Berkely, CA, USA},
+  edition = {1st},
+  isbn = {1430247258, 9781430247258}
+}
+
+@BOOK{UTFPR2008,
+  title = {Normas para elabora\c{c}\~ao de trabalhos acad\^emicos},
+  publisher = {Universidade Tecnol\'ogica Federal do Paran\'a},
+  year = {2008},
+  editor = {Reitoria},
+  author = {UTFPR},
+  address = {Curitiba},
+  owner = {Hugo},
+  timestamp = {2009.11.08}
+}
+
+@BOOK{Verissimo2001,
+  title = {Distributed Systems for System Architects},
+  publisher = {Kluwer Academic Publishers},
+  year = {2001},
+  author = {Verissimo, Paulo and Rodrigues, Luis},
+  address = {Norwell, MA, USA},
+  isbn = {0792372662}
+}
+
+@BOOK{Webber10,
+  title = {REST in Practice: Hypermedia and Systems Architecture},
+  publisher = {O'Reilly},
+  year = {2010},
+  author = {Webber, J and Robinson, I and Parastatidis, S},
+  abstract = {REST continues to gain momentum as the best method for building web
+	services, leaving many web architects to consider whether and how
+	to include this approach in their SOA and SOAP-dominated world. In
+	this insightful book, three SOA experts provide a down-to-earth explanation
+	of REST and demonstrate how you can develop simple and elegant distributed
+	hypermedia systems by applying the Web's guiding principles to common
+	enterprise computing problems. You'll learn techniques for implementing
+	specific Web technologies and patterns to solve the needs of a typical
+	company as it grows from modest beginnings to become a global enterprise.},
+  added-at = {2011-01-23T12:31:10.000+0100},
+  address2 = {Sebastopol, CA},
+  biburl = {http://www.bibsonomy.org/bibtex/23c062a2befaaecf32cb5fc71b78cf67f/jimbarritt},
+  file = {Safari:http\://acmsel.safaribooksonline.com/9780596805821:URL;O'Reilly Product page:http\://www.oreilly.com/catalog/9780596805821/:URL;Amazon Search inside:http\://www.amazon.de/gp/reader/0596805829/:URL;Google Books:http\://books.google.de/books?isbn=978-0-596-80582-1:URL},
+  interhash = {229d6a91d11c8d10e35fc2b1e531d6ec},
+  intrahash = {3c062a2befaaecf32cb5fc71b78cf67f},
+  isbn = {978-0-596-80582-1},
+  keywords = {design encapsulation},
+  timestamp = {2011-01-23T12:31:10.000+0100}
+}
+
+@INPROCEEDINGS{WeberAM07,
+  author = {Sam Weber and Paula Austel and Michael McIntosh},
+  title = {A Framework for Multi-Platform SOA Security Analyses},
+  booktitle = {2007 IEEE International Conference on Web Services (ICWS 2007), July
+	9-13, 2007, Salt Lake City, Utah, USA},
+  year = {2007},
+  pages = {102-109},
+  publisher = {IEEE Computer Society},
+  citedby = {0},
+  cites = {0},
+  doi = {http://doi.ieeecomputersociety.org/10.1109/ICWS.2007.4},
+  researchr = {http://researchr.org/publication/WeberAM07},
+  tags = {security}
+}
+
+@MISC{Wikibooks2009,
+  author = {Wikibooks},
+  title = {\LaTeX},
+  year = {2009},
+  owner = {Hugo},
+  timestamp = {2009.11.08},
+  url = {http://en.wikibooks.org/wiki/LaTeX},
+  urlaccessdate = {8 de novembro de 2009}
+}
+
+@ARTICLE{CrossRealmSOA2012,
+  author = {Jie Xu and Dacheng Zhang and Lu Liu and Xianxian Li},
+  title = {Dynamic Authentication for Cross-Realm SOA-Based Business Processes},
+  journal = {IEEE Transactions on Services Computing},
+  year = {2012},
+  volume = {5},
+  pages = {20-32},
+  number = {1},
+  address = {Los Alamitos, CA, USA},
+  doi = {http://doi.ieeecomputersociety.org/10.1109/TSC.2010.33},
+  issn = {1939-1374},
+  publisher = {IEEE Computer Society}
+}
+
+@ARTICLE{Zhang2011,
+  author = {Zhang, Yang and Chen, Junliang},
+  title = {A Delegation Solution for Universal Identity Management in SOA.},
+  journal = {IEEE T. Services Computing},
+  year = {2011},
+  volume = {4},
+  pages = {70-81},
+  number = {1},
+  added-at = {2011-11-07T00:00:00.000+0100},
+  biburl = {http://www.bibsonomy.org/bibtex/274b56f08b6b5e84a003161402336fbf2/dblp},
+  ee = {http://doi.ieeecomputersociety.org/10.1109/TSC.2010.9},
+  interhash = {c412096a9c79162970aa64df37d4efda},
+  intrahash = {74b56f08b6b5e84a003161402336fbf2},
+  keywords = {dblp},
+  timestamp = {2011-11-07T00:00:00.000+0100},
+  url = {http://dblp.uni-trier.de/db/journals/tsc/tsc4.html#ZhangC11}
+}
+
+@ARTICLE{Delegation_Solution2011,
+  author = {Yang Zhang and Jun-Liang Chen},
+  title = {A Delegation Solution for Universal Identity Management in SOA},
+  journal = {IEEE Transactions on Services Computing},
+  year = {2011},
+  volume = {4},
+  pages = {70-81},
+  number = {1},
+  address = {Los Alamitos, CA, USA},
+  doi = {http://doi.ieeecomputersociety.org/10.1109/TSC.2010.9},
+  issn = {1939-1374},
+  publisher = {IEEE Computer Society}
+}
+
+@MISC{,
+  owner = {Rogerio},
+  timestamp = {2013.09.05}
+}
+

@@ -1,0 +1,628 @@
+Received: from ATHENA.MIT.EDU by po6.MIT.EDU (5.61/4.7) id AA15720; Tue, 9 Jun 92 14:06:42 -0400
+Received: from THYME.LCS.MIT.EDU by Athena.MIT.EDU with SMTP
+	id AA05935; Tue, 9 Jun 92 14:06:34 EDT
+Received: from FLY.LCS.MIT.EDU by thyme.LCS.MIT.EDU via TCP with SMTP
+	id AA01869; Tue, 9 Jun 92 14:06:24 EDT
+Received: by fly.lcs.mit.edu.lcs.mit.edu (4.1/SMI-4.1)
+	id AA06070; Tue, 9 Jun 92 14:09:33 EDT
+Date: Tue, 9 Jun 92 14:09:33 EDT
+Message-Id: <9206091809.AA06070@fly.lcs.mit.edu.lcs.mit.edu>
+From: Semyon Dukach <dukach@lcs.mit.edu>
+Sender: dukach@fly.lcs.mit.edu
+To: sao@Athena.MIT.EDU
+Cc: sao@Athena.MIT.EDU
+In-Reply-To: sao@athena.mit.edu's message of Tue, 09 Jun 92 10:10:05 EDT <9206091410.AA08997@cascade>
+Subject: SNPP protocol
+
+Here's a copy of my paper on SNPP.  If you want to talk about it, you are
+welcome to stop by my office in 501 LCS anytime.
+
+/semyon
+
+% -*- Mode: LaTeX -*-
+\documentstyle[12pt]{article}
+\begin{document}
+
+\begin{center}
+{\large {\em \bf SNPP:} A Simple Network Payment Protocol \\}
+\bigskip
+\bigskip
+{\em Semyon Dukach\\}
+\bigskip
+NE43-501\\
+Laboratory for Computer Science\\
+Massachusetts Institute of Technology\\
+Cambridge, MA 02139\\
+dukach@lcs.mit.edu\\
+(617)253-6079\\
+\end{center}
+
+\bigskip
+\bigskip
+
+\begin{abstract}
+A protocol is proposed to securely implement payment transactions
+between mutually distrustful parties.  This protocol is designed to
+operate over an open network, and can be implemented using currently
+available encryption technology.
+\end{abstract}
+
+\section{Introduction}
+
+When the Internet was first created, many exciting services and
+applications were envisioned.  It was widely believed that the network
+would be used to fulfill diverse needs and to provide many new
+capabilities for users around the world.  Powerful services providing
+news, shopping, entertainment, and remote computation and storage were
+believed to be around the corner.  Yet despite the fact that today's Internet
+has grown to sufficient scope and speed, very few advanced services are
+available at the moment.  The large majority of traffic still consists of
+simple electronic mail and ``news'' delivery, remote logins, and file
+transfers.
+
+We believe that a major reason why advanced applications
+have not flourished is the lack of a practical payment facility.
+Without the ability to efficiently exchange money, there is
+insufficient motivation for the development of production-quality
+software.  In addition, since further growth of the Internet seems
+much less likely to rely on government funding, payment mechanisms are
+also needed to enable link owners to efficiently charge their users.
+
+Informal {\it ad hoc\/} financial transactions have already begun to occur on
+the Internet.  Most of these, such as sending credit card numbers
+through e-mail, are extremely insecure and inefficient.  It is instead
+desirable to allow individuals with access to the Internet to pay for
+goods and services directly.
+
+This paper describes SNPP, a simple payment protocol for secure
+transactions over an open network.  A logical verification of the
+protocol is included, as well as a status report on its
+implementation.
+
+\section{Goals}
+
+Our payment protocol has been designed to meet the following
+goals:
+\begin{itemize}
+\item It should provide a secure means
+for payment transactions between parties over an open network.
+
+\item The parties
+should not need to trust each other, only their respective banks.
+
+\item A thief with the
+ability to arbitrarily view, store, and replace messages among all parties
+should at most cause denial of service, and should not be able to
+embezzle funds, even if allied with one of the parties.
+
+\item   A mechanism should be provided for
+``holding'' the funds during the sensitive period of a transaction, so that
+no money is handed over until a product is received, yet no product is
+sent out until payment is assured.
+
+\item The protocol should be fully
+partitionable, in the sense that a customer should only deal with his merchant,
+and a merchant only with her bank. Therefore at each point, further
+verification could be postponed for batch processing at the risk of the
+appropriate party, and without a separate procedure at the beginning of the
+authorization chain.
+
+\end{itemize}
+
+For our initial implementation, the basic requirements are library calls
+providing UDP datagram
+communication, and DES encryption.  In addition, several support
+functions such as reliable key distribution, stable storage for used
+transaction numbers, and workstation authentication will be necessary for
+an implementation secure enough for experimenting with non-trivial amounts
+of real currency.
+
+\section{Background}
+
+In order to provide the ability to transfer payments in real time, a
+mechanism is necessary for secure communication.  In 1978, Needham and
+Schroeder \cite{kn:needham78} defined protocols for establishing secure interactive
+connections by using an authentication server.
+The Kerberos \cite{kn:steiner88} authentication system
+extends the Needham and Schroeder algorithm to multiple authentication
+servers.  Authorization and accounting schemes can be built on top of the
+authentication interface that Kerberos provides.  The latest version
+of Kerberos also supports an extension defined by Neuman
+\cite{kn:neuman91} as
+{\it Restricted Proxies}.  The recipient of such a proxy is allowed to act
+with the same rights and privileges as the grantor of the proxy, subject to
+an arbitrary set of restrictions.  Neuman briefly outlines how a payment
+protocol can be implemented on top of restricted proxies.
+
+While restricted proxies and Kerberos may prove to be a desirable
+platform in future implementations, the protocol we are currently
+proposing has been designed from scratch, using UDP for communication,
+and DES for encryption.  This has enabled us to give closer
+consideration to the fundamental security and performance tradeoffs
+inherent in the problem of open network payments.  In addition, direct
+implementations allow the inclusion of several desirable properties,
+such as anonymity between the buyer and the seller, and
+partitionability of payment verification.
+
+A network payment protocol is only as secure as the end workstations.  In
+particular, a user has to be able to authenticate a workstation before
+divulging his key.
+As shown in Abadi {\it et al} \cite{kn:abadi90}, workstation authentication
+can only be
+achieved with a smart card which minimally possesses a self-powered clock,
+an internal encryption and decryption capability, and either a keyboard or
+a display.  In their 1990 report, Bos and Chaum \cite{kn:bos90} describe an
+electronic payment system which employs smart cards capable of DES but not
+RSA encryption to authenticate host workstations.  Since our goal has been to
+design a payment system for the immediate future which does not require any
+special hardware,
+the protocol assumes that the user's end
+workstation is secure, without making any assumptions about the security of
+the network.
+
+In order to verify the correctness of our protocol, we make use of
+{\it A Logic of Authentication}, developed by Burrows, Abadi, and Needham
+\cite{kn:burrows89}.  The proof of the correctness of SNPP outlined below
+is analogous to the verification of Kerberos given as an example in
+their paper.
+
+\section{Summary of the Protocol}
+
+In order to act as either a customer or a merchant, a user must first
+open an account with a trusted bank and deposit some funds.  At the
+time an account is opened, a key is generated for subsequent symmetric
+encryption, and is given to the user along with an account number.
+The bank keeps a record of each account, indexed by account number.
+The record contains the amount and type of currency in the account, a
+list of holds on the currency, the aforementioned key, the most recent
+transaction number, and a list of all transaction numbers smaller than
+the most recent one which have not yet been used.  Each hold consists
+of an amount, an account~number/bank~id pair identifying the account
+for which the money is being held, and a timeout.  A single person can
+maintain multiple accounts, and each account can be used for buying as
+well as for selling.
+
+People who have accounts in different banks can still make payments to each
+other, subject to
+the condition that their banks trust each other, and have a pre-arranged
+common key.
+
+The protocol begins when a customer issues a {\bf HOLD} message to the
+merchant, which the merchant in turn forwards to her bank.  The
+merchant's bank then forwards the {\bf HOLD} to the customer's bank,
+if necessary.  If the funds are available, the customer's bank adds
+the hold to the holds list of the customer's account, and returns a
+confirmation to the merchant's bank.  After the merchant gets notified
+of the hold by her bank, she sends out the product to the customer.
+At this point, the customer sends out a {\bf PAY} message to the
+merchant, and an analogous procedure occurs.
+
+\section{Notation}
+
+\begin{itemize}
+\item \makebox[.85in][l]{$C$} Customer.
+\item \makebox[.85in][l]{$M$} \parbox{3in}{Merchant.}
+\item \makebox[.85in][l]{$B_{i}$} Bank of person $i$.
+\item \makebox[0.85in][l]{$A_{i}$} \parbox[t]{4.1in}{Account
+	number of person $i$, changed periodically.  $A_{i}$ need not be
+	confidential as it grants no privileges	without $K_{i}$.}
+\item \makebox[.85in][l]{$K_{i}$} \parbox[t]{4.1in}{The confidential key corresponding
+ to an account of person $i$, changed periodically.
+		$K_{i}$ is also known by $B_{i}$ given $A_{i}$.}
+\item \makebox[.85in][l]{$K_{B_{i},B_{j}}$} \parbox[t]{4.1in}{The common
+		key between bank $i$ and bank $j$.}
+\item \makebox[.85in][l]{$N_{i}$} \parbox[t]{4.1in}{Transaction number assigned by person $i$
+	($N_{i}$ is a nonce which is incremented after each complete transaction).}
+\item \makebox[.85in][l]{$P$} \parbox[t]{4.1in}{The product, quantity and price information.}
+\item \makebox[.85in][l]{\$} The type and amount of currency.
+\item \makebox[.85in][l]{$\{x\}_{K_{i}}$} Message consisting of $x$ encrypted in the key $K_{i}$.
+\item \makebox[.85in][l]{$i \Longrightarrow j : x$} \parbox[t]{4.1in}{$i$ sends a message
+		consisting of $x$ over the net to $j$. A hostile party
+		may tamper with $x$ in any way.}
+
+\end{itemize}
+
+This notation should not be taken to imply that there can only be one
+bank account per person.  Further subscripting could clarify this
+point, but has been omitted for simplicity.
+
+\section{The Protocol}
+
+Before the beginning of the payment protocol, the merchant will probably
+advertise the product over a mailing list, a newsgroup, or some
+alternative method of distribution.  The ad will include the bank id and
+account number to which the merchant expects the customer to direct his
+payments.  This does not necessarily disclose any sensitive information
+about the merchant, since multiple accounts may be maintained with each
+bank, and account numbers can be automatically changed periodically.  Once
+a mutually acceptable price is established, the protocol proceeds as
+follows:
+
+\begin{enumerate}
+
+\item  \[ C \Longrightarrow M : P, B_{C}, A_{C}, \{B_{M}, A_{M}, N_{C},  \$,
+		{\bf HOLD}\}_{K_{C}} \]
+The {\bf HOLD} symbol within the encrypted portion of the message
+signifies that the
+money is to be held by the bank, and not actually transferred.  The
+transaction number is
+needed to keep a thief from storing messages, and then replaying them
+again.  Since only the customer's bank knows $K_{C}$, no one along the way can
+modify the sensitive fields, such as the amount of money involved.
+
+\item \[ M \Longrightarrow B_{M} : B_{C}, A_{C}, \{B_{M}, A_{M}, N_{C},
+		\$, {\bf HOLD}\}_{K_{C}} \]
+
+The first two fields need not be encrypted, since forging them would simply
+prevent subsequent decryption of the {\bf HOLD}, and would eventually set
+off alarms.  The specific order information encapsulated in $P$ is not
+passed on to the bank, since it is not needed.
+
+\item If $B_{M} \neq B_{C}$ then
+\[ B_{M} \Longrightarrow B_{C} : A_{C}, \{B_{M}, A_{M}, N_{C},  \$,
+		{\bf HOLD}\}_{K_{C}} \]
+If $B_{M} = B_{C}$ then messages 3 and 4 are of course unnecessary.
+\item $B_{C}$ now uses $A_{C}$ to find $K_{C}$ and decrypt the message.  If
+$N_{C}$ is greater than the previous $N_{C}$ (or if it is on the list of unused
+skipped transaction numbers)
+and if the funds in $A_{C}$ are available, $B_{C}$ places a
+\{$B_{M}, A_{M}$\} hold on the requested
+amount.  The hold contains
+a standard timeout, after which it is automatically released.  The
+following message is then generated: (If there is not enough currency in
+the account, replace {\bf HELD} by {\bf INSUFFICIENT FUNDS}, and increment
+a security alert counter).
+\[B_{C} \Longrightarrow B_{M} : \{A_{C}, A_{M}, N_{B_{C}}, \$,  {\bf HELD}
+			\}_{K_{B_{C},B_{M}}} \]
+
+
+\item $B_{M}$ decrypts the message using the inter-bank key of the
+bank implied by the return address.
+Then $A_{M}$ is used to look up $K_{M}$ and the address of $M$.
+Alternatively, the merchant's bank could remember the return address of the
+merchant's request by adding an extra reference field to message 3
+encrypted in the inter-bank key.  This
+would allow a merchant to initiate transactions from arbitrary addresses,
+but is omitted here for simplicity.
+
+\[ B_{M} \Longrightarrow M : \{B_{C}, A_{C}, N_{B_{M}}, \$,  {\bf HELD} \}_{K_{M}} \]
+The message is now encrypted in the merchant's key, so that the
+merchant can verify that the {\bf HELD} guarantee is legitimate.  When the
+merchant is able to decrypt this message, she will know that the customer
+must have supplied the correct $A_{M}$ in the hold request.  The reason
+that a new transaction number, $N_{B_{M}}$, is used here instead of
+$N_{B_{C}}$, is so that a merchant only has to keep track of
+transaction numbers emanating from one source: her bank.  $A_{C}$ and
+$B_{C}$ are included in this message so that the {\bf HELD} guarantee can
+be matched to the correct {\bf HOLD} request.
+
+\item At this point, $M$ delivers the goods or services to $C$.  If $C$ is satisfied,
+\[  C \Longrightarrow M : P, B_{C}, A_{C}, \{B_{M}, A_{M}, N_{C},
+			 \$, {\bf PAY}\}_{K_{C}} \]
+
+\item \[ M \Longrightarrow B_{M} : B_{C}, A_{C}, \{B_{M}, A_{M}, N_{C},
+		\$, {\bf PAY}\}_{K_{C}} \]
+
+\item If $B_{M} \neq B_{C}$ then
+\[ B_{M} \Longrightarrow B_{C} : A_{C}, \{B_{M}, A_{M}, N_{C},  \$,
+		{\bf PAY}\}_{K_{C}} \]
+The money is first taken from held funds, which are automatically released
+as they are paid out.  If the {\bf PAY} is more than the {\bf HOLD},
+then the rest is taken straight out of the account, if available.
+
+\item $B_{C}$ initiates an out-of-band procedure to transfer the funds to $B_{M}$.
+\[B_{C} \Longrightarrow B_{M} : \{A_{C}, A_{M}, N_{B_{C}}, \$,  {\bf IOU}
+			\}_{K_{B_{C},B_{M}}} \]
+
+\item $B_{M}$ transfers the requested amount into account $A_{M}$.
+\[ B_{M} \Longrightarrow M : \{B_{C}, A_{C}, N_{B_{M}}, \$,  {\bf PAID} \}_{K_{M}} \]
+
+\end{enumerate}
+\bigskip
+
+If, after step 6, the customer does not receive the promised product, or is
+not satisfied with the quality, the {\bf PAY} message is never generated, and
+the money remains on hold for the length of the timeout period (which
+should be chosen to be of sufficient length to allow for any possible
+disputes to be resolved. Likewise, if the merchant sends out the product
+as promised, but never receives the {\bf PAID} message back from her bank, the
+merchant has not been paid, but the money still remains held.  In such
+cases, all claims to held funds will be addressed by an out-of-band
+arbitration procedure.  If one of the parties cannot be contacted, the money
+would of course be awarded to the other; and otherwise, some sort of legal
+arbitration will occur.
+
+There are other useful messages which should be provided with most
+implementations but have not been included here since they are not part of
+the core protocol.  Some examples are messages that a merchant can send to
+release held funds in excess of the final payment before the timeout
+expires, messages account holders can send to their banks to receive
+account information, and so forth.
+
+In addition to such steps, all users can automatically send out {\bf
+UPDATE REQUEST} packets to their banks at regular intervals.  Upon
+receiving such a packet, the bank generates a random unused account
+number and a random key, encrypts them with the user's old key, and
+returns them to the user.  From then on until the next update request,
+communication will proceed using the new account number and key.
+Updating the key, of course, improves overall security, but updating
+the account number serves another function as well: since every
+customer will have a different account number every few transactions,
+merchants or network watchers would not be able to compile and sell
+lists of correlations between account numbers and purchases.
+
+If the customer trusts that the merchant will deliver the product as
+promised, then the first half of the protocol may be skipped; that is,
+the customer may begin by sending out a {\bf PAY} instead of a {\bf HOLD}
+message.  Alternatively,
+if the merchant wants to save the cost of sending many small packets over
+the net, the product could be sent out immediately after \mbox{step 1}.  It would
+be advisable, however, to proceed with the protocol to verify the hold for
+any customer originating from an unfamiliar address.  In the same manner,
+the merchant's bank could issue the {\bf HELD} guarantee message back to the
+merchant without bothering to contact the customer's bank.  This would be
+probably be more likely if accounts contain credit limits rather than deposited
+funds, and the banks use a common method for verifying credit worthiness and
+risk.
+
+This partitionability of the protocol is the reason that per-party
+transaction numbers, rather than time, must be used to prevent replay
+attacks.  If the merchant chooses to verify every $N$th request from a
+particular customer, and processes the rest together at a later time, then
+the customer's bank will receive message $N$ before messages $1$ through
+$N-1$, so that merely comparing times would not be sufficient.
+
+The main problem with the cost-saving scheme outlined in the above
+paragraphs is that on an open network, it is impossible to trace return
+addresses to individuals, and thus a thief could attempt numerous fake
+transactions without fear of retribution.  One rationale for banks
+and/or merchants to skip the real-time verification step is the empirical
+expectation of losses, which would probably be bounded due primarily to the
+fact that most of the Internet maintains {\em some} level of security.
+
+The use of transaction numbers within all encrypted messages should
+eliminate the risks associated with replay attacks.  However, the
+possibility of inadvertent exposure of keys poses serious concerns.  If
+a customer's or merchant's key somehow gets stolen, all the funds in the
+associated account are at risk of being embezzled.  Furthermore, should an
+unauthorized party come into possession of an inter-bank key, all of
+the accounts at the two banks face potential danger.
+
+\section{Verification}
+To verify the correctness of SNPP we will employ the following constructs
+from the {\em BAN} Logic of
+Authentication \cite{kn:burrows89}:
+\begin{itemize}
+\item \makebox[1.2in][l]{$P$ {\bf believes} $X$} \parbox[t]{3.75in}{$P$ believes
+that $X$ is true, and is therefore free to act upon this belief.}
+\item \makebox[1.2in][l]{$P$ {\bf sees} $X$} \parbox[t]{3.75in}{$P$ received a
+message containing $X$.}
+\item \makebox[1.2in][l]{$P$ {\bf said} $X$} \parbox[t]{3.75in}{$P$ has sent a
+message containing $X$ at some point in the past.}
+\item \makebox[1.2in][l]{{\bf fresh}($X$)} \parbox[t]{3.75in}{$X$ has not
+appeared in a message processed in any previous run of the protocol; {\em
+i.e.,} $X$ is a nonce.}
+\item \makebox[1.2in][l]{$P$ {\bf controls} $X$} \parbox[t]{3.75in}{$P$ has the
+authority to determine $X$.  For example, a customer has the  authority to
+issue hold and pay requests from his account, and his bank respects that
+authority.}
+\item \makebox[1.2in][l]{$P \stackrel{K}{\leftrightarrow} Q$}
+\parbox[t]{3.75in} {$K$ is the shared key between $P$ and $Q$.}
+\item \makebox[1.2in][l]{${\{X\}}_K$}
+\parbox[t]{3.75in} {Message $X$ encrypted with the key $K$.}
+\end{itemize}
+
+\noindent
+We will also make use of the following postulates from the logic:
+
+\begin{itemize}
+\item The {\em message-meaning} rule for shared keys:
+\[\frac{P {\bf \ believes\ } Q \stackrel{K}{\leftrightarrow} P,\  P
+{\bf \ sees\ }
+{\{X\}}_K}{P {\bf \ believes\ } Q {\bf \ said\ } X}\]
+That is, if $P$ sees a message $X$ encrypted in a key that $P$ shares with $Q$,
+then $P$ believes that $Q$ has said $X$ at some point.  The logic assumes
+that the message was not generated by $P$ itself.
+
+\item The {\em nonce-verification} rule:
+\[\frac{P {\bf \ believes\ fresh}(X),\ P\ {\bf believes}\ Q\ {\bf said}\ X}
+{P\ {\bf believes}\ Q\ {\bf believes}\ X}\]
+That is, if $P$ believes that $Q$ has said $X$ at some point, but also
+believes that
+$X$ has never been said in the past, then $P$ must believe that $Q$ has
+said $X$ in the present run of the protocol, and that at this point,
+$Q$ {\bf believes} $X$.
+
+\item The {\em jurisdiction} rule:
+\[\frac{P\ {\bf believes}\ Q\ {\bf controls}\ X,\
+	P\ {\bf believes}\ Q\ {\bf believes}\ X}
+       {P\ {\bf believes}\ X}\]
+That is, if $P$ believes that $Q$ is an authority on $X$, and that $Q$
+believes $X$, then $P$ can believe $X$ also.
+\end{itemize}
+
+In order to verify SNPP, we must first convert it into the {\em BAN}
+idealized protocol form.  Information sent in the clear is omitted, and all
+the information that a customer needs to deliver to his bank in order to
+place a particular hold or payment is encapsulated for the purpose of this
+verification in a {\bf HOLDMSG} or {\bf PAYMSG} variable.
+
+\begin{enumerate}
+\item  $\makebox[.6cm][l]{$C$} \Longrightarrow \makebox[.6cm][l]{$M$} :\ \
+		\{N_{C},{\bf HOLDMSG}\}_{K_{C}} $
+\item  $ \makebox[.6cm][l]{$M$} \Longrightarrow \makebox[.6cm][l]{$B_{M}$}
+	:\ \ \{N_{C},{\bf HOLDMSG}\}_{K_{C}} $
+\item  $ \makebox[.6cm][l]{$B_{M}$} \Longrightarrow
+		\makebox[.6cm][l]{$B_{C}$} :\ \ \{N_{C},{\bf	HOLDMSG}\}_{K_{C}} $
+\item  $ \makebox[.6cm][l]{$B_{C}$} \Longrightarrow
+	\makebox[.6cm][l]{$B_{M}$} :\ \ \{N_{B_{C}},{\bf HELDMSG1}\}_{K_{B_{C},B_{M}}} $
+\item  $ \makebox[.6cm][l]{$B_{M}$} \Longrightarrow \makebox[.6cm][l]{$M$}
+			:\ \ \{N_{B_{M}},{\bf HELDMSG2}\}_{K_{M}} $
+
+\end{enumerate}
+
+The second five messages are identical to the first, except the hold
+request is replaced by the payment request.  The proof is analogous to the
+one below, and will not be given here.
+
+The next step in analyzing the protocol is listing the assumptions.  The
+following statements are assumed to hold when the protocol commences:
+\begin{enumerate}
+\item $B_{C}\ {\bf believes}\ C \stackrel{K_{C}}{\leftrightarrow} B_{C}$
+\item $B_{C}\ {\bf believes\ fresh}(N_{C})$
+\item $B_{C}\ {\bf believes}\ (C\ {\bf controls}\ $hold-requests)
+\vspace{.6cm}
+\item $B_{M}\ {\bf believes}\ B_{C} \stackrel{K_{B_{C},B_{M}}}{\longleftrightarrow} B_{M}$
+\item $B_{M}\ {\bf believes\ fresh}(N_{B_{C}})$
+\item $B_{M}\ {\bf believes}\ (B_{C}\ {\bf controls}\ $held-messages)
+\vspace{.6cm}
+\item $M\ {\bf believes}\ B_{M} \stackrel{K_{M}}{\leftrightarrow} M$
+\item $M\ {\bf believes\ fresh}(N_{B_{M}})$
+\item $M\ {\bf believes}\ (B_{M}\ {\bf controls}\ $held-messages)
+\end{enumerate}
+
+In their idealized form, the first three messages simply pass the hold
+request along from $C$ to $B_{C}$.  When $B_{C}$ receives message 3, the
+following statement holds, according to the definition of ``{\bf sees}'':
+\[B_{C}\ {\bf sees}\ \{N_{C},\ {\bf HOLDMSG}\}_{K_{C}}\]
+Since we have the assumption that $B_{C}\ {\bf believes}\ C
+\stackrel{K_{C}}{\leftrightarrow} B_{C}$, the {\em message-meaning} rule
+applies, yielding
+\[B_{C}\ {\bf believes}\ (C\ {\bf said}\ (N_{C},\ {\bf HOLDMSG}))\]
+Since we have assumed that $B_{C}\ {\bf believes\ fresh}(N_{C})$, the {\em
+nonce-verification} rule applies, and yields
+\[B_{C}\ {\bf believes}\ (C\ {\bf believes}\ (N_{C},\ {\bf HOLDMSG}))\]
+Breaking a conjunction,
+\[B_{C}\ {\bf believes}\ (C\ {\bf believes}\ {\bf HOLDMSG})\]
+Since we have assumed that $B_{C}$ {\bf believes} that $C$ {\bf controls}
+hold-requests,
+and since {\bf HOLDMSG} is an instance thereof,
+\[B_{C}\ {\bf believes}\ (C\ {\bf controls}\ {\bf HOLDMSG})\]
+The {\em jurisdiction} rule now applies, yielding
+\[B_{C}\ {\bf believes}\ {\bf HOLDMSG}\]
+Since $B_{C}$ now believes the hold request, it will execute it, provided
+conditions such as fund availability are met.
+
+After message 4 is received
+by $B_{M}$, we again apply the {\em message-meaning, nonce-verification,
+and jurisdiction} rules just like above, yielding
+\[B_{M}\ {\bf believes}\ {\bf HELDMSG1}\]
+Now $B_{M}$ can send out message 5 to the merchant, thereby telling her
+that it believes in the validity of the hold.  When $M$ receives message 5,
+the same three rules can again be applied to yield
+\[M\ {\bf believes}\ {\bf HELDMSG2}\]
+Since in the concrete protocol the {\bf HELD} message received by the
+merchant from her bank contains the amount that the customer has put on
+hold as well as information indicating that the hold is for an account belonging to
+this particular merchant, the merchant now has sufficient confidence in
+the hold to send out the product.
+
+The proof of the payment half of the protocol is identical.
+
+\section{Implementation Status}
+A prototype implementation of an earlier version of SNPP is currently
+available for anonymous FTP from allspice.lcs.mit.edu.  The user and
+application interfaces are rather primitive, host security has been
+sacrificed for convenience, and only a single bank is supported.
+However, by the end of June 1992 we plan to have a complete, portable,
+and robust implementation ready for distribution.
+
+Two initial applications which will use SNPP are currently in the
+design stage,
+and we expect to complete them during the summer of 1992.  They will
+serve as a proof of concept for the protocol implementation, and will
+provide two different sets of requirements for the application interface.
+
+The first application will address the problem of collecting small
+amounts of money for various social activities in our research group.
+Although this application is
+almost trivial, we believe it will not only provide an initial testing
+ground for most of SNPP, but will also make a small but notable
+improvement in a typical office environment.
+
+The second application we plan to finish this summer is the
+distribution of stock quotes and other financial information over the
+network.  We plan to obtain the information from a commercial source,
+which charges a periodic fee for bulk access, and resell the data
+using SNPP on an individual quote basis.  This will provide a much
+wider testing ground for the protocol, since both multiple banks and
+the holding of funds will be in use.  We believe that there is a great
+amount of demand for this type of information on the Internet, and
+SNPP will for the first time provide a legal way to obtain it
+without having to dial up a commercial source directly.
+
+\section{Conclusions}
+
+We have described a simple, practical protocol for open network
+payment transactions.  SNPP allows funds to be held during a sensitive
+period of a transaction between distrustful parties.  At the same time
+it provides partitionability, so that unwanted real-time verification
+can be avoided, with the risks borne by the party that receives
+the benefits of improved efficiency.
+
+We have employed the BAN Logic of Authentication to verify the
+correctness of SNPP.  In our experience, the most useful part of the
+verification process was not the resulting proof, but the process of
+generating the idealized protocol.  The act of abstracting away all
+implementation dependent details helped us uncover flaws in
+earlier versions of SNPP.
+
+We expect that the availability of the protocol presented in this work
+could provide the material motivation for the development of many
+production quality services, and SNPP will thus serve to make the
+Internet a more useful, practical environment.
+
+\newpage
+\begin{thebibliography}{99}
+
+\bibitem{kn:abadi90}
+{\bf M. Abadi, M. Burrows, C. Kaufman, B. Lampson,}
+``Authentication and Delegation with Smart-cards,''
+{\it DEC Systems Research Center,}
+October 1990.
+
+\bibitem{kn:bos90}
+{\bf J. N. E. Bos, D. Chaum,}
+``SmartCash: a Practical Electronic Payment System,''
+{\it Centrum Voor Wiskunde en Informatica,}
+Report CS-R9035, August 1990.
+
+\bibitem{kn:burrows89}
+{\bf M. Burrows, M. Abadi, R. Needham,}
+``A Logic of Authentication,''
+{\it Proceedings of the Royal Society of London,}
+Vol. 426, 1989.
+
+\bibitem{kn:kirkman87}
+{\bf P. Kirkman,}
+``Electronic Funds Transfer Systems,''
+Basil Blackwell Ltd.,
+Oxford, UK, 1987.
+
+\bibitem{kn:needham78}
+{\bf R. M. Needham, M. D. Schroeder,}
+``Using Encryption for Authentication in Large Networks of Computers,''
+{\it Communications of the ACM,}
+Vol. 21, No. 12, December 1978.
+
+\bibitem{kn:neuman91}
+{\bf B. C. Neuman,}
+``Proxy-Based Authorization and Accounting for Distributed Systems,''
+{\it University of Washington at Seattle,}
+Technical Report 91-02-01,
+March 1991.
+
+\bibitem{kn:steiner88}
+{\bf J. G. Steiner, C. Neuman, J. I. Schiller,}
+``Kerberos: an Authentication Service for Open Network Systems,''
+{\it Proceedings of the Winter 1988 Usenix Conference,}
+February 1988.
+
+\bibitem{kn:voydock83}
+{\bf V. L. Voydock, S. T. Kent,}
+``Security Mechanisms in High-level Network Protocols,''
+{\it Computing Surveys,}
+Vol. 15, No. 2, June 1983.
+
+\end{thebibliography}
+\end{document}
